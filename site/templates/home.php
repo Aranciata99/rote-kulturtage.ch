@@ -8,12 +8,16 @@
 
 <?php snippet('header') ?>
 <?php snippet('footer') ?>
+<?php snippet('programmPage') ?>
+<?php snippet('aboutPage') ?>
+<?php snippet('contactPage') ?>
 
 <?php endslot() ?>
 
 <?php slot('scripts') ?>
 
-<!-- additional scripts here -->
+<script src="assets/scripts/fadePagesScript.js"></script>
+<script src="assets/scripts/scrollTo.js"></script>
 
 <?php endslot() ?>
 

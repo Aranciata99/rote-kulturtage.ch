@@ -6,8 +6,10 @@
 
 <?php slot() ?>
 
+<?php snippet('crowdfounding') ?>
 <?php snippet('header') ?>
 <?php snippet('footer') ?>
+
 
 <?php endslot() ?>
 

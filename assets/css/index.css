@@ -127,7 +127,8 @@ button:hover {
 
 .contactHeader,
 .programmHeader,
-.aboutHeader {
+.aboutHeader,
+.crowdFoundingHeader {
     position: fixed;
     background: white;
     cursor: pointer;
@@ -139,6 +140,10 @@ button:hover {
 
 .aboutHeader {
     z-index: 20;
+}
+
+.crowdFoundingHeader {
+    z-index: 35;
 }
 
 .contactHeader {
@@ -161,13 +166,20 @@ button:hover {
     color: var(--rkt-red);
 }
 
-.contactHeader p {
+.contactHeader p,
+.crowdFoundingHeader p {
     position: absolute;
     right: -25%;
-    top: calc(var(--header-footer-height-width)/3);
+    top: calc(var(--header-footer-height-width)/2);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     color: var(--rkt-red);
+}
+
+.crowdFoundingHeader p {
+    color: white;
+    transform: rotate(0);
+    top: calc(var(--header-footer-height-width)/2); 
 }
 
 /* default / header / Programm TL */
@@ -209,12 +221,26 @@ button:hover {
 
 /* default / header / Contact R */
 
-.contactHeader {
+.contactHeader,
+.crowdFoundingHeader {
     border-left: var(--border-thickness) solid var(--rkt-red);
+    border-bottom: none;
     width: var(--header-footer-height-width);
     top: 0;
     right: 0;
-    height: 100%;
+    height: 50%;
+}
+
+.crowdFoundingHeader {
+    top: 50%;
+    background-color: black;
+    border-left: var(--border-thickness) solid black;
+    border-top: var(--border-thickness) solid black;
+}
+
+.crowdFoundingHeader div {
+    writing-mode: normal;
+    transform: rotate(180deg);
 }
 
 /* default / footer */
@@ -343,7 +369,8 @@ button:hover {
 
 .closeAboutContainer,
 .closeContactContainer,
-.closeProgrammContainer {
+.closeProgrammContainer,
+.closeFoundingContainer {
     position: relative;
     width: 100%;
     height: var(--header-footer-height-width);
@@ -357,6 +384,11 @@ button:hover {
 .closeProgrammContainer {
     position: absolute;
     width: 33.3333vw;
+}
+
+.closeFoundingContainer {
+    top: calc(var(--header-footer-height-width)/2);
+    width: 50%;
 }
 
 /* Content Containers */
@@ -381,10 +413,6 @@ button:hover {
     padding-top: calc(var(--header-footer-height-width)*2);
     height: calc(100vh - var(--header-footer-height-width)*3);
     padding-inline: 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: var(--border-thickness);
-    padding-bottom: var(--header-footer-height-width);
     overflow-x: hidden;
 }
 
@@ -394,12 +422,79 @@ button:hover {
     height: calc(100vh - var(--header-footer-height-width)*2);
 }
 
-.programmContentContainer.contactOpen {
+/* Programm Page */
+
+.programmDatum {
+    text-align: center;
+    background-color: white;
+    color: var(--rkt-red);
+    height: calc(var(--header-footer-height-width)*2);
+    border-bottom: var(--border-thickness) solid var(--rkt-red);
+}
+
+.programmDatum h3 {
+    position: absolute;
+    transform: translate(0%, 25%);
+    left: 50%;
+}
+
+.programmTag {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--border-thickness);
+}
+
+.programmTag.contactOpen {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.programmContentContainer.aboutContactOpen {
+.programmTag.aboutContactOpen {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.programmPunkt {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: var(--border-thickness) solid var(--rkt-red);
+    border-top: 0;
+}
+
+.programmCoverImage {
+    position: relative;
+    width: 100%;
+    height: calc(var(--header-footer-height-width)*3);
+}
+
+.programmCoverImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.programmPunkt h2 {
+    color: var(--rkt-red);
+    line-height: 1.1;
+    padding-inline: 1vw;
+}
+
+.programmPunkt h3 {
+    line-height: 0;
+}
+
+.programmPunkt button {
+    margin-bottom: calc(var(--header-footer-height-width)/2);
+    border: none;
+    background-color: var(--rkt-red);
+    width: 50%;
+    transition: 0.5s;
+}
+
+.programmPunkt button:hover {
+    color: white;
+    border: none;
+    background-color: var(--rkt-red);
+    width: 80%;
 }
 
 /* About Page */
@@ -438,8 +533,7 @@ button:hover {
 }
 
 .contactFunding small,
-.contactFunding p
-  {
+.contactFunding p {
     color: var(--rkt-red);
 }
 
@@ -483,55 +577,29 @@ button:hover {
     padding-inline: 0.5vw;
 }
 
+/* Crowdfounding Page */
 
-/* Programm Page */
-
-.programmPunkt {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    border: var(--border-thickness) solid var(--rkt-red);
-    border-bottom: var(--border-thickness) solid var(--rkt-red);
-}
-
-.programmCoverImage {
-    position: relative;
-    width: 100%;
-    height: calc(var(--header-footer-height-width)*3);
-}
-
-.programmCoverImage img {
-    width: 100%;
+.crowdFoundingContainer {
+    position: fixed;
+    top: 0;
     height: 100%;
-    object-fit: cover;
+    width: 100%;
+    z-index: 500;
 }
 
-.programmPunkt h2 {
-    color: var(--rkt-red);
-    line-height: 1.1;
-    padding-inline: 1vw;
+.crowdFoundingBackground {
+    position: absolute;
+    top: calc(var(--header-footer-height-width)/5);
+    left: calc(var(--header-footer-height-width)/5);
+    width: calc(100vw - var(--header-footer-height-width)/2);
+    height: calc(100vh - var(--header-footer-height-width)/2);
+    background-color: black;
 }
 
-.programmPunkt h3 {
-    line-height: 0;
-}
-
-.programmPunkt button {
-    margin-bottom: calc(var(--header-footer-height-width)/2);
-    border: none;
-    background-color: var(--rkt-red);
-    width: 50%;
-    transition: 0.5s;
-}
-
-.programmPunkt button:hover {
+.crowdFoundingBackground h2 {
+    text-align: center;
     color: white;
-    border: none;
-    background-color: var(--rkt-red);
-    width: 80%;
 }
-
-
 
 /* Breakpoints */
 /* Breakpoints */

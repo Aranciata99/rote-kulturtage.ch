@@ -15,3 +15,9 @@
         <p><?= $site->contactHeaderTitle()->upper() ?></p>
     </div>
 </a>
+
+<a href="<?= $pages = $site->find('crowdfounding') ?>">
+    <div class="crowdFoundingHeader">
+        <p> ❤ ❤ ❤ ❤ ❤ ❤ </p>
+    </div>
+</a>
