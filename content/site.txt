@@ -1,0 +1,102 @@
+Title: Rote Kulturtage 2025
+
+----
+
+Programmheadertitle: Programm
+
+----
+
+Aboutheadertitle: About
+
+----
+
+Contactheadertitle: Kontakt
+
+----
+
+Programmpunkte:
+
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Zweiter Titel
+  time: 20–23
+  location: ZWZ
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Zweiter Titel
+  time: 20–23
+  location: ZWZ
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Zweiter Titel
+  time: 20–23
+  location: ZWZ
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+
+----
+
+Aboutinfotitle: Info
+
+----
+
+Aboutinfotext: Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben.
+
+----
+
+Aboutfinanztitle: Finanzierung
+
+----
+
+Aboutfinanztext: Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben.
+
+----
+
+Aboutmotivationtitle: Motivation
+
+----
+
+Aboutmotivationtext: Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben.
+
+----
+
+Aboutawaretitle: Awareness
+
+----
+
+Aboutawaretext: Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. Es ist ein paradiesmatisches Land, in dem einem gebratene Satzteile in den Mund fliegen. Nicht einmal von der allmächtigen Interpunktion werden die Blindtexte beherrscht – ein geradezu unorthographisches Leben.
+
+----
+
+Contactvereintext:
+
+Verein Rote Kulturtage
+Masha Slovic
+Zürcherstrasse 3
+8000 Zürich
+Schweiz

@@ -1,0 +1,158 @@
+title: Site
+
+columns:
+  - width: 1/3
+    sections:
+    type: fields
+    fields:
+      programmHeaderTitle:
+        label: Programm Button
+        type: text
+        help: Sprache anpassen
+        required: true
+  - width: 1/3
+    sections:
+    type: fields
+    fields:
+      aboutHeaderTitle:
+        label: About Button
+        type: text
+        help: Sprache anpassen
+        required: true
+  - width: 1/3
+    sections:
+    type: fields
+    fields:
+      contactHeaderTitle:
+        label: Kontakt Button
+        type: text
+        help: Sprache anpassen
+        required: true
+  - width: 1/1
+    fields:
+      programmPunkte:
+        label: Programmpunkte
+        type: structure
+        fields:
+          bild:
+            label: Cover Bild
+            type: files
+            uploads: image
+            multiple: false
+            required: true
+          title:
+            label: Titel
+            type: text
+            required: true
+          time:
+            label: Zeit
+            type: text
+            required: true
+          location:
+            label: Ort
+            type: text
+            required: true
+
+  - width: 1/4
+    type: fields
+    fields:
+      aboutInfoTitle:
+        label: Info
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutInfoText:
+        label: Info Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutFinanzTitle:
+        label: Finanzierung
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutFinanzText:
+        label: Finanzierung Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutMotivationTitle:
+        label: Motivation Text
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutMotivationText:
+        label: Motivation Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutAwareTitle:
+        label: Awareness
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutAwareText:
+        label: Awareness Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/3
+    type: fields
+    fields:
+      contactVereinText:
+        label: Verein Text / Adresse
+        type: textarea
+        help: Title
+        required: true
+        buttons:
+          - bold
+          - italic
+          - link
+- width: 1/1
+    sections:
+      pages:
+        type: pages
+        status: listed
+        label: Seiten
+
