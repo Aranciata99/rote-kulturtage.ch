@@ -58,6 +58,7 @@ p {
 
 small {
     font-size: 2.2vh;
+    line-height: 1.4;
 }
 
 a {
@@ -178,8 +179,9 @@ button:hover {
 
 .crowdFoundingHeader p {
     color: white;
-    transform: rotate(0);
-    top: calc(var(--header-footer-height-width)/2); 
+    transform: rotate(90);
+    top: calc(var(--header-footer-height-width)/2);
+    text-transform: uppercase;
 }
 
 /* default / header / Programm TL */
@@ -388,7 +390,12 @@ button:hover {
 
 .closeFoundingContainer {
     top: calc(var(--header-footer-height-width)/2);
-    width: 50%;
+    left: calc(100vw - var(--header-footer-height-width));
+    width: 0;
+}
+
+.closeFoundingContainer div div {
+    background-color: white;
 }
 
 /* Content Containers */
@@ -453,11 +460,13 @@ button:hover {
 }
 
 .programmPunkt {
+    position: relative;
     width: 100%;
     height: auto;
     text-align: center;
     border: var(--border-thickness) solid var(--rkt-red);
     border-top: 0;
+    cursor: pointer;
 }
 
 .programmCoverImage {
@@ -485,7 +494,7 @@ button:hover {
 .programmPunkt button {
     margin-bottom: calc(var(--header-footer-height-width)/2);
     border: none;
-    background-color: var(--rkt-red);
+    background-color: black;
     width: 50%;
     transition: 0.5s;
 }
@@ -493,8 +502,59 @@ button:hover {
 .programmPunkt button:hover {
     color: white;
     border: none;
-    background-color: var(--rkt-red);
+    background-color: black;
     width: 80%;
+}
+
+.programmInfoContainer {
+    position: absolute;
+    display: none;
+    height: calc(100% - var(--header-footer-height-width));
+    width: calc(100% - var(--header-footer-height-width));
+    top: calc(var(--header-footer-height-width)/4);
+    left: calc(var(--header-footer-height-width)/4);
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: calc(var(--border-thickness)*5) solid black;
+    cursor: pointer;
+}
+
+.programmInfoContainer.visible {
+    display: block;
+}
+
+.programmInfoText {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.programmInfoText small {
+    padding-right: calc(var(--header-footer-height-width)/2);
+}
+
+.closeProgrammInfo {
+    position: absolute;
+    height: calc(var(--header-footer-height-width)/2);
+    width: calc(var(--header-footer-height-width)/2);
+    right: 0;
+    top: 0;
+    background-color: black;
+    border-radius: 50px;
+}
+
+.closeProgrammInfo h3 {
+    color: white;
+    position: absolute;
+    top: -93%;
+    left: 15%;
+
 }
 
 /* About Page */
@@ -582,6 +642,7 @@ button:hover {
 .crowdFoundingContainer {
     position: fixed;
     top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     z-index: 500;
@@ -593,6 +654,7 @@ button:hover {
     left: calc(var(--header-footer-height-width)/5);
     width: calc(100vw - var(--header-footer-height-width)/2);
     height: calc(100vh - var(--header-footer-height-width)/2);
+    border-radius: 10px;
     background-color: black;
 }
 

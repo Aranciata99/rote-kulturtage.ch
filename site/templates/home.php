@@ -17,6 +17,7 @@
 <?php slot('scripts') ?>
 
 <script src="assets/scripts/fadePagesScript.js"></script>
+<script src="assets/scripts/programmDetails.js"></script>
 <script src="assets/scripts/scrollTo.js"></script>
 
 <?php endslot() ?>

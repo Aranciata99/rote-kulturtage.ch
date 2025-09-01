@@ -18,6 +18,6 @@
 
 <a href="<?= $pages = $site->find('crowdfounding') ?>">
     <div class="crowdFoundingHeader">
-        <p> ❤ ❤ ❤ ❤ ❤ ❤ </p>
+        <p> crowdfunding </p>
     </div>
 </a>

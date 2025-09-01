@@ -60,7 +60,15 @@ columns:
                 label: Ort
                 type: text
                 required: true
-
+              details:
+                label: Details
+                type: textarea
+                buttons:
+                  - bold
+                  - italic
+                  - '|'
+                  - ul
+                  - ol
   - width: 1/4
     type: fields
     fields:

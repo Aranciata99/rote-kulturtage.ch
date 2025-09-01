@@ -1,9 +1,7 @@
 <div class="crowdFoundingContainer">
-    <a href="<?= $pages = $site->find('home') ?>">
     <div class="closeFoundingContainer">
-        <?php snippet('closeButton') ?>
+        <a href="<?= $pages = $site->find('home') ?>"><?php snippet('closeButton') ?></a>
     </div>
-    </a>
     <div class="crowdFoundingBackground">
         <h2>Crowdfounding</h2>
     </div>

@@ -1,6 +1,8 @@
 <?php if ($programm = $site->programm()->toStructure()): ?>
     <?php foreach ($programm as $tag): ?>
-        <div class="programmDatum"><h3><?= $tag->datum()->toDate('d.m') ?></h3></div>
+        <div class="programmDatum">
+            <h3><?= $tag->datum()->toDate('d.m') ?></h3>
+        </div>
         <div class="programmTag">
             <?php if ($punkte = $tag->punkte()->toStructure()): ?>
                 <?php foreach ($punkte as $punkt): ?>
@@ -13,7 +15,17 @@
                         <h2><?= $punkt->title() ?></h2>
                         <h3><?= $punkt->time() ?></h3>
                         <h3><?= $punkt->location() ?></h3>
-                        <button>INFO</button>
+                        <?php if ($punkt->details()->isNotEmpty()): ?>
+                            <button>INFO</button>
+                            <div class="programmInfoContainer">
+                                <div class="programmInfoText"><small><?= $punkt->title() ?></small>
+                                    <p><?= $punkt->details() ?></p>
+                                </div>
+                                <div class="closeProgrammInfo">
+                                    <h3>×</h3>
+                                </div>
+                            </div>
+                        <?php endif ?>
                     </div>
                 <?php endforeach ?>
             <?php endif ?>
