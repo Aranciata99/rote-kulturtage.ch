@@ -15,7 +15,7 @@
 
 <?php slot('scripts') ?>
 
-<!-- additional scripts here -->
+<script src="assets/scripts/crowdfounding.js"></script>
 
 <?php endslot() ?>
 

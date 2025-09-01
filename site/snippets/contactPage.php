@@ -3,9 +3,15 @@
         <?php snippet('closeButton') ?>
     </div>
     <div class="contactContentContainer">
-        <div class="contactFunding" id="">
-            <small>Crowdfounding</small>
-            <p>Platzhalter Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien. </p>
+        <div class="contactFunding">
+            <div class="crowdfoundingSticker">
+                <a href="<?= $pages = $site->find('crowdfounding') ?>">
+                    <h2>❤ ❤ ❤<br>
+                        Unterstütze uns!<br>
+                        ★★★</h2>
+                    </h2>
+                </a>
+            </div>
         </div>
         <div class="contactNewsletter" id="">
             <small>Newsletter</small>

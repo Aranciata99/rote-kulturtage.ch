@@ -1,0 +1,25 @@
+Title: Crowdfounding
+
+----
+
+Beschrieb: Unser Crowdfounding Platzhalter: Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext.
+
+----
+
+Programmheadertitle: Programm
+
+----
+
+Pagetitle: 
+
+----
+
+Subtitle: 
+
+----
+
+Text: 
+
+----
+
+Uuid: o1kconwi5jndeejl
