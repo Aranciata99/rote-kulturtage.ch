@@ -346,17 +346,17 @@ button:hover {
 }
 
 .homeBlackPic.clicked {
- visibility: hidden;
+    visibility: hidden;
 }
 
 .homeBackgroundText {
     color: black;
-    text-shadow: 
-    -3px -3px 0 white,
-     3px -3px 0 white,
-    -3px  3px 0 white,
-     3px  3px 0 white;
-     z-index: 5;
+    text-shadow:
+        -3px -3px 0 white,
+        3px -3px 0 white,
+        -3px 3px 0 white,
+        3px 3px 0 white;
+    z-index: 5;
 }
 
 .homeBackgroundText.clicked {
@@ -1162,7 +1162,24 @@ button:hover {
 /* Breakpoints */
 /* Breakpoints */
 
+@media (max-width: 1700px) {
+    .programmTag {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: var(--border-thickness);
+    }
+
+    .programmTag.contactOpen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .programmTag.aboutContactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
 @media (max-width: 992px) {
+
     .aboutNavi {
         grid-template-columns: auto;
     }
