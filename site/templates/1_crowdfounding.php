@@ -9,6 +9,7 @@
 <?php snippet('crowdfoundingPage') ?>
 <?php snippet('header') ?>
 <?php snippet('footer') ?>
+<?php snippet('backgroundHome') ?>
 
 
 <?php endslot() ?>

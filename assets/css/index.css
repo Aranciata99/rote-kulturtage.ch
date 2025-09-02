@@ -32,6 +32,11 @@ body {
     height: 0;
 }
 
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 :root {
     --rkt-red: rgb(230, 48, 27);
     --border-thickness: 0.35vh;
@@ -41,6 +46,12 @@ body {
 }
 
 /* generall settings / Typefaces & Settings */
+
+h1 {
+    font-family: 'ABCFavoritEdu-Book';
+    font-size: max(4.2vw, 60px);
+    line-height: 1;
+}
 
 h2 {
     font-family: 'ABCFavoritLiningEdu-Book';
@@ -301,6 +312,85 @@ button:hover {
 .logoRKTfooter img {
     height: 100%;
 }
+
+/* default / background */
+
+.homeBackgroundContainer,
+.homeBackgroundText {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.homeBackgroundImages {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.homeBackgroundImages img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homeBlackPic {
+    z-index: 1;
+}
+
+.homeBlackPic.clicked {
+ visibility: hidden;
+}
+
+.homeBackgroundText {
+    color: black;
+    text-shadow: 
+    -3px -3px 0 white,
+     3px -3px 0 white,
+    -3px  3px 0 white,
+     3px  3px 0 white;
+     z-index: 5;
+}
+
+.homeBackgroundText.clicked {
+    color: var(--rkt-red);
+}
+
+.homeDatum {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+.homeTitle {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.homeTitle h1 {
+    font-family: 'ABCFavoritLiningEdu-Book';
+    font-size: 6vh;
+}
+
+.homeSticker {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    z-index: 5;
+}
+
+
 
 /* Pages */
 /* Pages */
@@ -593,9 +683,8 @@ button:hover {
     margin-bottom: var(--header-footer-height-width);
 }
 
-.contactFunding small,
-.contactFunding p {
-    color: var(--rkt-red);
+.contactFunding {
+    padding-left: calc(var(--header-footer-height-width)/3);
 }
 
 .newsletterForm {
@@ -843,7 +932,8 @@ button:hover {
 
 .contributions {
     margin-top: calc(var(--header-footer-height-width)/2);
-    margin-bottom: calc(var(--header-footer-height-width)/2);;
+    margin-bottom: calc(var(--header-footer-height-width)/2);
+    ;
 }
 
 .contributions h2 {
@@ -1079,5 +1169,30 @@ button:hover {
 
     .aboutContentContainer {
         height: calc(100vh - var(--header-footer-height-width)/2*10);
+    }
+}
+
+
+@media (max-width: 770px) {
+
+    /* default / background */
+
+    .homeBackgroundContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .homeBackgroundImages {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .homeBackgroundImages img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
     }
 }

@@ -4,14 +4,7 @@
     </div>
     <div class="contactContentContainer">
         <div class="contactFunding">
-            <div class="crowdfoundingSticker">
-                <a href="<?= $pages = $site->find('crowdfounding') ?>">
-                    <h2>❤ ❤ ❤<br>
-                        Unterstütze uns!<br>
-                        ★★★</h2>
-                    </h2>
-                </a>
-            </div>
+            <?php snippet('sticker') ?>
         </div>
         <div class="contactNewsletter" id="">
             <small>Newsletter</small>
