@@ -6,7 +6,7 @@
 
 <?php slot() ?>
 
-<?php snippet('crowdfounding') ?>
+<?php snippet('crowdfoundingPage') ?>
 <?php snippet('header') ?>
 <?php snippet('footer') ?>
 

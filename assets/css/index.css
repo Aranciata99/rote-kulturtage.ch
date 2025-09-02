@@ -655,7 +655,7 @@ button:hover {
 
 }
 
-.crowdfoundingSticker a:hover{
+.crowdfoundingSticker a:hover {
     font-style: normal;
 }
 
@@ -695,13 +695,20 @@ button:hover {
     width: min(100% - 2rem, 550px);
     height: 100vh;
     transform: translate(-50%);
-    padding-inline: var(--header-footer-height-width);
     background-color: black;
     transition: var(--fadeIn-paged-speed) ease-in-out;
 }
 
 .crowdFoundingBackground.open {
     top: 0;
+}
+
+.crowdfoundingContainer {
+    position: relative;
+    top: calc(0vh - var(--header-footer-height-width));
+    height: 100vh;
+    overflow: auto;
+    padding-inline: var(--header-footer-height-width);
 }
 
 .crowdFoundingBackground h2,
@@ -713,8 +720,352 @@ button:hover {
 
 .crowdFoundingBackground p {
     padding-top: 0;
+    text-align: left;
 
 }
+
+/* Crowdfounding Layout */
+
+.campaignContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-top: var(--header-footer-height-width);
+    margin-bottom: var(--header-footer-height-width);
+    text-align: left;
+}
+
+.campaignContainer h3 {
+    color: white;
+}
+
+.goal-amount,
+.start-date,
+.end-date,
+.nr-backers {
+    font-size: 2.4vh;
+    margin-bottom: var(--header-footer-height-width);
+    color: white;
+}
+
+.remaining-days {
+    font-size: 2.4vh;
+    margin-top: var(--header-footer-height-width);
+    color: white;
+}
+
+.container-progress {
+    height: 33.3333vh;
+    width: 100%;
+    margin: 0;
+    display: flex;
+
+}
+
+.container-progress {
+    display: grid;
+    grid-template-columns: 8% 80%;
+    gap: 0px 4%;
+}
+
+.container-left {
+    height: 100%;
+    background-color: black;
+    border: var(--border-thickness) solid white;
+    left: 0;
+}
+
+.container-right {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 33% 33% 25%;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Moped"
+        "Altes-Wohnmobil"
+        "Punkrock-Studiobus"
+        "Fancy-Traumbus";
+}
+
+.Moped {
+    grid-area: Moped;
+    position: relative;
+}
+
+.Altes-Wohnmobil {
+    grid-area: Altes-Wohnmobil;
+    position: relative;
+}
+
+.Punkrock-Studiobus {
+    grid-area: Punkrock-Studiobus;
+    position: relative;
+}
+
+.Fancy-Traumbus {
+    grid-area: Fancy-Traumbus;
+    position: relative;
+}
+
+
+
+.targetMoney {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 2vh;
+    color: white;
+}
+
+.targetObject {
+    width: 100%;
+    font-size: 2.8vh;
+    color: white;
+}
+
+#progress {
+    width: 100%;
+    height: 20%;
+    background-color: white;
+
+}
+
+.progress-text {
+    font-size: 2vh;
+    margin-left: 0;
+    color: white;
+}
+
+#rewards {
+    display: none;
+}
+
+.contributions {
+    margin-top: calc(var(--header-footer-height-width)/2);
+    margin-bottom: calc(var(--header-footer-height-width)/2);;
+}
+
+.contributions h2 {
+    font-size: 2vh;
+    margin-bottom: var(--header-footer-height-width);
+}
+
+.contributions form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contributions label {
+    font-size: 2vh;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.contributions input[type="number"] {
+    font-size: 2vh;
+    height: calc(var(--header-footer-height-width)/3*2);
+    border: var(--border-thickness) solid white;
+    width: 90%;
+    outline: none;
+    margin-top: 1vh;
+    padding-inline: 0.5vw;
+}
+
+.contributions input::placeholder {
+    font-size: 2vh;
+    color: hsla(0, 0%, 0%, 0.5);
+    cursor: text;
+}
+
+.contributions button:focus {
+    border-color: var(--rkt-red);
+}
+
+
+.suggested-amounts {
+    margin-bottom: calc(var(--header-footer-height-width)/4);
+    position: relative;
+    left: 0px;
+}
+
+.currency-symbol {
+    color: white;
+}
+
+.suggested-amounts p {
+    font-size: 2vh;
+    margin-bottom: calc(var(--header-footer-height-width)/2);
+    color: black;
+}
+
+.suggested-amounts ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.suggested-amounts li {
+    margin: 0 11.5px;
+    height: calc(var(--header-footer-height-width)/2);
+    padding-inline: 10px;
+    padding-top: 5px;
+    border: var(--border-thickness) solid white;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition-animation-general);
+}
+
+.suggested-amounts li:hover {
+    background-color: white;
+    color: black;
+}
+
+.contributions button[type="submit"] {
+    font-size: 2vh;
+    height: calc(var(--header-footer-height-width)/3*2);
+    background-color: black;
+    width: 50%;
+    color: white;
+    border: var(--border-thickness) solid white;
+    cursor: pointer;
+    transition: var(--transition-animation-general);
+}
+
+.contributions button:hover {
+    width: 95%;
+    transform: translate(0%);
+    background-color: white;
+    color: black;
+}
+
+/*.container {
+    display: flex;
+}
+
+.column1 {
+    flex: 2;
+    padding: 20px;
+}
+
+.column2 {
+    flex: 1;
+    padding: 20px;
+}
+
+
+.goodie {
+    border: 1px solid #ccc;
+    padding-top: 0;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    position: relative;
+}
+
+.goodie-button {
+    font-size: 1rem;
+    padding: 7px;
+    border: 2px solid #ea4e27;
+    color: #ea4e27;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #f2f2f2;
+}
+
+.goodie-size {
+    font-size: 1rem;
+    padding: 7px;
+    border: 2px solid #ddd;
+    color: #555;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    width: 100px;
+}
+
+.goodie-color {
+    font-size: 1rem;
+    padding: 7px;
+    border: 2px solid #ddd;
+    color: #555;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    background-color: #f2f2f2;
+    width: 100px;
+
+}
+
+
+#goto-top {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 2px solid #ea4e27;
+    color: #ea4e27;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    background-color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    height: 100%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    padding-right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.selected {
+    border: 2px solid #ea4e27 !important;
+}
+
+#goodies-container {
+    margin-top: 10px;
+}*/
+
 
 /* Breakpoints */
 /* Breakpoints */
