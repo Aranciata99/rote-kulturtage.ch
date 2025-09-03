@@ -390,8 +390,6 @@ button:hover {
     z-index: 5;
 }
 
-
-
 /* Pages */
 /* Pages */
 /* Pages */
@@ -524,15 +522,15 @@ button:hover {
 
 .programmDatum {
     text-align: center;
-    background-color: white;
-    color: var(--rkt-red);
-    height: calc(var(--header-footer-height-width)*2);
+    background-color: black;
+    color: white;
+    height: calc(var(--header-footer-height-width));
     border-bottom: var(--border-thickness) solid var(--rkt-red);
 }
 
 .programmDatum h3 {
     position: absolute;
-    transform: translate(-50%, 25%);
+    transform: translate(-50%, -70%);
     left: 50%;
 }
 
@@ -680,7 +678,7 @@ button:hover {
 /* Contact Page */
 
 .contactContentContainer div {
-    margin-bottom: var(--header-footer-height-width);
+    margin-bottom: calc(var(--header-footer-height-width)/2);
 }
 
 .contactFunding {
@@ -693,23 +691,24 @@ button:hover {
 
 .newsletterForm input {
     margin-bottom: 1vh;
-    height: calc(var(--header-footer-height-width)/2);
+    height: calc(var(--header-footer-height-width));
     border: var(--border-thickness) solid;
     text-align: left;
     outline: none;
-    padding-inline: 0.5vw;
+    padding-inline: 2vh;
 }
 
 .newsletterForm input::placeholder {
-    font-size: 1.5vh;
+    font-size: 2.2vh;
     color: hsla(0, 0%, 0%, 0.25);
     cursor: text;
 }
 
 .newsletterForm button {
     text-align: left;
-    padding-inline: 0.5vw;
-    height: calc(var(--header-footer-height-width)/5*3);
+    font-size: 2.2vh;
+    padding-inline: 2vh;
+    height: calc(var(--header-footer-height-width));
 }
 
 .newsletterForm button:focus {
@@ -721,10 +720,11 @@ button:hover {
 }
 
 .contactMail button {
-    height: calc(var(--header-footer-height-width)/3*2);
+    height: calc(var(--header-footer-height-width));
     width: 100%;
     text-align: left;
     padding-inline: 0.5vw;
+    font-size: 2.2vh;
 }
 
 .crowdfoundingSticker {
@@ -849,7 +849,6 @@ button:hover {
     width: 100%;
     margin: 0;
     display: flex;
-
 }
 
 .container-progress {
@@ -933,7 +932,6 @@ button:hover {
 .contributions {
     margin-top: calc(var(--header-footer-height-width)/2);
     margin-bottom: calc(var(--header-footer-height-width)/2);
-    ;
 }
 
 .contributions h2 {
@@ -1192,6 +1190,165 @@ button:hover {
 
 @media (max-width: 770px) {
 
+    /* generall settings */
+
+    :root {
+        --header-footer-height-width: 4.5vh;
+    }
+
+    /* generall settings / Typefaces & Settings */
+
+    h1 {
+        font-size: min(12vw, 50px);
+    }
+
+    h2 {
+        font-size: 4vh;
+    }
+
+    h3 {
+        font-size: 4vh;
+    }
+
+    p {
+        font-size: 2.4vh;
+        line-height: 1.2;
+    }
+
+    small {
+        font-size: 2vh;
+        line-height: 1.4;
+    }
+
+    a:hover {
+        font-style: normal;
+    }
+
+    /*
+
+    button {
+        height: calc(var(--header-footer-height-width)/2);
+        font-size: 1.5vh;
+        color: white;
+        border: none;
+        border-radius: none;
+        background-color: black;
+        cursor: pointer;
+    }
+
+    button:hover {
+        border: var(--border-thickness) solid;
+        background-color: white;
+        color: black;
+    }
+
+    /* default */
+
+    /* default / Buttons */
+
+    /*
+    .closeButton {
+        position: relative;
+        width: var(--header-footer-height-width);
+        height: var(--header-footer-height-width);
+        border-radius: 100%;
+        top: 0;
+        left: 50%;
+        cursor: pointer;
+        transform: translate(-50%, 0%) rotate(45deg);
+        transition: var(--transition-animation-general);
+    }
+
+    .closeButton:hover {
+        transform: translate(-50%, 0%) rotate(45deg) scale(1.2);
+    }
+
+    .Button-Linie-Vertikal,
+    .Button-Linie-Horizontal {
+        position: relative;
+        background-color: var(--rkt-red);
+        left: 50%;
+        width: 75%;
+        height: var(--border-thickness);
+    }
+
+    .Button-Linie-Vertikal {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .Button-Linie-Horizontal {
+        top: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    */
+    /* default / header */
+
+    .programmHeader {
+        z-index: 10;
+    }
+
+    .aboutHeader {
+        z-index: 20;
+    }
+
+    .crowdFoundingHeader {
+        z-index: 35;
+    }
+
+    .contactHeader {
+        z-index: 40;
+    }
+
+    /* default / header / Programm TL */
+
+    .programmHeader,
+    .programmHeader.aboutOpen,
+    .programmHeader.contactOpen {
+        width: 50vw;
+    }
+
+    /* default / header / About TR */
+
+    .aboutHeader,
+    .aboutHeader.contactOpen {
+        left: 50vw;
+        width: calc(50vw - var(--header-footer-height-width));
+    }
+
+    /* default / footer */
+
+    .footer {
+        width: 100vw;
+        z-index: 100;
+    }
+
+    .footer.contactOpen {
+        width: 100vw;
+    }
+
+    .footerLeft p,
+    .footerRight p {
+        top: -8%;
+    }
+
+    .logoRKTfooter {
+        top: -1.3vh;
+    }
+
+    /* default / header / general */
+
+    .programmHeader p,
+    .aboutHeader p {
+        transform: translate(-50%, -50%);
+    }
+
+    .contactHeader p,
+    .crowdFoundingHeader p {
+        right: -35%;
+    }
+
     /* default / background */
 
     .homeBackgroundContainer {
@@ -1202,14 +1359,283 @@ button:hover {
         width: 100vw;
     }
 
-    .homeBackgroundImages {
+    .homeBackgroundImages img {
+        position: relative;
+        height: 50%;
+    }
+
+    .homeDatum {
+        transform: translate(-50%, -50%);
+    }
+
+    .homeTitle {
+        top: 3%;
+        left: 3%;
+    }
+
+    .homeTitle h1 {
+        font-size: 10vw;
+    }
+
+    .homeSticker {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        z-index: 5;
+    }
+
+    /* Pages */
+    /* Pages */
+    /* Pages */
+    /* Pages */
+
+    /* Containers (Animation) */
+
+    .programmContainer {
+        top: -100vh;
+        z-index: 11;
+    }
+
+    .programmContainer.open {
+        top: 0;
+    }
+
+    .programmContainer.contactOpen {
+        width: calc(100vw - var(--header-footer-height-width));
+    }
+
+    .programmContainer.aboutContactOpen {
+        width: calc(100vw - var(--header-footer-height-width));
+    }
+
+    .aboutContainer {
+        left: 0;
+        width: calc(100vw - var(--header-footer-height-width));
+        border-left: none;
+    }
+
+    .aboutContainer.contactOpen {
+        left: 0;
+        width: calc(100vw - var(--header-footer-height-width));
+    }
+
+    .contactContainer {
+        right: calc(-100vw - var(--border-thickness));
         height: 100vh;
         width: 100vw;
     }
 
-    .homeBackgroundImages img {
-        width: 100%;
-        height: 50%;
-        object-fit: cover;
+    /* Close pages Container */
+
+    .closeProgrammContainer {
+        width: 50vw;
     }
+
+    /* Programm Page */
+
+    .programmDatum {
+        color: white;
+        background-color: black;
+        height: calc(var(--header-footer-height-width)*2);
+
+    }
+
+    .programmDatum h3 {
+        transform: translate(-50%, -35%);
+    }
+
+    .programmTag {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .programmTag.contactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .programmTag.aboutContactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .programmCoverImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .programmPunkt button {
+        margin-bottom: var(--header-footer-height-width);
+        background-color: black;
+        transition: var(--transition-animation-general);
+    }
+
+    .programmPunkt button:hover {
+        width: 50%;
+    }
+
+    .programmInfoContainer {
+        height: 90%;
+        width: 85%;
+    }
+
+    .closeProgrammInfo h3 {
+        color: white;
+        position: absolute;
+        top: -150%;
+        left: 15%;
+
+    }
+
+    .programmInfoText p {
+        line-height: 1.3;
+    }
+
+    /* About Page */
+
+    .aboutContentContainer {
+        height: calc(100vh - var(--header-footer-height-width)*6);
+    }
+
+    .aboutNavi div {
+        height: calc(var(--header-footer-height-width));
+        border-bottom: var(--border-thickness) solid var(--rkt-red);
+        border-right: var(--border-thickness) solid var(--rkt-red);
+        width: auto;
+        cursor: pointer;
+        color: var(--rkt-red);
+    }
+
+    .aboutNavi div:hover {
+        background-color: white;
+        color: var(--rkt-red);
+    }
+
+    .aboutNavi small {
+        transform: translate(-50%, 30%);
+    }
+
+    /* Contact Page */
+
+    .newsletterForm input {
+        height: calc(var(--header-footer-height-width));
+        padding-inline: 3vw;
+    }
+
+    .newsletterForm input::placeholder {
+        font-size: 2vh;
+    }
+
+    .newsletterForm button {
+        padding-inline: 3vw;
+        height: calc(var(--header-footer-height-width));
+        font-size: 2vh;
+    }
+
+    .contactMail button {
+        height: calc(var(--header-footer-height-width));
+        padding-inline: 3vw;
+        font-size: 2vh;
+    }
+
+    .crowdfoundingSticker:hover {
+        transform: rotate(10deg);
+
+    }
+
+    .crowdfoundingSticker h2,
+    .crowdfoundingSticker p {
+        line-height: 1.1;
+    }
+
+    .crowdfoundingSticker h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Crowdfounding Page */
+
+    .crowdfoundingContainer {
+        padding-inline: var(--header-footer-height-width);
+    }
+
+    .crowdFoundingBackground h2,
+    .crowdFoundingBackground p {
+        padding-top: var(--header-footer-height-width);
+    }
+
+    .crowdFoundingBackground h2 {
+        font-size: 7.5vw;
+        padding-top: calc(var(--header-footer-height-width)/2*3);
+    }
+
+    .crowdFoundingBackground p {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    /* Crowdfounding Layout */
+    
+    .container-progress {
+        grid-template-columns: 12% 80%;
+    }
+
+    .targetMoney {
+        font-size: 1.8vh;
+    }
+
+    .targetObject {
+        font-size: 2.4vh;
+    }
+
+    .contributions h2 {
+        font-size: 2.4vh;
+        margin-bottom: var(--header-footer-height-width);
+    }
+
+    .contributions label {
+        font-size: 2.4vh;
+    }
+
+    .contributions input[type="number"] {
+        font-size: 2.4vh;
+        height: calc(var(--header-footer-height-width));
+        padding-inline: 3vw;
+    }
+
+    .contributions input::placeholder {
+        font-size: 2.4vh;
+    }
+
+    .contributions button:focus {
+        border-color: var(--rkt-red);
+    }
+
+    .suggested-amounts {
+        margin-bottom: var(--header-footer-height-width);
+    }
+
+    .suggested-amounts p {
+        font-size: 2.4vh;
+        margin-bottom: calc(var(--header-footer-height-width));
+    }
+
+    .suggested-amounts li {
+        margin: 0 1vw;
+        height: auto;
+        padding-inline: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .contributions button[type="submit"] {
+        font-size: 2.4vh;
+        height: var(--header-footer-height-width);
+        background-color: white;
+        width: 100%;
+        color: black;
+    }
+
+    .contributions button:hover {
+        width: 100%;
+    }
+
+
 }
