@@ -18,9 +18,11 @@ columns:
               bild:
                 label: Cover Bild
                 type: files
-                uploads: image
+                layout: cards
                 multiple: false
-                required: true
+                uploads:
+                  template: image
+                required: false
               title:
                 label: Titel
                 type: text
@@ -32,6 +34,11 @@ columns:
               location:
                 label: Ort
                 type: text
+                required: true
+              veranstaltungsDetails:
+                label: Details (sprache, länge, etc.)
+                type: textarea
+                buttons: false
                 required: true
               details:
                 label: Details

@@ -7,7 +7,7 @@
             <?php if ($punkte = $tag->punkte()->toStructure()): ?>
                 <?php foreach ($punkte as $punkt): ?>
                     <div class="programmPunkt">
-                        <?php if ($bild = $punkt->bild()->toFile()): ?>
+                        <?php if ($bild = $punkt->media()->toFiles()): ?>
                             <div class="programmCoverImage">
                                 <img src="<?= $bild->url() ?>" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
                             </div>
@@ -18,7 +18,7 @@
                         <?php if ($punkt->details()->isNotEmpty()): ?>
                             <button>INFO</button>
                             <div class="programmInfoContainer">
-                                <div class="programmInfoText"><small><?= $punkt->title() ?></small>
+                                <div class="programmInfoText"><small><?= $punkt->veranstaltungsDetails()->esc() ?></small>
                                     <p><?= $punkt->details()->kt() ?></p>
                                 </div>
                                 <div class="closeProgrammInfo">
