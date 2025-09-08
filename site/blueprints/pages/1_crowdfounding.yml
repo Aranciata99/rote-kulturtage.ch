@@ -6,13 +6,8 @@ columns:
     type: fields
     fields:
       beschrieb:
-        label: Crowdfounding Beschrieb
+        label: Beschrieb Text
         type: textarea
-        buttons:
-          - bold
-          - italic
-          - '|'
-          - ul
-          - ol
-        help: Sprache anpassen
+        buttons: false
+        help: 
         required: true

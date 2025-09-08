@@ -1,13 +1,18 @@
 <div class="crowdFoundingContainer" id="programmScroller">
     <div class="crowdFoundingBackground" id="crowdFoundingBackground">
-        <div class="closeFoundingContainer">
-            <a href="<?= $pages = $site->find('home') ?>"><?php snippet('closeButton') ?></a>
-        </div>
-        <div class="crowdfoundingContainer">
-            <h2>❤ Crowdfounding ❤</h2>
-            <p style="text-align: center;">★★★</p>
-            <p><?= $page->beschrieb()->kt() ?></p>
+        <div class="crowdFoundingCampagne" id="foundingCampagneContainer">
             <?php snippet('crowdfounding') ?>
+        </div>
+        <div class="crowdFoundingText">
+            <div class="closeFoundingContainer">
+                <a href="<?= $pages = $site->find('home') ?>"><?php snippet('closeButton') ?></a>
+            </div>
+            <h2>Crowdfounding <br>❤ ❤ ❤</h2>
+            <p><?= $page->beschrieb()->kt() ?></p> <br>
+            <button id="goto-top" title="Go to top">Jetzt spenden</button>
+        </div>
+        <div class="crowdFoundingVideo">
+
         </div>
     </div>
 </div>

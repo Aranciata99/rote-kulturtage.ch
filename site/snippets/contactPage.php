@@ -15,7 +15,7 @@
         </div>
         <div class="contactMail" id="">
             <small>Kontakt</small>
-            <a href="mailto:rotekulturtage@immerda.ch" target="_blank"><button>E-MAIL</button></a>
+            <a href="mailto:rotekulturtage@immerda.ch" target="_blank"><button>E-Mail</button></a>
         </div>
         <div class="contactVerein" id="">
             <small>Verein</small>

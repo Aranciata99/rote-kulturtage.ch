@@ -723,7 +723,7 @@ button:hover {
     height: calc(var(--header-footer-height-width));
     width: 100%;
     text-align: left;
-    padding-inline: 0.5vw;
+    padding-inline: 2vh;
     font-size: 2.2vh;
 }
 
@@ -773,44 +773,51 @@ button:hover {
 
 .crowdFoundingContainer.open {
     background-color: hsla(0, 0%, 100%, 0.5);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(12px);
 
 }
 
 .crowdFoundingBackground {
     position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     top: -100vh;
-    left: 50%;
-    width: min(100% - 2rem, 675px);
+    left: calc(var(--header-footer-height-width)/2);
+    width: calc(100vw - var(--header-footer-height-width));
     height: 100vh;
-    transform: translate(-50%);
-    background-color: black;
     transition: var(--fadeIn-paged-speed) ease-in-out;
+}
+
+.crowdFoundingCampagne,
+.crowdFoundingVideo,
+.crowdFoundingText {
+    padding-inline: 2vw;
+    overflow: auto;
+}
+
+.crowdFoundingText {
+    background-color: black;
 }
 
 .crowdFoundingBackground.open {
     top: 0;
 }
 
-.crowdfoundingContainer {
-    position: relative;
-    top: calc(0vh - var(--header-footer-height-width));
-    height: 100vh;
-    overflow: auto;
-    padding-inline: var(--header-footer-height-width);
-}
-
-.crowdFoundingBackground h2,
-.crowdFoundingBackground p {
+.crowdFoundingText h2,
+.crowdFoundingText p,
+.crowdFoundingText small {
     text-align: center;
     color: white;
-    padding-top: var(--header-footer-height-width);
+    padding-top: calc(var(--header-footer-height-width)/2);
 }
 
-.crowdFoundingBackground p {
+.crowdFoundingText p {
     padding-top: 0;
     text-align: left;
+}
 
+.crowdFoundingText small {
+    line-height: 1.2;
 }
 
 /* Crowdfounding Layout */
@@ -826,7 +833,7 @@ button:hover {
 }
 
 .campaignContainer h3 {
-    color: white;
+    color: black;
 }
 
 .goal-amount,
@@ -835,17 +842,17 @@ button:hover {
 .nr-backers {
     font-size: 2.4vh;
     margin-bottom: var(--header-footer-height-width);
-    color: white;
+    color: black;
 }
 
 .remaining-days {
     font-size: 2.4vh;
     margin-top: var(--header-footer-height-width);
-    color: white;
+    color: black;
 }
 
 .container-progress {
-    height: 33.3333vh;
+    height: 25vh;
     width: 100%;
     margin: 0;
     display: flex;
@@ -860,14 +867,14 @@ button:hover {
 .container-left {
     height: 100%;
     background-color: black;
-    border: var(--border-thickness) solid white;
+    border: var(--border-thickness) solid black;
     left: 0;
 }
 
 .container-right {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 33% 33% 25%;
+    grid-template-rows: 33% 33% 26%;
     grid-auto-flow: row;
     grid-template-areas:
         "Moped"
@@ -896,37 +903,51 @@ button:hover {
     position: relative;
 }
 
-
-
 .targetMoney {
     position: absolute;
     bottom: 0px;
     width: 100%;
     font-size: 2vh;
-    color: white;
+    color: black;
 }
 
 .targetObject {
     width: 100%;
-    font-size: 2.8vh;
-    color: white;
+    font-size: 1.2vw;
+    line-height: 1.2;
+    color: black;
 }
 
 #progress {
     width: 100%;
     height: 20%;
     background-color: white;
-
 }
 
 .progress-text {
     font-size: 2vh;
     margin-left: 0;
-    color: white;
+    color: black;
 }
 
 #rewards {
     display: none;
+    position: relative;
+    font-size: 1.5vh;
+    height: calc(var(--header-footer-height-width)/2);
+    background-color: black;
+    color: white;
+    border: var(--border-thickness) solid black;
+    transition: var(--transition-animation-general);
+    width: auto;
+    padding-inline: 20px;
+}
+
+#rewards:hover {
+    width: auto;
+    border: var(--border-thickness) solid black;
+    color: black;
+    background-color: white;
 }
 
 .contributions {
@@ -947,17 +968,17 @@ button:hover {
 .contributions label {
     font-size: 2vh;
     margin-bottom: 10px;
-    color: white;
+    color: black;
 }
 
 .contributions input[type="number"] {
     font-size: 2vh;
     height: calc(var(--header-footer-height-width)/3*2);
-    border: var(--border-thickness) solid white;
+    border: var(--border-thickness) solid black;
     width: 90%;
     outline: none;
     margin-top: 1vh;
-    padding-inline: 0.5vw;
+    padding-inline: 1vw;
 }
 
 .contributions input::placeholder {
@@ -970,15 +991,13 @@ button:hover {
     border-color: var(--rkt-red);
 }
 
-
 .suggested-amounts {
-    margin-bottom: calc(var(--header-footer-height-width)/4);
     position: relative;
     left: 0px;
 }
 
 .currency-symbol {
-    color: white;
+    color: black;
 }
 
 .suggested-amounts p {
@@ -998,24 +1017,30 @@ button:hover {
     margin: 0 10px;
     height: auto;
     padding: 10px;
-    border: var(--border-thickness) solid white;
-    color: white;
+    border: var(--border-thickness) solid black;
+    background-color: white;
+    color: black;
     cursor: pointer;
     transition: var(--transition-animation-general);
 }
 
+.suggested-amounts:focus {
+    border: var(--border-thickness) solid black;
+}
+
 .suggested-amounts li:hover {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 .contributions button[type="submit"] {
     font-size: 2vh;
+    margin-bottom: calc(var(--header-footer-height-width)/2);
     height: calc(var(--header-footer-height-width)/3*2);
-    background-color: black;
+    background-color: white;
     width: 50%;
-    color: white;
-    border: var(--border-thickness) solid white;
+    color: black;
+    border: var(--border-thickness) solid black;
     cursor: pointer;
     transition: var(--transition-animation-general);
 }
@@ -1023,8 +1048,8 @@ button:hover {
 .contributions button:hover {
     width: 95%;
     transform: translate(0%);
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 /*.container {
@@ -1039,34 +1064,53 @@ button:hover {
 .column2 {
     flex: 1;
     padding: 20px;
+}*/
+
+#goodies-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--border-thickness);
 }
 
-
 .goodie {
-    border: 1px solid #ccc;
     padding-top: 0;
     padding-bottom: 20px;
-    padding-left: 20px;
+    padding-inline: 20px;
     margin-bottom: 20px;
+    background-color: white;
+}
+
+.goodie p {
+    font-size: 1vw;
 }
 
 .price {
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
     margin-top: 10px;
+    margin-bottom: 10px;
     position: relative;
 }
 
 .goodie-button {
-    font-size: 1rem;
-    padding: 7px;
-    border: 2px solid #ea4e27;
-    color: #ea4e27;
+    font-size: 0.7vw;
+    width: 80%;
+    border: var(--border-thickness) solid black;
+    color: black;
     cursor: pointer;
-    margin-top: 10px;
-    background-color: #f2f2f2;
+    background-color: white;
+    transition: var(--transition-animation-general);
 }
 
+.goodie-button:hover {
+    width: 100%;
+    background-color: white;
+    border: var(--border-thickness) solid black;
+    color: white;
+}
+
+/* 
 .goodie-size {
     font-size: 1rem;
     padding: 7px;
@@ -1091,22 +1135,26 @@ button:hover {
 
     background-color: #f2f2f2;
     width: 100px;
-
-}
-
+} */
 
 #goto-top {
-    display: block;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 1.2rem;
+    display: none;
+    font-size: 2vh;
+    margin-bottom: var(--header-footer-height-width);
     padding: 10px;
-    border: 2px solid #ea4e27;
-    color: #ea4e27;
+    border: var(--border-thickness) solid black;
+    background-color: white;
+    height: var(--header-footer-height-width);
+    color: black;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: var(--transition-animation-general);
     width: 100%;
-    background-color: #fff;
+}
+
+#goto-top:hover {
+    border: var(--border-thickness) solid white;
+    background-color: black;
+    color: white;
 }
 
 .modal {
@@ -1146,12 +1194,8 @@ button:hover {
 }
 
 .selected {
-    border: 2px solid #ea4e27 !important;
+    border: var(--border-thickness) solid gray !important;
 }
-
-#goodies-container {
-    margin-top: 10px;
-}*/
 
 
 /* Breakpoints */
@@ -1173,9 +1217,81 @@ button:hover {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .crowdFoundingBackground {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .targetMoney {
+        font-size: 2vh;
+        color: black;
+    }
+
+    .targetObject {
+        font-size: 1.8vw;
+    }
+
+    #goodies-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .goodie p {
+        font-size: 2vw;
+    }
+
+    .goodie-button {
+        font-size: 1.3vw;
+    }
 }
 
 @media (max-width: 992px) {
+    .crowdFoundingBackground {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .crowdFoundingContainer {
+        overflow: auto;
+    }
+
+    .crowdFoundingBackground {
+        position: absolute;
+        display: grid;
+        top: -100vh;
+        height: auto;
+        overflow: hidden;
+        transition: var(--fadeIn-paged-speed) ease-in-out;
+    }
+
+    .crowdFoundingCampagne,
+    .crowdFoundingVideo,
+    .crowdFoundingText {
+        padding-inline: 5vw;
+        overflow: auto;
+    }
+
+    .closeFoundingContainer {
+        position: absolute;
+    }
+
+    .closeFoundingContainer div div {
+        background-color: black;
+    }
+
+    #rewards {
+        font-size: 2vh;
+        height: var(--header-footer-height-width);
+    }
+
+    #goto-top {
+        display: block;
+    }
+
+    #goodies-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .targetObject {
+        font-size: 2.4vh;
+    }
 
     .aboutNavi {
         grid-template-columns: auto;
@@ -1183,6 +1299,14 @@ button:hover {
 
     .aboutContentContainer {
         height: calc(100vh - var(--header-footer-height-width)/2*10);
+    }
+
+    .goodie p {
+        font-size: 2vw;
+    }
+
+    .goodie-button {
+        font-size: 1.7vw;
     }
 }
 
@@ -1222,67 +1346,6 @@ button:hover {
     a:hover {
         font-style: normal;
     }
-
-    /*
-
-    button {
-        height: calc(var(--header-footer-height-width)/2);
-        font-size: 1.5vh;
-        color: white;
-        border: none;
-        border-radius: none;
-        background-color: black;
-        cursor: pointer;
-    }
-
-    button:hover {
-        border: var(--border-thickness) solid;
-        background-color: white;
-        color: black;
-    }
-
-    /* default */
-
-    /* default / Buttons */
-
-    /*
-    .closeButton {
-        position: relative;
-        width: var(--header-footer-height-width);
-        height: var(--header-footer-height-width);
-        border-radius: 100%;
-        top: 0;
-        left: 50%;
-        cursor: pointer;
-        transform: translate(-50%, 0%) rotate(45deg);
-        transition: var(--transition-animation-general);
-    }
-
-    .closeButton:hover {
-        transform: translate(-50%, 0%) rotate(45deg) scale(1.2);
-    }
-
-    .Button-Linie-Vertikal,
-    .Button-Linie-Horizontal {
-        position: relative;
-        background-color: var(--rkt-red);
-        left: 50%;
-        width: 75%;
-        height: var(--border-thickness);
-    }
-
-    .Button-Linie-Vertikal {
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(90deg);
-    }
-
-    .Button-Linie-Horizontal {
-        top: 45%;
-        transform: translate(-50%, -50%);
-    }
-
-    */
-    /* default / header */
 
     .programmHeader {
         z-index: 10;
@@ -1550,7 +1613,16 @@ button:hover {
 
     /* Crowdfounding Page */
 
+    .crowdFoundingText {
+        background-color: black;
+    }
+
+    .crowdFoundingBackground.open {
+        top: 0;
+    }
+
     .crowdfoundingContainer {
+        overflow: auto;
         padding-inline: var(--header-footer-height-width);
     }
 
@@ -1569,18 +1641,35 @@ button:hover {
         text-align: left;
     }
 
+    #goodies-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .goodie p {
+        font-size: 4vw;
+    }
+
+    .goodie-button {
+        font-size: 3vw;
+        height: calc(var(--header-footer-height-width));
+    }
+
+    .price {
+    font-size: 1.5rem;
+    }
+
+    .closeFoundingContainer div div {
+        background-color: black;
+    }
+
     /* Crowdfounding Layout */
-    
+
     .container-progress {
         grid-template-columns: 12% 80%;
     }
 
     .targetMoney {
         font-size: 1.8vh;
-    }
-
-    .targetObject {
-        font-size: 2.4vh;
     }
 
     .contributions h2 {
@@ -1604,10 +1693,6 @@ button:hover {
 
     .contributions button:focus {
         border-color: var(--rkt-red);
-    }
-
-    .suggested-amounts {
-        margin-bottom: var(--header-footer-height-width);
     }
 
     .suggested-amounts p {
