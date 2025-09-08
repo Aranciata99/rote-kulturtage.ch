@@ -64,7 +64,7 @@
                         </div>
                         <div class="suggested-amounts">
                             <ul>
-                                <li style="margin-left: 0;" onclick="setAmount(25)">CHF 25</li>
+                                <li style="margin-left: 0;" onclick="setAmount(20)">CHF 20</li>
                                 <li onclick="setAmount(50)">CHF 50</li>
                                 <li onclick="setAmount(100)">CHF 100</li>
                                 <li onclick="setAmount(500)">CHF 500</li>
