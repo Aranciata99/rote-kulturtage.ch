@@ -65,7 +65,7 @@
                         <form id="donate-form">
                             <br>
                             <div class="amount-input">
-                                <span class="currency-symbol">CHF</span>
+                                <span class="currency-symbol">CHF</span> <br>
                                 <input type="number" id="amount" name="amount" min="1" placeholder="Dein Betrag">
                             </div>
                             <div class="suggested-amounts">

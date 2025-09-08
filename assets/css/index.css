@@ -781,7 +781,7 @@ button:hover {
     position: absolute;
     top: -100vh;
     left: 50%;
-    width: min(100% - 2rem, 550px);
+    width: min(100% - 2rem, 675px);
     height: 100vh;
     transform: translate(-50%);
     background-color: black;
@@ -995,10 +995,9 @@ button:hover {
 }
 
 .suggested-amounts li {
-    margin: 0 11.5px;
-    height: calc(var(--header-footer-height-width)/2);
-    padding-inline: 10px;
-    padding-top: 5px;
+    margin: 0 10px;
+    height: auto;
+    padding: 10px;
     border: var(--border-thickness) solid white;
     color: white;
     cursor: pointer;
@@ -1546,7 +1545,7 @@ button:hover {
     }
 
     .crowdfoundingSticker h2 {
-        font-size: 1.5rem;
+        font-size: 3vh;
     }
 
     /* Crowdfounding Page */

@@ -19,7 +19,7 @@
                             <button>INFO</button>
                             <div class="programmInfoContainer">
                                 <div class="programmInfoText"><small><?= $punkt->title() ?></small>
-                                    <p><?= $punkt->details() ?></p>
+                                    <p><?= $punkt->details()->kt() ?></p>
                                 </div>
                                 <div class="closeProgrammInfo">
                                     <h3>×</h3>
