@@ -19,7 +19,7 @@
         </div>
         <div class="contactVerein" id="">
             <small>Verein</small>
-            <p><?= $site->contactVereinText()->kt() ?></p>
+            <p><?= page('contact')?->contactVereinText()->kt() ?></p>
         </div>
     </div>
 

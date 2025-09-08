@@ -1,0 +1,44 @@
+title: Programm
+
+columns:
+  - width: 1/1
+    fields:
+      programm:
+        label: Programmübersicht
+        type: structure
+        fields:
+          datum:
+            label: Datum
+            type: date
+            display: DD.MM
+          punkte:
+            label: Programmpunkte
+            type: structure
+            fields:
+              bild:
+                label: Cover Bild
+                type: files
+                uploads: image
+                multiple: false
+                required: true
+              title:
+                label: Titel
+                type: text
+                required: true
+              time:
+                label: Zeit
+                type: text
+                required: true
+              location:
+                label: Ort
+                type: text
+                required: true
+              details:
+                label: Details
+                type: textarea
+                buttons:
+                  - bold
+                  - italic
+                  - '|'
+                  - ul
+                  - ol

@@ -675,6 +675,10 @@ button:hover {
     transform: translate(-50%, 10%);
 }
 
+.aboutInfoAllgemein {
+    color: var(--rkt-red);
+}
+
 /* Contact Page */
 
 .contactContentContainer div {

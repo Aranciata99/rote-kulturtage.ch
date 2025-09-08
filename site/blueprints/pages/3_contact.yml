@@ -1,0 +1,14 @@
+title: About
+
+columns:
+  - width: 1/3
+    type: fields
+    fields:
+      contactVereinText:
+        label: Verein Text / Adresse
+        type: textarea
+        required: true
+        buttons:
+          - bold
+          - italic
+          - link

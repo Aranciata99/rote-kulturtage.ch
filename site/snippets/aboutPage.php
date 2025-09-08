@@ -4,34 +4,35 @@
     </div>
     <div class="aboutNavi">
         <a id="aboutInfoButton"><div>
-            <small><?= $site->aboutInfoTitle() ?></small>
+            <small><?= page('about')?->aboutInfoTitle()?->esc() ?></small>
         </div></a>
         <a id="aboutFinanzButton"><div>
-            <small><?= $site->aboutFinanzTitle() ?></small>
+            <small><?= page('about')?->aboutFinanzTitle() ?></small>
         </div></a>
         <a id="aboutMotivationButton"><div>
-            <small><?= $site->aboutMotivationTitle() ?></small>
+            <small><?= page('about')?->aboutMotivationTitle() ?></small>
         </div></a>
         <a id="aboutAwareButton"><div>
-            <small><?= $site->aboutAwareTitle() ?></small>
+            <small><?= page('about')?->aboutAwareTitle() ?></small>
         </div></a>
     </div>
     <div class="aboutContentContainer">
+        <p class="aboutInfoAllgemein"><?= page('about')?->aboutInfoAllgemein()->kt() ?></p>
         <div class="aboutInfo" id="aboutInfo">
-            <h2><?= $site->aboutInfoTitle() ?></h2>
-            <p><?= $site->aboutInfoText()->kt() ?></p>
+            <h2><?= page('about')?->aboutInfoTitle() ?></h2>
+            <p><?= page('about')?->aboutInfoText()->kt() ?></p>
         </div>
         <div class="aboutFinanz" id="aboutFinanz">
-            <h2><?= $site->aboutFinanzTitle() ?></h2>
-            <p><?= $site->aboutFinanzText()->kt() ?></p>
+            <h2><?= page('about')?->aboutFinanzTitle() ?></h2>
+            <p><?= page('about')?->aboutFinanzText()->kt() ?></p>
         </div>
         <div class="aboutMotivation" id="aboutMotivation">
-            <h2><?= $site->aboutMotivationTitle() ?></h2>
-            <p><?= $site->aboutMotivationText()->kt() ?></p>
+            <h2><?= page('about')?->aboutMotivationTitle() ?></h2>
+            <p><?= page('about')?->aboutMotivationText()->kt() ?></p>
         </div>
         <div class="aboutAware" id="aboutAware">
-            <h2><?= $site->aboutAwareTitle() ?></h2>
-            <p><?= $site->aboutAwareText()->kt() ?></p>
+            <h2><?= page('about')?->aboutAwareTitle() ?></h2>
+            <p><?= page('about')?->aboutAwareText()->kt() ?></p>
         </div>
     </div>
 

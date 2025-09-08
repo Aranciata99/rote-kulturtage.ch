@@ -1,0 +1,101 @@
+title: About
+
+columns:
+  - width: 1/1
+    type: fields
+    fields:
+      aboutInfoAllgemein:
+        label: Allgemein
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        help: Infos Rot allgemien
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutInfoTitle:
+        label: Info
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutInfoText:
+        label: Info Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutFinanzTitle:
+        label: Finanzierung
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutFinanzText:
+        label: Finanzierung Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutMotivationTitle:
+        label: Motivation Text
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutMotivationText:
+        label: Motivation Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true
+  - width: 1/4
+    type: fields
+    fields:
+      aboutAwareTitle:
+        label: Awareness
+        type: text
+        help: Title
+        required: true
+        maxlength: 15
+      aboutAwareText:
+        label: Awareness Text
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
+        required: true

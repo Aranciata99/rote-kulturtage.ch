@@ -1,4 +1,4 @@
-<?php if ($programm = $site->programm()->toStructure()): ?>
+<?php if ($programm = page('programm')?->programm()->toStructure()): ?>
     <?php foreach ($programm as $tag): ?>
         <div class="programmDatum">
             <h3><?= $tag->datum()->toDate('d.m') ?></h3>
