@@ -26,31 +26,31 @@
     {
       "id": 5,
       "name": "Langarm Shirt schwarz/silber",
-      "description": "Wir machen einen Beitrag zum Thema deiner Wahl",
+      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
       "price": 60
     },
     {
       "id": 6,
       "name": "Langarm Shirt rot/grau",
-      "description": "LoRa Shirt",
+      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
       "price": 60
     },
     {
       "id": 7,
       "name": "Bücherpaket",
-      "description": "Bundle mit Shirt und Cap",
+      "description": "Verschiedene literarische leckerbissen",
       "price": 150
     },
     {
       "id": 8,
       "name": "Marxköpfe",
-      "description": "Du kriegst deine 15 min Fame bei unserem 40h Live Event (5x)",
+      "description": "Du wolltest schon immer ein Keramik-Marxkopf, der als Vase oder lasse fungieren kann? Laurie Ubezio macht's möglich!",
       "price": 250
     },
     {
       "id": 9,
       "name": "Kunst Claudi",
-      "description": "Eintritt Lora Fest + Free Shot",
+      "description": "Limitiertes Kunstwerk einer jungen Zürcher Künstlerin",
       "price": 500
     }
   ]
