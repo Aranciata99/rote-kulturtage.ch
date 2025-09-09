@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Sticker & Feuerzeug",
+      "description": "Paket aus dreierlei Stickern auf transparenter Folie gedruckt und ein customizesed Feuerzeug.",
+      "price": 20
+    },
+    {
+      "id": 2,
+      "name": "Plakat der Roten Kulturtage",
+      "description": "Das A2-Plakat der Roten Kulturtage: Silbrig schimmernd, rot durchzogen und ein liebevoller Siebdruck: Perfekt für den Sitzungsraum oder übers Bett.",
+      "price": 40
+    },
+    {
+      "id": 3,
+      "name": "Kurzarm Shirt schwarz/silber",
+      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
+      "price": 50
+    },
+    {
+      "id": 4,
+      "name": "Kurzarm Shirt rot/grau",
+      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
+      "price": 50
+    },
+    {
+      "id": 5,
+      "name": "Langarm Shirt schwarz/silber",
+      "description": "Wir machen einen Beitrag zum Thema deiner Wahl",
+      "price": 60
+    },
+    {
+      "id": 6,
+      "name": "Langarm Shirt rot/grau",
+      "description": "LoRa Shirt",
+      "price": 60
+    },
+    {
+      "id": 7,
+      "name": "Bücherpaket",
+      "description": "Bundle mit Shirt und Cap",
+      "price": 150
+    },
+    {
+      "id": 8,
+      "name": "Marxköpfe",
+      "description": "Du kriegst deine 15 min Fame bei unserem 40h Live Event (5x)",
+      "price": 250
+    },
+    {
+      "id": 9,
+      "name": "Kunst Claudi",
+      "description": "Eintritt Lora Fest + Free Shot",
+      "price": 500
+    }
+  ]
+  
