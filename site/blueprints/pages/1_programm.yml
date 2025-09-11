@@ -1,51 +1,11 @@
 title: Programm
 
-columns:
-  - width: 1/1
-    fields:
-      programm:
-        label: Programmübersicht
-        type: structure
-        fields:
-          datum:
-            label: Datum
-            type: date
-            display: DD.MM
-          punkte:
-            label: Programmpunkte
-            type: structure
-            fields:
-              bild:
-                label: Cover Bild
-                type: files
-                layout: cards
-                multiple: false
-                uploads:
-                  template: image
-                required: false
-              title:
-                label: Titel
-                type: text
-                required: true
-              time:
-                label: Zeit
-                type: text
-                required: true
-              location:
-                label: Ort
-                type: text
-                required: true
-              veranstaltungsDetails:
-                label: Details (sprache, länge, etc.)
-                type: textarea
-                buttons: false
-                required: true
-              details:
-                label: Details
-                type: textarea
-                buttons:
-                  - bold
-                  - italic
-                  - '|'
-                  - ul
-                  - ol
+sections:
+  programmTag:
+    type: pages
+    label: Programm Tage
+    create: programmTag
+    layout: list
+    image:
+      color: red
+      back: red

@@ -1,35 +1,32 @@
-<?php if ($programm = page('programm')?->programm()->toStructure()): ?>
-    <?php foreach ($programm as $tag): ?>
+    <?php foreach (page('programm')?->children() as $programmtag): ?>
         <div class="programmDatum">
-            <h3><?= $tag->datum()->toDate('d.m') ?></h3>
+            <h3><?= $programmtag->title() ?></h3>
         </div>
         <div class="programmTag">
-            <?php if ($punkte = $tag->punkte()->toStructure()): ?>
-                <?php foreach ($punkte as $punkt): ?>
-                    <div class="programmPunkt">
-                        <?php if ($bild = $punkt->media()->toFiles()): ?>
-                            <div class="programmCoverImage">
-                                <img src="<?= $bild->url() ?>" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
+            <?php foreach ($programmtag->children() as $punkt): ?>
+                <div class="programmPunkt">
+                    <?php foreach ($punkt->files()->sortBy('first') as $bild): ?>
+                        <div class="programmCoverImage">
+                            <img src="<?= $bild->url() ?>" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
+                        </div>
+                    <?php endforeach ?>
+                    <h2><?= $punkt->title() ?></h2>
+                    <h3><?= $punkt->von()->toDate('H:i') ?>–<?= $punkt->bis()->toDate('H:i') ?> <br>
+                        <?php if ($punkt->locationLink()->isNotEmpty()): ?>
+                            <a href="<?= $punkt->locationLink() ?>" target="_blank">
+                        <?php endif ?><?= $punkt->location() ?></a></h3>
+                    <?php if ($punkt->details()->isNotEmpty() || $punkt->veranstaltungsDetails()->isNotEmpty()): ?>
+                        <button>INFO</button>
+                        <div class="programmInfoContainer">
+                            <div class="programmInfoText"><span class="smallText"><?= $punkt->veranstaltungsDetails()->kt() ?></span>
+                                <p><?= $punkt->details()->kt() ?></p>
                             </div>
-                        <?php endif ?>
-                        <h2><?= $punkt->title() ?></h2>
-                        <h3><?= $punkt->time() ?></h3>
-                        <h3><?= $punkt->location() ?></h3>
-                        <?php if ($punkt->details()->isNotEmpty()): ?>
-                            <button>INFO</button>
-                            <div class="programmInfoContainer">
-                                <div class="programmInfoText"><small><?= $punkt->veranstaltungsDetails()->esc() ?></small>
-                                    <p><?= $punkt->details()->kt() ?></p>
-                                </div>
-                                <div class="closeProgrammInfo">
-                                    <h3>×</h3>
-                                </div>
+                            <div class="closeProgrammInfo">
+                                <h3>×</h3>
                             </div>
-                        <?php endif ?>
-                    </div>
-                <?php endforeach ?>
-            <?php endif ?>
-
+                        </div>
+                    <?php endif ?>
+                </div>
+            <?php endforeach ?>
         </div>
     <?php endforeach ?>
-<?php endif ?>

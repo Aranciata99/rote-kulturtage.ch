@@ -1,0 +1,9 @@
+sections:
+  programmTag:
+    type: pages
+    label: Programm Punkte  
+    create: programmpunkt
+    layout: cards
+    image:
+      ratio: 1/1
+      cover: true

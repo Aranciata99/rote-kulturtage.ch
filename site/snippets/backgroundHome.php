@@ -8,7 +8,7 @@
             <h1>30.10–09.11<br>2025</h1>
         </div>
         <div class="homeTitle">
-            <h1>Ein Festival der <br> Arbeiter★innen-<br>kultur</h1>
+            <h1>Ein Festival der <br> Arbeiter★innen-<br>kultur <br><br>Zürich</h1>
         </div>
     </div>
     <div class="homeSticker">

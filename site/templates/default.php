@@ -8,12 +8,11 @@
 
 <?php snippet('header') ?>
 <?php snippet('footer') ?>
+<?php go('/home') ?>
 
 <?php endslot() ?>
 
 <?php slot('scripts') ?>
-
-<!-- additional scripts here -->
 
 <?php endslot() ?>
 

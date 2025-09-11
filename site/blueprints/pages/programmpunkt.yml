@@ -1,0 +1,58 @@
+columns:
+  - width: 1/5
+    sections:
+      cover: 
+        type: fields
+        fields:
+          bild:
+            label: Cover Bild
+            type: files
+            layout: cards
+            multiple: false
+            image:
+              ratio: 1/1
+              cover: true
+            help:
+  - width: 2/5
+    sections:
+      veranstaltungDetails: 
+        type: fields
+        fields:
+          von:
+            label: Von
+            type: time
+            display: HH:mm
+            width: 1/2
+          bis:
+            label: Bis
+            type: time
+            display: HH:mm
+            width: 1/2
+          location:
+            label: Location
+            type: text
+            width: 1/1
+          locationLink:
+            label: Location Link
+            type: url
+            width: 1/1
+            help: Google Maps Link hier einfügen
+    
+  - width: 2/5
+    sections:
+      veranstaltungsInfo: 
+        type: fields
+        fields:
+          veranstaltungsDetails:
+            label: Details (Sprache, Länge, etc.)
+            type: textarea
+            buttons: false
+          details:
+            label: Details
+            type: textarea
+            buttons:
+              - bold
+              - italic
+              - '|'
+              - ul
+              - ol

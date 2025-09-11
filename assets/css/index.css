@@ -97,6 +97,17 @@ button:hover {
     color: black;
 }
 
+/* Span */
+
+.redText {
+    color: var(--rkt-red);
+}
+
+.smallText p {
+    font-size: 2.2vh;
+    line-height: 1.4;
+}
+
 /* default */
 
 /* default / Buttons */
@@ -132,7 +143,7 @@ button:hover {
 }
 
 .Button-Linie-Horizontal {
-    top: 45%;
+    top: 44%;
     transform: translate(-50%, -50%);
 }
 
@@ -555,13 +566,13 @@ button:hover {
     text-align: center;
     border: var(--border-thickness) solid var(--rkt-red);
     border-top: 0;
-    cursor: pointer;
 }
 
 .programmCoverImage {
     position: relative;
     width: 100%;
     height: calc(var(--header-footer-height-width)*3);
+    max-height: 33vh;
 }
 
 .programmCoverImage img {
@@ -577,7 +588,13 @@ button:hover {
 }
 
 .programmPunkt h3 {
-    line-height: 0;
+    line-height: 1;
+    padding-inline: 1vw;
+}
+
+.programmPunkt a {
+    cursor: help;
+    color: black;
 }
 
 .programmPunkt button {
@@ -586,6 +603,7 @@ button:hover {
     background-color: black;
     width: 50%;
     transition: var(--transition-animation-general);
+    cursor: pointer;
 }
 
 .programmPunkt button:hover {
@@ -1367,6 +1385,13 @@ button:hover {
         z-index: 40;
     }
 
+    /* Span */
+
+    .smallText p {
+        font-size: 2vh;
+        line-height: 1.2;
+    }
+
     /* default / header / Programm TL */
 
     .programmHeader,
@@ -1524,7 +1549,7 @@ button:hover {
 
     .programmCoverImage {
         width: 100%;
-        height: auto;
+        height: 33vh;
     }
 
     .programmPunkt button {
@@ -1538,7 +1563,7 @@ button:hover {
     }
 
     .programmInfoContainer {
-        height: 90%;
+        height: 80%;
         width: 85%;
     }
 
@@ -1659,7 +1684,7 @@ button:hover {
     }
 
     .price {
-    font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 
     .closeFoundingContainer div div {

@@ -17,9 +17,9 @@
         </div></a>
     </div>
     <div class="aboutContentContainer">
-        <p class="aboutInfoAllgemein"><?= page('about')?->aboutInfoAllgemein()->kt() ?></p>
         <div class="aboutInfo" id="aboutInfo">
             <h2><?= page('about')?->aboutInfoTitle() ?></h2>
+            <span class="redText"><p class="aboutInfoAllgemein"><?= page('about')?->aboutInfoAllgemein()->kt() ?></p></span>
             <p><?= page('about')?->aboutInfoText()->kt() ?></p>
         </div>
         <div class="aboutFinanz" id="aboutFinanz">
