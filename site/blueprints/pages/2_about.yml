@@ -1,5 +1,9 @@
 title: About
 
+image:
+  icon: star-filled
+  back: red
+
 columns:
   - width: 1/1
     type: fields
@@ -7,12 +11,7 @@ columns:
       aboutInfoAllgemein:
         label: Allgemein
         type: textarea
-        buttons:
-          - bold
-          - italic
-          - '|'
-          - ul
-          - ol
+        buttons: false
         help: Infos Rot allgemien
         required: true
   - width: 1/4
@@ -28,7 +27,6 @@ columns:
         label: Info Text
         type: textarea
         buttons:
-          - bold
           - italic
           - '|'
           - ul
@@ -49,7 +47,6 @@ columns:
         label: Finanzierung Text
         type: textarea
         buttons:
-          - bold
           - italic
           - '|'
           - ul
@@ -70,7 +67,6 @@ columns:
         label: Motivation Text
         type: textarea
         buttons:
-          - bold
           - italic
           - '|'
           - ul
@@ -91,7 +87,6 @@ columns:
         label: Awareness Text
         type: textarea
         buttons:
-          - bold
           - italic
           - '|'
           - ul

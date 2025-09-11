@@ -13,6 +13,11 @@ columns:
               ratio: 1/1
               cover: true
             help:
+            required: true
+          copyright:
+            label: Bild Copyright
+            type: text
+            help: ohne © Smbol schreiben!
   - width: 2/5
     sections:
       veranstaltungDetails: 
@@ -23,21 +28,23 @@ columns:
             type: time
             display: HH:mm
             width: 1/2
+            required: true
           bis:
             label: Bis
             type: time
             display: HH:mm
             width: 1/2
+            required: true
           location:
             label: Location
             type: text
             width: 1/1
+            required: true
           locationLink:
             label: Location Link
             type: url
             width: 1/1
             help: Google Maps Link hier einfügen
-    
   - width: 2/5
     sections:
       veranstaltungsInfo: 

@@ -624,7 +624,7 @@ button:hover {
     color: white;
     border-radius: 10px;
     border: calc(var(--border-thickness)*5) solid black;
-    cursor: pointer;
+    cursor: zoom-out;
 }
 
 .programmInfoContainer.visible {
@@ -635,18 +635,18 @@ button:hover {
     position: absolute;
     width: 100%;
     height: auto;
-    top: 0;
+    top: -30px;
     bottom: 0;
     overflow: auto;
     line-height: 1.2;
     text-align: left;
 }
 
-.programmInfoText small {
+/* .programmInfoText small {
     padding-right: calc(var(--header-footer-height-width)/2);
-}
+} */
 
-.closeProgrammInfo {
+/* .closeProgrammInfo {
     position: absolute;
     height: calc(var(--header-footer-height-width)/2);
     width: calc(var(--header-footer-height-width)/2);
@@ -661,7 +661,16 @@ button:hover {
     position: absolute;
     top: -93%;
     left: 15%;
+} */
 
+.bildCopyright {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding-inline: 5px;
+    font-size: 0.8rem;
+    color: black;
 }
 
 /* About Page */
@@ -1563,17 +1572,16 @@ button:hover {
     }
 
     .programmInfoContainer {
-        height: 80%;
+        height: 90%;
         width: 85%;
     }
 
-    .closeProgrammInfo h3 {
+    /* .closeProgrammInfo h3 {
         color: white;
         position: absolute;
         top: -150%;
         left: 15%;
-
-    }
+    } */
 
     .programmInfoText p {
         line-height: 1.3;

@@ -1,40 +1,14 @@
 title: Site
 
 columns:
-  - width: 1/3
-    sections:
-    type: fields
-    fields:
-      programmHeaderTitle:
-        label: Programm Button
-        type: text
-        help: Sprache anpassen
-        required: true
-  - width: 1/3
-    sections:
-    type: fields
-    fields:
-      aboutHeaderTitle:
-        label: About Button
-        type: text
-        help: Sprache anpassen
-        required: true
-  - width: 1/3
-    sections:
-    type: fields
-    fields:
-      contactHeaderTitle:
-        label: Kontakt Button
-        type: text
-        help: Sprache anpassen
-        required: true
-  - width: 1/3
+  - width: 1/1
     sections:
       pages:
-        label: Crowdfounding 
+        label: Seiten
         type: pages
-        layout: cardlets
+        layout: cards
         status: listed
         image:
-          color: none
+          query: page
           back: black
+          color: white

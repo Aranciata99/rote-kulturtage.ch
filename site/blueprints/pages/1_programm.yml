@@ -1,5 +1,9 @@
 title: Programm
 
+image:
+  icon: grid
+  back: red
+
 sections:
   programmTag:
     type: pages
@@ -7,5 +11,6 @@ sections:
     create: programmTag
     layout: list
     image:
-      color: red
-      back: red
+      icon: grid-full
+      color: white
+      back: black

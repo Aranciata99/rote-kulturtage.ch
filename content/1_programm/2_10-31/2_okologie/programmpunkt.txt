@@ -2,6 +2,10 @@ Title: Ökologie
 
 ----
 
+Bild: - file://jliozydj3lbqaqob
+
+----
+
 Von: 15:00:00
 
 ----
@@ -11,6 +15,10 @@ Bis: 12:00:00
 ----
 
 Location: ZWZ
+
+----
+
+Locationlink: 
 
 ----
 

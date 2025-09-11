@@ -1,5 +1,9 @@
 title: Crowdfounding
 
+image:
+  icon: heart-filled
+  back: black
+
 columns:
   - width: 1/3
     sections:
@@ -8,6 +12,8 @@ columns:
       beschrieb:
         label: Beschrieb Text
         type: textarea
-        buttons: false
+        buttons:
+          - italic
+          - link
         help: 
         required: true

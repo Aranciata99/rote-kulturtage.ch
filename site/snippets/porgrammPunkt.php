@@ -14,15 +14,14 @@
                     <h3><?= $punkt->von()->toDate('H:i') ?>–<?= $punkt->bis()->toDate('H:i') ?> <br>
                         <?php if ($punkt->locationLink()->isNotEmpty()): ?>
                             <a href="<?= $punkt->locationLink() ?>" target="_blank">
-                        <?php endif ?><?= $punkt->location() ?></a></h3>
+                                <?php endif ?><?= $punkt->location() ?></a>
+                    </h3>
+                    <?php if ($punkt->copyright()->isNotEmpty()): ?><div class="bildCopyright">↑ Photo © <?= $punkt->copyright() ?></div><?php endif ?>
                     <?php if ($punkt->details()->isNotEmpty() || $punkt->veranstaltungsDetails()->isNotEmpty()): ?>
                         <button>INFO</button>
                         <div class="programmInfoContainer">
                             <div class="programmInfoText"><span class="smallText"><?= $punkt->veranstaltungsDetails()->kt() ?></span>
                                 <p><?= $punkt->details()->kt() ?></p>
-                            </div>
-                            <div class="closeProgrammInfo">
-                                <h3>×</h3>
                             </div>
                         </div>
                     <?php endif ?>

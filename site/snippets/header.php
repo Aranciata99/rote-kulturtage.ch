@@ -1,23 +1,23 @@
 <a>
     <div class="programmHeader" id="programmInbutton">
-        <p><?= $site->programmHeaderTitle()->upper() ?></p>
+        <p><?= page('programm')?->title()->upper() ?></p>
     </div>
 </a>
 
 <a>
     <div class="aboutHeader" id="aboutInbutton">
-        <p><?= $site->aboutHeaderTitle()->upper() ?></p>
+        <p><?= page('about')?->title()->upper() ?></p>
     </div>
 </a>
 
 <a>
     <div class="contactHeader" id="contactInButton">
-        <p><?= $site->contactHeaderTitle()->upper() ?></p>
+        <p><?= page('contact')?->title()->upper() ?></p>
     </div>
 </a>
 
 <a href="<?= $pages = $site->find('crowdfounding') ?>">
     <div class="crowdFoundingHeader">
-        <p> crowdfunding </p>
+        <p><?= page('crowdfounding')?->title()->upper() ?></p>
     </div>
 </a>
