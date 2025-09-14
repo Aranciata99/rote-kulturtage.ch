@@ -635,7 +635,8 @@ button:hover {
     position: absolute;
     width: 100%;
     height: auto;
-    top: -30px;
+    top: 0px;
+    margin-top: 0;
     bottom: 0;
     overflow: auto;
     line-height: 1.2;

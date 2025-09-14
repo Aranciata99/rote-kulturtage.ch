@@ -1,3 +1,7 @@
+image:
+  icon: question
+  back: black
+
 columns:
   - width: 1/5
     sections:
@@ -13,11 +17,11 @@ columns:
               ratio: 1/1
               cover: true
             help:
-            required: true
           copyright:
             label: Bild Copyright
             type: text
             help: ohne © Smbol schreiben!
+            placeholder: Name Nachname, jahr
   - width: 2/5
     sections:
       veranstaltungDetails: 
@@ -40,11 +44,24 @@ columns:
             type: text
             width: 1/1
             required: true
+            placeholder: z.B. Volkshaus, Weisser Saal
           locationLink:
             label: Location Link
             type: url
             width: 1/1
             help: Google Maps Link hier einfügen
+          tags:
+            label: Tags / Art der Veranstaltung
+            type: tags
+            options:
+              - Performatives
+              - Musik
+              - Film
+              - Theorie
+              - Sport
+              - Kinderprogramm
+              - Weiteres
+            required: true
   - width: 2/5
     sections:
       veranstaltungsInfo: 
@@ -54,9 +71,11 @@ columns:
             label: Details (Sprache, Länge, etc.)
             type: textarea
             buttons: false
+            placeholder: z.B. Sprache; Englisch
           details:
             label: Details
             type: textarea
+            placeholder: Veranstaltungstext
             buttons:
               - bold
               - italic
