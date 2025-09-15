@@ -6,6 +6,7 @@ const pScroller = document.getElementById('programmScroller');
 const pOpenBtn = document.getElementById('programmInbutton');
 const pCloseBtn = document.getElementById('closeProgrammScroller');
 const pGrid = document.querySelectorAll('.programmTag');
+const filter = document.getElementById('filter-buttons');
 //About
 const aScroller = document.getElementById('aboutScroller');
 const aOpenBtn = document.getElementById('aboutInbutton');
@@ -61,6 +62,7 @@ aCloseBtn.addEventListener('click', () => {
 cOpenBtn.addEventListener('click', () => {
     contact = true;
     cScroller.classList.add('open');
+    filter.classList.add('open');
     if (about == true) {
         pOpenBtn.classList.add('contactOpen');
         pScroller.classList.add('aboutContactOpen');
@@ -81,6 +83,7 @@ cOpenBtn.addEventListener('click', () => {
 cCloseBtn.addEventListener('click', () => {
     contact = false;
     cScroller.classList.remove('open');
+    filter.classList.remove('open');
     if (about == true) {
         pOpenBtn.classList.remove('contactOpen');
         pScroller.classList.remove('aboutContactOpen');
