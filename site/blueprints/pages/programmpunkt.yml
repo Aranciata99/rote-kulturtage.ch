@@ -77,7 +77,6 @@ columns:
             type: textarea
             placeholder: Veranstaltungstext
             buttons:
-              - bold
               - italic
               - '|'
               - ul

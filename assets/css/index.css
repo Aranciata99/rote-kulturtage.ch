@@ -571,7 +571,7 @@ button:hover {
 .programmCoverImage {
     position: relative;
     width: 100%;
-    height: calc(var(--header-footer-height-width)*3);
+    height: auto /*calc(var(--header-footer-height-width)*3)*/;
     max-height: 33vh;
 }
 

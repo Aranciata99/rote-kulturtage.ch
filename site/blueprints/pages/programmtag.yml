@@ -7,3 +7,5 @@ sections:
     image:
       ratio: 1/1
       cover: true
+    text: "{{ page.von }} </br></br> {{ page.title }}"
+    help: Sortieren nach Zeit, von links nach rechts

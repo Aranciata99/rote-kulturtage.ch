@@ -7,7 +7,7 @@
                 <div class="programmPunkt">
                     <?php foreach ($punkt->files()->sortBy('first') as $bild): ?>
                         <div class="programmCoverImage">
-                            <img src="<?= $bild->url() ?>" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
+                            <img src="<?= $bild->url() ?>" draggable="false" loading="lazy" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
                         </div>
                     <?php endforeach ?>
                     <h2><?= $punkt->title() ?></h2>
