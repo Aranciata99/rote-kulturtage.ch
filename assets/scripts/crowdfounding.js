@@ -49,6 +49,9 @@ async function main() {
       window.scrollTo(0, 0);
     });
   }
+
+  // Set up automatic refresh every 30 seconds
+  startAutoRefresh();
 }
 
 // Wait for DOM ready before initialising listeners and fetching data
@@ -81,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function donateAmount(amount, purpose) {
   console.log('donateAmount called with:', amount, purpose);
   
-  const paymentUrl = `https://crowdfundinglora.payrexx.com/de/vpos?amount=${amount}&purpose=${purpose}&currency=CHF`;
+  const paymentUrl = `https://rotekulturtage.payrexx.com/de/vpos?amount=${amount}&purpose=${purpose}&currency=CHF`;
   console.log('Payment URL:', paymentUrl);
 
   // Open the payment page in the iframe and show the modal
@@ -136,15 +139,44 @@ function updateCampaignStatus(status) {
   // Update other elements if needed
 }
 function refreshPageContent() {
+  console.log('Refreshing campaign status...');
   fetch(`${devEnv}/api/campaign-status`)
     .then(response => response.json())
     .then(status => {
+      console.log('Updated campaign status:', status);
       updateCampaignStatus(status);
     })
     .catch(err => {
       console.error('Error refreshing campaign status:', err);
     });
 }
+
+// Auto-refresh functionality
+let autoRefreshInterval;
+
+function startAutoRefresh() {
+  // Refresh every 30 seconds
+  autoRefreshInterval = setInterval(() => {
+    refreshPageContent();
+  }, 30000);
+  console.log('Auto-refresh started (every 30 seconds)');
+}
+
+function stopAutoRefresh() {
+  if (autoRefreshInterval) {
+    clearInterval(autoRefreshInterval);
+    autoRefreshInterval = null;
+    console.log('Auto-refresh stopped');
+  }
+}
+
+// Refresh immediately when page becomes visible again (user returns to tab)
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    console.log('Page became visible, refreshing content...');
+    refreshPageContent();
+  }
+});
 
 // Suggested amounts
 function setAmount(value) {
@@ -301,4 +333,14 @@ document.getElementById('goto-top').addEventListener('click', function() {
       amountInput.focus();
     }
   }, 500); // Wait for smooth scroll to complete
+});
+
+// Add manual refresh functionality for testing
+document.addEventListener('keydown', (e) => {
+  // Press Ctrl+R or Cmd+R to manually refresh campaign data
+  if ((e.ctrlKey || e.metaKey) && e.key === 'r' && e.shiftKey) {
+    e.preventDefault();
+    console.log('Manual refresh triggered');
+    refreshPageContent();
+  }
 });

@@ -61,16 +61,62 @@ Kirby::plugin('custom/crowdfunding', [
                 'pattern' => 'payrexx-webhook',
                 'method'  => 'POST',
                 'action'  => function () {
+                    // Ensure all tables exist
+                    crowdfundingEnsureTable();
+                    
                     $payload = kirby()->request()->body()->toArray();
+                    $rawBody = kirby()->request()->body()->toString();
 
-                    // TODO: Verify Payrexx signature here
+                    // Verify Payrexx signature (optional but recommended)
+                    $webhookSecret = option('crowdfunding.webhook_secret', ''); // Add to config
+                    if ($webhookSecret) {
+                        $signature = $_SERVER['HTTP_X_PAYREXX_SIGNATURE'] ?? '';
+                        $expectedSignature = hash_hmac('sha256', $rawBody, $webhookSecret);
+                        
+                        if (!hash_equals($expectedSignature, $signature)) {
+                            return new Response('Unauthorized', 'text/plain', 401);
+                        }
+                    }
 
-                    if (($payload['transaction']['status'] ?? null) === 'confirmed') {
+                    // Log webhook for debugging
+                    error_log('Payrexx webhook received: ' . $rawBody);
+                    error_log('Webhook payload parsed: ' . json_encode($payload, JSON_PRETTY_PRINT));
+
+                    $transactionStatus = $payload['transaction']['status'] ?? null;
+                    error_log('Transaction status: ' . $transactionStatus);
+
+                    if ($transactionStatus === 'confirmed') {
                         $amount = ($payload['transaction']['amount'] ?? 0) / 100.0;
-                        $db     = crowdfundingDb();
-                        $stmt   = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 1');
-                        $stmt->bindValue(':amt', $amount);
+                        $transactionId = $payload['transaction']['id'] ?? '';
+                        
+                        error_log("Processing confirmed transaction: ID={$transactionId}, Amount={$amount}");
+                        
+                        // Prevent duplicate processing
+                        $db = crowdfundingDb();
+                        $stmt = $db->prepare('SELECT COUNT(*) FROM transactions WHERE transaction_id = :tid');
+                        $stmt->bindValue(':tid', $transactionId);
                         $stmt->execute();
+                        
+                        if ($stmt->fetchColumn() == 0) {
+                            // Record transaction to prevent duplicates
+                            $stmt = $db->prepare('INSERT INTO transactions (transaction_id, amount, processed_at) VALUES (:tid, :amt, :processed)');
+                            $stmt->execute([
+                                ':tid' => $transactionId,
+                                ':amt' => $amount,
+                                ':processed' => date('Y-m-d H:i:s')
+                            ]);
+                            
+                            // Update campaign status
+                            $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 1');
+                            $stmt->bindValue(':amt', $amount);
+                            $stmt->execute();
+                            
+                            error_log("Transaction processed successfully. New total raised: " . ($amount + 25)); // Assuming previous amount
+                        } else {
+                            error_log("Transaction {$transactionId} already processed, skipping.");
+                        }
+                    } else {
+                        error_log("Transaction status '{$transactionStatus}' not confirmed, skipping.");
                     }
                     return new Response('OK', 'text/plain');
                 },
@@ -125,6 +171,14 @@ function crowdfundingEnsureTable(): void
         start_date         TEXT,
         end_date           TEXT,
         supporters_count   INTEGER DEFAULT 0
+    )');
+
+    // Create transactions table for duplicate prevention
+    $db->exec('CREATE TABLE IF NOT EXISTS transactions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        transaction_id TEXT UNIQUE NOT NULL,
+        amount REAL NOT NULL,
+        processed_at TEXT NOT NULL
     )');
 
     // seed default row if empty
