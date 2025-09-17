@@ -290,6 +290,7 @@ button:hover {
 }
 
 .footerRight {
+    display: none; /*XXXXX*/
     position: absolute;
     top: 0;
     width: 50%;
@@ -772,6 +773,10 @@ button:hover {
 
 .contactFunding {
     padding-left: calc(var(--header-footer-height-width)/3);
+}
+
+.contactNewsletter {
+    display: none; /*XXXXX*/
 }
 
 .newsletterForm {

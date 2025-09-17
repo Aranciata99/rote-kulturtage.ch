@@ -5,7 +5,7 @@ const homeBlackPic = document.getElementById('homeBlackPic');
 const homeText = document.getElementById('homeText');
 
 homeContainer.addEventListener('click', () => {
-    if (window.innerWidth >= 770) {
+    if (window.innerWidth >= 900) {
         if (black == true) {
             homeBlackPic.classList.add('clicked');
             homeText.classList.add('clicked');
