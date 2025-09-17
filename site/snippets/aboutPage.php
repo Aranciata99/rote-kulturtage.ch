@@ -3,24 +3,54 @@
         <?php snippet('closeButton') ?>
     </div>
     <div class="aboutNavi">
-        <a id="aboutInfoButton"><div>
-            <small><?= page('about')?->aboutInfoTitle()?->esc() ?></small>
-        </div></a>
-        <a id="aboutFinanzButton"><div>
-            <small><?= page('about')?->aboutFinanzTitle() ?></small>
-        </div></a>
-        <a id="aboutMotivationButton"><div>
-            <small><?= page('about')?->aboutMotivationTitle() ?></small>
-        </div></a>
-        <a id="aboutAwareButton"><div>
-            <small><?= page('about')?->aboutAwareTitle() ?></small>
-        </div></a>
+        <a id="aboutInfoButton">
+            <div>
+                <small><?= page('about')?->aboutInfoTitle()?->esc() ?></small>
+            </div>
+        </a>
+        <a id="aboutFinanzButton">
+            <div>
+                <small><?= page('about')?->aboutFinanzTitle() ?></small>
+            </div>
+        </a>
+        <a id="aboutMotivationButton">
+            <div>
+                <small><?= page('about')?->aboutMotivationTitle() ?></small>
+            </div>
+        </a>
+        <a id="aboutAwareButton">
+            <div>
+                <small><?= page('about')?->aboutAwareTitle() ?></small>
+            </div>
+        </a>
     </div>
     <div class="aboutContentContainer">
         <div class="aboutInfo" id="aboutInfo">
             <h2><?= page('about')?->aboutInfoTitle() ?></h2>
-            <span class="redText"><p class="aboutInfoAllgemein"><?= page('about')?->aboutInfoAllgemein()->kt() ?></p></span>
+            <span class="redText">
+                <p class="aboutInfoAllgemein"><?= page('about')?->aboutInfoAllgemein()->kt() ?></p>
+            </span>
             <p><?= page('about')?->aboutInfoText()->kt() ?></p>
+            <p>Folgende Organisationen/Gruppen nehmen teil:</p>
+            <div class="infoLogoContainer">
+                <?php foreach (page('about')->logos()->toFiles()->sortBy('sort') as $logo): ?>
+                    <img src="<?= $logo->url() ?>" draggable="false">
+                <?php endforeach ?>
+            </div>
+            <p>Medienpartnerinnen:</p>
+            <div class="infoLogoContainer">
+                <?php foreach (page('about')->medienpartnerinnen()->toFiles()->sortBy('sort') as $partner): ?>
+                    <img src="<?= $partner->url() ?>" draggable="false">
+                <?php endforeach ?>
+            </div>
+            <?php if (page('about')->others()->isNotEmpty()): ?>
+                <p>Weitere Unterstützer:innen:</p>
+                <div class="infoLogoContainer">
+                    <?php foreach (page('about')->others()->toFiles()->sortBy('sort') as $weitere): ?>
+                        <img src="<?= $weitere->url() ?>" draggable="false">
+                    <?php endforeach ?>
+                </div>
+            <?php endif ?>
         </div>
         <div class="aboutFinanz" id="aboutFinanz">
             <h2><?= page('about')?->aboutFinanzTitle() ?></h2>

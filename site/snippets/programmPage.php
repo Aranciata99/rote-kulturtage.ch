@@ -1,8 +1,8 @@
 <div class="programmContainer" id="programmScroller">
-    <div class="closeProgrammContainer" id="closeProgrammScroller">
-        <?php snippet('closeButton') ?>
-    </div>
     <div class="filterButtonsContainer" id="filter-buttons">
+        <div class="closeProgrammContainer" id="closeProgrammScroller">
+            <?php snippet('closeButton') ?>
+        </div>
         <Button data-filter="alle">Alle</Button>
         <Button data-filter="musik">Musik</Button>
         <Button data-filter="film">Film</Button>

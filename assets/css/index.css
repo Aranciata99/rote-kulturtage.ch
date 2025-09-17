@@ -481,13 +481,13 @@ button:hover {
     z-index: 100;
 }
 
-.closeAboutContainer {
-    border-bottom: var(--border-thickness) solid var(--rkt-red);
+.closeProgrammContainer {
+    padding-bottom: calc((var(--header-footer-height-width) / 3));
+
 }
 
-.closeProgrammContainer {
-    position: absolute;
-    width: 33.3333vw;
+.closeAboutContainer {
+    border-bottom: var(--border-thickness) solid var(--rkt-red);
 }
 
 .closeFoundingContainer {
@@ -535,14 +535,13 @@ button:hover {
 
 .filterButtonsContainer {
     position: absolute;
-    width: 45vw;
+    width: 60.6666vw;
     top: 0;
-    left: 20vw;
     z-index: 110;
-    margin-top: calc(var(--header-footer-height-width)/4);
     line-height: 4.2vh;
     text-align: center;
     transition: var(--fadeIn-paged-speed) ease-in-out;
+    left: 3vw;
 }
 
 .filterButtonsContainer button {
@@ -561,9 +560,8 @@ button:hover {
 }
 
 .filterButtonsContainer.open {
-    left: 0vw;
-    width: 33.3333vw;
-    margin-top: calc(var(--header-footer-height-width));
+    width: 30.3333vw;
+    left: 1.5vw;
 }
 
 /* Programm Page / Programm */
@@ -751,6 +749,19 @@ button:hover {
 
 .aboutInfoAllgemein {
     color: var(--rkt-red);
+}
+
+.infoLogoContainer {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 10px;
+}
+
+.infoLogoContainer img{
+    width: 100%;
+    height: auto;
 }
 
 /* Contact Page */
@@ -1219,7 +1230,7 @@ button:hover {
     display: none;
     font-size: 2vh;
     margin-bottom: var(--header-footer-height-width);
-    padding: 10px;
+    padding-inline: 10px;
     border: var(--border-thickness) solid black;
     background-color: white;
     height: var(--header-footer-height-width);
@@ -1586,16 +1597,19 @@ button:hover {
 
         .closeProgrammContainer {
             width: 50vw;
+            padding-bottom: calc((var(--header-footer-height-width) / 2));
         }
 
         /* Programm Page */
 
         .filterButtonsContainer {
-            width: 85vw;
-            top: 0;
-            left: 3vw;
-            text-align: left;
-            margin-top: calc(var(--header-footer-height-width) + 3vw);
+            width: calc(90vw - var(--header-footer-height-width));
+            left: 5vw;
+        }
+
+        .filterButtonsContainer.open {
+            width: calc(90vw - var(--header-footer-height-width));
+            left: 5vw;
         }
 
         .programmDatum {

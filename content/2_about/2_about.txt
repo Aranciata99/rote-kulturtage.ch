@@ -35,6 +35,18 @@ Erkunde mit uns die Wege der Arbeiter:innenkultur in Zürich und international. 
 
 ----
 
+Logos: - file://e4dudy7bijyweq3x
+
+----
+
+Medienpartnerinnen: - file://6ykxfougj3gek4bm
+
+----
+
+Others: 
+
+----
+
 Aboutfinanztitle: Finanzierung
 
 ----
@@ -76,6 +88,13 @@ Aboutawaretitle: Awareness
 ----
 
 Aboutawaretext: Das Awareness Konzept zum Festival wird bei Festival-Start hier ersichtlich sein.
+
+----
+
+Bild:
+
+- file://6ykxfougj3gek4bm
+- file://e4dudy7bijyweq3x
 
 ----
 
