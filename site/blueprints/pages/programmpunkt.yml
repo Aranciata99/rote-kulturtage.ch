@@ -16,7 +16,7 @@ columns:
             image:
               ratio: 1/1
               cover: true
-            help:
+            help: Bildgrösse max 10 MB
           copyright:
             label: Bild Copyright
             type: text
