@@ -217,6 +217,10 @@ function createGoodieElement(goodie) {
   const goodieDiv = document.createElement("div");
   goodieDiv.className = "goodie";
 
+  const goodieName = document.createElement("small");
+  goodieName.textContent = goodie.name;
+  goodieDiv.appendChild(goodieName);
+
   const goodieDescription = document.createElement("p");
   goodieDescription.textContent = goodie.description;
   goodieDiv.appendChild(goodieDescription);
@@ -226,68 +230,100 @@ function createGoodieElement(goodie) {
   goodiePrice.textContent = `${goodie.price} CHF`;
   goodieDiv.appendChild(goodiePrice);
 
-  //When creating element id 6 and 7, show two select pickers for the size and color
-  if (goodie.id === 6 || goodie.id === 7) {
+  //When creating element id 3, show two select pickers for the size and color
+  if (goodie.id === 3) {
     const goodieSize = document.createElement("select");
     goodieSize.className = "goodie-size";
     goodieSize.id = `goodie-size-${goodie.id}`;
     goodieSize.name = "goodie-size";
     goodieSize.required = true;
     goodieSize.innerHTML = `
-      <option value="" disabled selected>Grösse</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-      <option value="XXL">XXL</option>
+      <option value="" disabled selected>Grösse und Art</option>
+      <option value="LangM">Langarm M</option>
+      <option value="LangL">Langarm L</option>
+      <option value="KurzS">Kurzarm S</option>
+      <option value="KurzM">Kurzarm M</option>
+      <option value="KurzXL">Kurzarm XL</option>
       `;
     goodieDiv.appendChild(goodieSize);
 
-    const goodieColor = document.createElement("select");
+    /* const goodieColor = document.createElement("select");
     goodieColor.className = "goodie-color";
     goodieColor.id = `goodie-color-${goodie.id}`;
     goodieColor.name = "goodie-color";
     goodieColor.required = true;
     goodieColor.innerHTML = `
-      <option value="" disabled selected>Farbe</option>
+      <option value="" disabled selected>Kurzarm</option>
       <option value="White">White</option>
       <option value="Lime">Lime</option>
       <option value="Radiant Purple">Radiant Purple</option>
       <option value="Burgundy">Burgundy</option>`;
-    goodieDiv.appendChild(goodieColor);
+    goodieDiv.appendChild(goodieColor); */
+  }
+
+  //When creating element id 4, show two select pickers for the size and color
+
+  if (goodie.id === 4) {
+    const goodieSize = document.createElement("select");
+    goodieSize.className = "goodie-size";
+    goodieSize.id = `goodie-size-${goodie.id}`;
+    goodieSize.name = "goodie-size";
+    goodieSize.required = true;
+    goodieSize.innerHTML = `
+      <option value="" disabled selected>Grösse und Art</option>
+      <option value="LangarmS">Langarm S</option>
+      <option value="LangarmM">Langarm M</option>
+      <option value="KurzS">Kurzarm S</option>
+      <option value="KurzM">Kurzarm M</option>
+      <option value="KurzXL">Kurzarm XL</option>
+      `;
+    goodieDiv.appendChild(goodieSize);
+
+    /* const goodieColor = document.createElement("select");
+    goodieColor.className = "goodie-color";
+    goodieColor.id = `goodie-color-${goodie.id}`;
+    goodieColor.name = "goodie-color";
+    goodieColor.required = true;
+    goodieColor.innerHTML = `
+      <option value="" disabled selected>Langarm</option>
+      <option value="White">White</option>
+      <option value="Lime">Lime</option>
+      <option value="Radiant Purple">Radiant Purple</option>
+      <option value="Burgundy">Burgundy</option>`;
+    goodieDiv.appendChild(goodieColor); */
   }
 
   function onBuyButtonClick(goodie) {
-    if (goodie.id === 6 || goodie.id === 7) {
+    if (goodie.id === 3 || goodie.id === 4) {
       const goodieSize = document.getElementById(`goodie-size-${goodie.id}`);
-      const goodieColor = document.getElementById(`goodie-color-${goodie.id}`);
+      //const goodieColor = document.getElementById(`goodie-color-${goodie.id}`);
 
       // goodieSize and goodieColor are required fields, we need to check if they are selected
-      if (!goodieSize.value || !goodieColor.value) {
+      if (!goodieSize.value /*|| !goodieColor.value*/) {
         const existingErrorMessage = goodieDiv.querySelector(".error-message");
         if (!existingErrorMessage) {
           // Create error message
-          const errorMessage = document.createElement("p");
+          const errorMessage = document.createElement("small");
           errorMessage.className = "error-message";
           errorMessage.id = `error-message-${goodie.id}`;
-          errorMessage.textContent = "Bitte wähle eine Grösse und Farbe aus";
+          errorMessage.textContent = "Bitte wähle eine Grösse und Art des Shirts aus";
           goodieDiv.appendChild(errorMessage);
 
-          // Remove error message when user selects a size and color
+          // Remove error message when user selects a size
           goodieSize.addEventListener("change", () => {
             errorMessage.remove();
           });
-          goodieColor.addEventListener("change", () => {
+          /*goodieColor.addEventListener("change", () => {
             errorMessage.remove();
-          });
+          });*/
         }
         return; // Add this return statement to stop code execution if the required fields are not filled
       }
       const goodieSizeValue =
         goodieSize.options[goodieSize.selectedIndex].value;
-      const goodieColorValue =
-        goodieColor.options[goodieColor.selectedIndex].value;
-      const goodieName = `${goodie.name} - ${goodieSizeValue} - ${goodieColorValue}`;
+      /*const goodieColorValue =
+        goodieColor.options[goodieColor.selectedIndex].value;*/
+      const goodieName = `${goodie.name} - ${goodieSizeValue}`; //- ${goodieColorValue}
       donateAmount(goodie.price, goodieName);
     } else {
       donateAmount(goodie.price, goodie.name);

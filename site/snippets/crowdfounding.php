@@ -7,7 +7,7 @@
             </div>
             <div class="campaignContainer">
                 <h3 class="amount-raised" style="margin-bottom: 10px; margin-top: 10px;">
-                    <span id="amount-raised"></span> 
+                    <span id="amount-raised"></span>
                 </h3>
 
                 <div class="goal-amount">
@@ -31,7 +31,7 @@
                         </div>
                         <div class="Altes-Wohnmobil">
                             <div class="targetObject">
-                                Alle Räume bezahlt! 
+                                Alle Räume bezahlt!
                             </div>
                             <div class="targetMoney">
                                 10’000
@@ -74,8 +74,10 @@
                     </form>
                     <br>
                     <button id="rewards" onclick="showRewards()">Goodies anzeigen</button>
-                    <div id="goodies-container">
-                        <br/>
+                    <div class="goodiesWrapper">
+                        <div id="goodies-container">
+                            <br />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -13,42 +13,30 @@
     },
     {
       "id": 3,
-      "name": "Kurzarm Shirt schwarz/silber",
-      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
+      "name": "Shirt schwarz/silber",
+      "description": "T-Shirt schwarz und silber, ob Langarm oder Kurzarm, wunderbare Farbkombinationen mit hochwertigem Print.",
       "price": 50
     },
     {
       "id": 4,
-      "name": "Kurzarm Shirt rot/grau",
-      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
+      "name": "Shirt rot/grau",
+      "description": "T-Shirt rot und grau, ob Langarm oder Kurzarm, wunderbare Farbkombinationen mit hochwertigem Print.",
       "price": 50
     },
     {
       "id": 5,
-      "name": "Langarm Shirt schwarz/silber",
-      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
-      "price": 60
-    },
-    {
-      "id": 6,
-      "name": "Langarm Shirt rot/grau",
-      "description": "Ob Langarm oder T-Shirt, wunderbare Farbkombinationen mit hochwertigem Print.",
-      "price": 60
-    },
-    {
-      "id": 7,
       "name": "Bücherpaket",
       "description": "Verschiedene literarische leckerbissen",
       "price": 150
     },
     {
-      "id": 8,
+      "id": 6,
       "name": "Marxköpfe",
       "description": "Du wolltest schon immer ein Keramik-Marxkopf, der als Vase oder lasse fungieren kann? Laurie Ubezio macht's möglich!",
       "price": 250
     },
     {
-      "id": 9,
+      "id": 7,
       "name": "Kunst Claudi",
       "description": "Limitiertes Kunstwerk einer jungen Zürcher Künstlerin",
       "price": 500

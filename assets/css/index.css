@@ -759,7 +759,7 @@ button:hover {
     column-gap: 10px;
 }
 
-.infoLogoContainer img{
+.infoLogoContainer img {
     width: 100%;
     height: auto;
 }
@@ -916,7 +916,7 @@ button:hover {
     flex-direction: column;
     justify-content: left;
     align-items: left;
-    margin-top: var(--header-footer-height-width);
+    margin-top: 30px;
     margin-bottom: var(--header-footer-height-width);
     text-align: left;
 }
@@ -1155,23 +1155,48 @@ button:hover {
     padding: 20px;
 }*/
 
+.goodiesWrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    width: 32%;
+}
+
 #goodies-container {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     column-gap: var(--border-thickness);
 }
 
 .goodie {
-    padding-top: 0;
+    padding-top: 20px;
     padding-bottom: 20px;
     padding-inline: 20px;
-    margin-bottom: 20px;
+    margin-bottom: var(--border-thickness);
     background-color: white;
+    display: block;
 }
 
 .goodie p {
+    font-size: 1.5vw;
+}
+
+.goodie small {
+    font-size: 1.3vw;
+    color: var(--rkt-red);
+}
+
+.goodie-size {
+    width: auto;
     font-size: 1vw;
+    background-color: white;
+    border: var(--border-thickness) solid black;
+    padding-inline: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .price {
@@ -1183,13 +1208,14 @@ button:hover {
 }
 
 .goodie-button {
-    font-size: 0.7vw;
-    width: 80%;
+    font-size: 1.2vw;
+    width: 100%;
     border: var(--border-thickness) solid black;
     color: black;
     cursor: pointer;
     background-color: white;
     transition: var(--transition-animation-general);
+    height: calc(var(--header-footer-height-width)/3*2);
 }
 
 .goodie-button:hover {
@@ -1298,550 +1324,596 @@ button:hover {
     }
 }
 
-    @media (max-width: 1700px) {
-        .programmTag {
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: var(--border-thickness);
-        }
-
-        .programmTag.contactOpen {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .programmTag.aboutContactOpen {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .crowdFoundingBackground {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .targetMoney {
-            font-size: 2vh;
-            color: black;
-        }
-
-        .targetObject {
-            font-size: 1.8vw;
-        }
-
-        #goodies-container {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .goodie p {
-            font-size: 2vw;
-        }
-
-        .goodie-button {
-            font-size: 1.3vw;
-        }
+@media (max-width: 1700px) {
+    .programmTag {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: var(--border-thickness);
     }
 
-    @media (max-width: 992px) {
-        .crowdFoundingBackground {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .programmTag.contactOpen {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .crowdFoundingContainer {
-            overflow: auto;
-        }
-
-        .crowdFoundingBackground {
-            position: absolute;
-            display: grid;
-            top: -100vh;
-            height: auto;
-            overflow: hidden;
-            transition: var(--fadeIn-paged-speed) ease-in-out;
-        }
-
-        .crowdFoundingCampagne,
-        .crowdFoundingVideo,
-        .crowdFoundingText {
-            padding-inline: 5vw;
-            overflow: auto;
-        }
-
-        .closeFoundingContainer {
-            position: absolute;
-        }
-
-        .closeFoundingContainer div div {
-            background-color: black;
-        }
-
-        #rewards {
-            font-size: 2vh;
-            height: var(--header-footer-height-width);
-        }
-
-        #goto-top {
-            display: block;
-        }
-
-        #goodies-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .targetObject {
-            font-size: 2.4vh;
-        }
-
-        .aboutNavi {
-            grid-template-columns: auto;
-        }
-
-        .aboutContentContainer {
-            height: calc(100vh - var(--header-footer-height-width)/2*10);
-        }
-
-        .goodie p {
-            font-size: 2vw;
-        }
-
-        .goodie-button {
-            font-size: 1.7vw;
-        }
+    .programmTag.contactOpen {
+        grid-template-columns: repeat(2, 1fr);
     }
 
+    .programmTag.aboutContactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-    @media (max-width: 900px) {
+    .crowdFoundingBackground {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        /* generall settings */
+    .goodiesWrapper {
+        position: relative;
+        right: 0;
+        top: 0;
+        height: auto;
+        overflow: none;
+        width: 100%;
+    }
 
-        :root {
-            --header-footer-height-width: 4.5vh;
-        }
+    .targetMoney {
+        font-size: 2vh;
+        color: black;
+    }
 
-        /* generall settings / Typefaces & Settings */
+    .targetObject {
+        font-size: 1.8vw;
+    }
 
-        h1 {
-            font-size: min(12vw, 50px);
-        }
+    #goodies-container {
+        display: none;
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-        h2 {
-            font-size: 4vh;
-        }
+    #rewards {
+        display: block;
+        font-size: 2vh;
+        height: var(--header-footer-height-width);
+    }
 
-        h3 {
-            font-size: 4vh;
-        }
+    .goodie p {
+        font-size: 2vw;
+    }
 
-        p {
-            font-size: 2.4vh;
-            line-height: 1.2;
-        }
+    .goodie-button {
+        font-size: 1.5vw;
+    }
 
-        small {
-            font-size: 2vh;
-            line-height: 1.4;
-        }
+    .goodie small {
+        font-size: 1.5vw;
+    }
 
-        a:hover {
-            font-style: normal;
-        }
+    .price {
+        font-size: 2.5vw;
+    }
+}
 
-        .programmHeader {
-            z-index: 10;
-        }
+@media (max-width: 992px) {
+    .crowdFoundingBackground {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-        .aboutHeader {
-            z-index: 20;
-        }
+    .programmTag.contactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-        .crowdFoundingHeader {
-            z-index: 35;
-        }
+    .crowdFoundingContainer {
+        overflow: auto;
+    }
 
-        .contactHeader {
-            z-index: 40;
-        }
+    .crowdFoundingBackground {
+        position: absolute;
+        display: grid;
+        top: -100vh;
+        height: auto;
+        overflow: hidden;
+        transition: var(--fadeIn-paged-speed) ease-in-out;
+    }
 
-        /* Span */
+    .crowdFoundingCampagne,
+    .crowdFoundingVideo,
+    .crowdFoundingText {
+        padding-inline: 5vw;
+        overflow: auto;
+    }
 
-        .smallText p {
-            font-size: 2vh;
-            line-height: 1.2;
-        }
+    .closeFoundingContainer {
+        position: absolute;
+        left: 0;
+    }
 
-        /* default / header / Programm TL */
+    .closeFoundingContainer div div {
+        background-color: black;
+    }
 
-        .programmHeader,
-        .programmHeader.aboutOpen,
-        .programmHeader.contactOpen {
-            width: 50vw;
-        }
+    .campaignContainer {
+        margin-top: var(--header-footer-height-width);
+    }
 
-        /* default / header / About TR */
+    #goto-top {
+        display: block;
+    }
 
-        .aboutHeader,
-        .aboutHeader.contactOpen {
-            left: 50vw;
-            width: calc(50vw - var(--header-footer-height-width));
-        }
+    #goodies-container {
+        display: none;
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-        /* default / footer */
+    .targetObject {
+        font-size: 2.4vh;
+    }
 
-        .footer {
-            width: 100vw;
-            z-index: 100;
-        }
+    .aboutNavi {
+        grid-template-columns: auto;
+    }
 
-        .footer.contactOpen {
-            width: 100vw;
-        }
+    .aboutContentContainer {
+        height: calc(100vh - var(--header-footer-height-width)/2*10);
+    }
 
-        .footerLeft p,
-        .footerRight p {
-            top: -8%;
-        }
+    .goodie p {
+        font-size: 3vw;
+    }
 
-        .logoRKTfooter {
-            top: -1.3vh;
-        }
+    .goodie small {
+        font-size: 2.3vw;
+    }
 
-        /* default / header / general */
+    .goodie-button {
+        font-size: 2.3vw;
+    }
 
-        .programmHeader p,
-        .aboutHeader p {
-            transform: translate(-50%, -50%);
-        }
+    .goodie-size {
+        font-size: 2vw;
+    }
+}
 
-        .contactHeader p,
-        .crowdFoundingHeader p {
-            right: -35%;
-        }
 
-        /* default / background */
+@media (max-width: 900px) {
 
-        .homeBackgroundContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-        }
+    /* generall settings */
 
-        .homeBackgroundImages img {
-            position: relative;
-            height: 50%;
-        }
+    :root {
+        --header-footer-height-width: 4.5vh;
+    }
 
-        .homeDatum {
-            transform: translate(-50%, -50%);
-        }
+    /* generall settings / Typefaces & Settings */
 
-        .homeTitle {
-            top: 3%;
-            left: 3%;
-        }
+    h1 {
+        font-size: min(12vw, 50px);
+    }
 
-        .homeTitle h1 {
-            font-size: 10vw;
-        }
+    h2 {
+        font-size: 4vh;
+    }
 
-        .homeSticker {
-            position: absolute;
-            bottom: 10%;
-            left: 5%;
-            z-index: 5;
-        }
+    h3 {
+        font-size: 4vh;
+    }
 
-        /* Pages */
-        /* Pages */
-        /* Pages */
-        /* Pages */
+    p {
+        font-size: 2.4vh;
+        line-height: 1.2;
+    }
 
-        /* Containers (Animation) */
+    small {
+        font-size: 2vh;
+        line-height: 1.4;
+    }
 
-        .programmContainer {
-            top: -100vh;
-            z-index: 11;
-        }
+    a:hover {
+        font-style: normal;
+    }
 
-        .programmContainer.open {
-            top: 0;
-        }
+    .programmHeader {
+        z-index: 10;
+    }
 
-        .programmContainer.contactOpen {
-            width: calc(100vw - var(--header-footer-height-width));
-        }
+    .aboutHeader {
+        z-index: 20;
+    }
 
-        .programmContainer.aboutContactOpen {
-            width: calc(100vw - var(--header-footer-height-width));
-        }
+    .crowdFoundingHeader {
+        z-index: 35;
+    }
 
-        .aboutContainer {
-            left: 0;
-            width: calc(100vw - var(--header-footer-height-width));
-            border-left: none;
-        }
+    .contactHeader {
+        z-index: 40;
+    }
 
-        .aboutContainer.contactOpen {
-            left: 0;
-            width: calc(100vw - var(--header-footer-height-width));
-        }
+    /* Span */
 
-        .contactContainer {
-            right: calc(-100vw - var(--border-thickness));
-            height: 100vh;
-            width: 100vw;
-        }
+    .smallText p {
+        font-size: 2vh;
+        line-height: 1.2;
+    }
 
-        /* Close pages Container */
+    /* default / header / Programm TL */
 
-        .closeProgrammContainer {
-            width: 50vw;
-            padding-bottom: calc((var(--header-footer-height-width) / 2));
-        }
+    .programmHeader,
+    .programmHeader.aboutOpen,
+    .programmHeader.contactOpen {
+        width: 50vw;
+    }
 
-        /* Programm Page */
+    /* default / header / About TR */
 
-        .filterButtonsContainer {
-            width: calc(90vw - var(--header-footer-height-width));
-            left: 5vw;
-        }
+    .aboutHeader,
+    .aboutHeader.contactOpen {
+        left: 50vw;
+        width: calc(50vw - var(--header-footer-height-width));
+    }
 
-        .filterButtonsContainer.open {
-            width: calc(90vw - var(--header-footer-height-width));
-            left: 5vw;
-        }
+    /* default / footer */
 
-        .programmDatum {
-            color: white;
-            background-color: black;
-            height: calc(var(--header-footer-height-width)*2);
-        }
+    .footer {
+        width: 100vw;
+        z-index: 100;
+    }
 
-        .programmDatum h3 {
-            transform: translate(-50%, -35%);
-        }
+    .footer.contactOpen {
+        width: 100vw;
+    }
 
-        .programmTag {
-            grid-template-columns: repeat(1, 1fr);
-        }
+    .footerLeft p,
+    .footerRight p {
+        top: -8%;
+    }
 
-        .programmTag.contactOpen {
-            grid-template-columns: repeat(1, 1fr);
-        }
+    .logoRKTfooter {
+        top: -1.3vh;
+    }
 
-        .programmTag.aboutContactOpen {
-            grid-template-columns: repeat(1, 1fr);
-        }
+    /* default / header / general */
 
-        .programmCoverImage {
-            width: 100%;
-            height: auto
-                /*33vh*/
-            ;
-        }
+    .programmHeader p,
+    .aboutHeader p {
+        transform: translate(-50%, -50%);
+    }
 
-        .programmPunkt button {
-            margin-bottom: var(--header-footer-height-width);
-            background-color: black;
-            transition: var(--transition-animation-general);
-        }
+    .contactHeader p,
+    .crowdFoundingHeader p {
+        right: -35%;
+    }
 
-        .programmPunkt button:hover {
-            width: 50%;
-        }
+    /* default / background */
 
-        .programmInfoContainer {
-            height: 90%;
-            width: 85%;
-        }
+    .homeBackgroundContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+    }
 
-        /* .closeProgrammInfo h3 {
+    .homeBackgroundImages img {
+        position: relative;
+        height: 50%;
+    }
+
+    .homeDatum {
+        transform: translate(-50%, -50%);
+    }
+
+    .homeTitle {
+        top: 3%;
+        left: 3%;
+    }
+
+    .homeTitle h1 {
+        font-size: 10vw;
+    }
+
+    .homeSticker {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        z-index: 5;
+    }
+
+    /* Pages */
+    /* Pages */
+    /* Pages */
+    /* Pages */
+
+    /* Containers (Animation) */
+
+    .programmContainer {
+        top: -100vh;
+        z-index: 11;
+    }
+
+    .programmContainer.open {
+        top: 0;
+    }
+
+    .programmContainer.contactOpen {
+        width: calc(100vw - var(--header-footer-height-width));
+    }
+
+    .programmContainer.aboutContactOpen {
+        width: calc(100vw - var(--header-footer-height-width));
+    }
+
+    .aboutContainer {
+        left: 0;
+        width: calc(100vw - var(--header-footer-height-width));
+        border-left: none;
+    }
+
+    .aboutContainer.contactOpen {
+        left: 0;
+        width: calc(100vw - var(--header-footer-height-width));
+    }
+
+    .contactContainer {
+        right: calc(-100vw - var(--border-thickness));
+        height: 100vh;
+        width: 100vw;
+    }
+
+    /* Close pages Container */
+
+    .closeProgrammContainer {
+        width: 50vw;
+        padding-bottom: calc((var(--header-footer-height-width) / 2));
+    }
+
+    /* Programm Page */
+
+    .filterButtonsContainer {
+        width: calc(90vw - var(--header-footer-height-width));
+        left: 5vw;
+    }
+
+    .filterButtonsContainer.open {
+        width: calc(90vw - var(--header-footer-height-width));
+        left: 5vw;
+    }
+
+    .programmDatum {
+        color: white;
+        background-color: black;
+        height: calc(var(--header-footer-height-width)*2);
+    }
+
+    .programmDatum h3 {
+        transform: translate(-50%, -35%);
+    }
+
+    .programmTag {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .programmTag.contactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .programmTag.aboutContactOpen {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .programmCoverImage {
+        width: 100%;
+        height: auto
+            /*33vh*/
+        ;
+    }
+
+    .programmPunkt button {
+        margin-bottom: var(--header-footer-height-width);
+        background-color: black;
+        transition: var(--transition-animation-general);
+    }
+
+    .programmPunkt button:hover {
+        width: 50%;
+    }
+
+    .programmInfoContainer {
+        height: 90%;
+        width: 85%;
+    }
+
+    /* .closeProgrammInfo h3 {
         color: white;
         position: absolute;
         top: -150%;
         left: 15%;
     } */
 
-        .programmInfoText p {
-            line-height: 1.3;
-        }
+    .programmInfoText p {
+        line-height: 1.3;
+    }
 
-        .programmContentContainer {
-            padding-top: calc(var(--header-footer-height-width)*4);
-            height: calc(100vh - var(--header-footer-height-width)*5);
-        }
+    .programmContentContainer {
+        padding-top: calc(var(--header-footer-height-width)*4);
+        height: calc(100vh - var(--header-footer-height-width)*5);
+    }
 
-        /* About Page */
+    /* About Page */
 
-        .aboutContentContainer {
-            height: calc(100vh - var(--header-footer-height-width)*6);
-        }
+    .aboutContentContainer {
+        height: calc(100vh - var(--header-footer-height-width)*6);
+    }
 
-        .aboutNavi div {
-            height: calc(var(--header-footer-height-width));
-            border-bottom: var(--border-thickness) solid var(--rkt-red);
-            border-right: var(--border-thickness) solid var(--rkt-red);
-            width: auto;
-            cursor: pointer;
-            color: var(--rkt-red);
-        }
+    .aboutNavi div {
+        height: calc(var(--header-footer-height-width));
+        border-bottom: var(--border-thickness) solid var(--rkt-red);
+        border-right: var(--border-thickness) solid var(--rkt-red);
+        width: auto;
+        cursor: pointer;
+        color: var(--rkt-red);
+    }
 
-        .aboutNavi div:hover {
-            background-color: white;
-            color: var(--rkt-red);
-        }
+    .aboutNavi div:hover {
+        background-color: white;
+        color: var(--rkt-red);
+    }
 
-        .aboutNavi small {
-            transform: translate(-50%, 30%);
-        }
+    .aboutNavi small {
+        transform: translate(-50%, 30%);
+    }
 
-        /* Contact Page */
+    /* Contact Page */
 
-        .newsletterForm input {
-            height: calc(var(--header-footer-height-width));
-            padding-inline: 3vw;
-        }
+    .newsletterForm input {
+        height: calc(var(--header-footer-height-width));
+        padding-inline: 3vw;
+    }
 
-        .newsletterForm input::placeholder {
-            font-size: 2vh;
-        }
+    .newsletterForm input::placeholder {
+        font-size: 2vh;
+    }
 
-        .newsletterForm button {
-            padding-inline: 3vw;
-            height: calc(var(--header-footer-height-width));
-            font-size: 2vh;
-        }
+    .newsletterForm button {
+        padding-inline: 3vw;
+        height: calc(var(--header-footer-height-width));
+        font-size: 2vh;
+    }
 
-        .contactMail button {
-            height: calc(var(--header-footer-height-width));
-            padding-inline: 3vw;
-            font-size: 2vh;
-        }
+    .contactMail button {
+        height: calc(var(--header-footer-height-width));
+        padding-inline: 3vw;
+        font-size: 2vh;
+    }
 
-        .crowdfoundingSticker:hover {
-            transform: rotate(10deg);
-
-        }
-
-        .crowdfoundingSticker h2,
-        .crowdfoundingSticker p {
-            line-height: 1.1;
-        }
-
-        .crowdfoundingSticker h2 {
-            font-size: 3vh;
-        }
-
-        /* Crowdfounding Page */
-
-        .crowdFoundingText {
-            background-color: black;
-        }
-
-        .crowdFoundingBackground.open {
-            top: 0;
-        }
-
-        .crowdfoundingContainer {
-            overflow: auto;
-            padding-inline: var(--header-footer-height-width);
-        }
-
-        .crowdFoundingBackground h2,
-        .crowdFoundingBackground p {
-            padding-top: var(--header-footer-height-width);
-        }
-
-        .crowdFoundingBackground h2 {
-            font-size: 7.5vw;
-            padding-top: calc(var(--header-footer-height-width)/2*3);
-        }
-
-        .crowdFoundingBackground p {
-            padding-top: 0;
-            text-align: left;
-        }
-
-        #goodies-container {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .goodie p {
-            font-size: 4vw;
-        }
-
-        .goodie-button {
-            font-size: 3vw;
-            height: calc(var(--header-footer-height-width));
-        }
-
-        .price {
-            font-size: 1.5rem;
-        }
-
-        .closeFoundingContainer div div {
-            background-color: black;
-        }
-
-        /* Crowdfounding Layout */
-
-        .container-progress {
-            grid-template-columns: 12% 80%;
-        }
-
-        .targetMoney {
-            font-size: 1.8vh;
-        }
-
-        .contributions h2 {
-            font-size: 2.4vh;
-            margin-bottom: var(--header-footer-height-width);
-        }
-
-        .contributions label {
-            font-size: 2.4vh;
-        }
-
-        .contributions input[type="number"] {
-            font-size: 2.4vh;
-            height: calc(var(--header-footer-height-width));
-            padding-inline: 3vw;
-        }
-
-        .contributions input::placeholder {
-            font-size: 2.4vh;
-        }
-
-        .contributions button:focus {
-            border-color: var(--rkt-red);
-        }
-
-        .suggested-amounts p {
-            font-size: 2.4vh;
-            margin-bottom: calc(var(--header-footer-height-width));
-        }
-
-        .suggested-amounts li {
-            margin: 0 1vw;
-            height: auto;
-            padding-inline: 10px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            line-height: 1.2;
-        }
-
-        .contributions button[type="submit"] {
-            font-size: 2.4vh;
-            height: var(--header-footer-height-width);
-            background-color: white;
-            width: 100%;
-            color: black;
-        }
-
-        .contributions button:hover {
-            width: 100%;
-        }
-
+    .crowdfoundingSticker:hover {
+        transform: rotate(10deg);
 
     }
+
+    .crowdfoundingSticker h2,
+    .crowdfoundingSticker p {
+        line-height: 1.1;
+    }
+
+    .crowdfoundingSticker h2 {
+        font-size: 3vh;
+    }
+
+    /* Crowdfounding Page */
+
+    .crowdFoundingText {
+        background-color: black;
+    }
+
+    .crowdFoundingBackground.open {
+        top: 0;
+    }
+
+    .crowdfoundingContainer {
+        overflow: auto;
+        padding-inline: var(--header-footer-height-width);
+    }
+
+    .crowdFoundingBackground h2,
+    .crowdFoundingBackground p {
+        padding-top: var(--header-footer-height-width);
+    }
+
+    .crowdFoundingBackground h2 {
+        font-size: 7.5vw;
+        padding-top: calc(var(--header-footer-height-width)/2*3);
+    }
+
+    .crowdFoundingBackground p {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .campaignContainer {
+        margin-top: var(--header-footer-height-width);
+    }
+
+    #goodies-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .goodie p {
+        font-size: 4vw;
+    }
+
+    .goodie-button {
+        font-size: 3vw;
+        width: 100%;
+        height: calc(var(--header-footer-height-width));
+    }
+
+    .goodie small {
+        font-size: 3.5vw;
+    }
+
+    .goodie-size {
+        font-size: 3vw;
+    }
+
+    .price {
+        font-size: 1.5rem;
+    }
+
+    .closeFoundingContainer div div {
+        background-color: black;
+    }
+
+    /* Crowdfounding Layout */
+
+    .container-progress {
+        grid-template-columns: 12% 80%;
+    }
+
+    .targetMoney {
+        font-size: 1.8vh;
+    }
+
+    .contributions h2 {
+        font-size: 2.4vh;
+        margin-bottom: var(--header-footer-height-width);
+    }
+
+    .contributions label {
+        font-size: 2.4vh;
+    }
+
+    .contributions input[type="number"] {
+        font-size: 2.4vh;
+        height: calc(var(--header-footer-height-width));
+        padding-inline: 3vw;
+    }
+
+    .contributions input::placeholder {
+        font-size: 2.4vh;
+    }
+
+    .contributions button:focus {
+        border-color: var(--rkt-red);
+    }
+
+    .suggested-amounts p {
+        font-size: 2.4vh;
+        margin-bottom: calc(var(--header-footer-height-width));
+    }
+
+    .suggested-amounts li {
+        margin: 0 1vw;
+        height: auto;
+        padding-inline: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .contributions button[type="submit"] {
+        font-size: 2.4vh;
+        height: var(--header-footer-height-width);
+        background-color: white;
+        width: 100%;
+        color: black;
+    }
+
+    .contributions button:hover {
+        width: 100%;
+    }
+
+
+}
