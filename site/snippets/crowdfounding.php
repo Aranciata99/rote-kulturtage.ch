@@ -1,10 +1,10 @@
-            <!-- Verstehe nicht für was das ist … -->
-            <!-- <div id="payment-modal" class="modal">
+            <!-- Payment Modal for Payrexx integration -->
+            <div id="payment-modal" class="modal" style="display: none;">
                 <div class="modal-content">
                     <span id="modal-close" class="close">&times;</span>
                     <iframe id="payment-iframe" frameborder="0" width="100%" height="100%"></iframe>
                 </div>
-            </div> -->
+            </div>
             <div class="campaignContainer">
                 <h3 class="amount-raised" style="margin-bottom: 10px; margin-top: 10px;">
                     <span id="amount-raised"></span> 

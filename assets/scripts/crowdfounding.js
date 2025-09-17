@@ -1,20 +1,26 @@
-//const devEnv = "https://d1ca-82-220-89-185.ngrok-free.app";
-const devEnv = "http://localhost:3000";
+// Base URL for API – default to current origin to avoid CORS issues
+const devEnv = window?.config?.apiUrl || window.location.origin;
 
 // Get campaign status and update page elements
 async function getCampaignStatus() {
   try {
-    const response = await axios.get(`${devEnv}/api/campaign-status`);
-    return response.data;
-  } catch (err) {}
+    const response = await fetch(`${devEnv}/api/campaign-status`);
+    return await response.json();
+  } catch (err) {
+    console.error('Error fetching campaign status:', err);
+    return null;
+  }
 }
 
 // Get goodies and display them on the page
 async function getGoodies() {
   try {
-    const response = await axios.get(`${devEnv}/api/goodies`);
-    return response.data;
-  } catch (err) {}
+    const response = await fetch(`${devEnv}/api/goodies`);
+    return await response.json();
+  } catch (err) {
+    console.error('Error fetching goodies:', err);
+    return [];
+  }
 }
 
 async function main() {
@@ -23,72 +29,154 @@ async function main() {
     getGoodies(),
   ]);
 
-  updateCampaignStatus(status);
+  if (status) {
+    updateCampaignStatus(status);
+  }
 
   const goodiesContainer = document.getElementById("goodies-container");
-  goodiesList.forEach((goodie) => {
-    const goodieElement = createGoodieElement(goodie);
-    goodiesContainer.appendChild(goodieElement);
-  });
+  if (Array.isArray(goodiesList)) {
+    goodiesList.forEach((goodie) => {
+      const goodieElement = createGoodieElement(goodie);
+      goodiesContainer.appendChild(goodieElement);
+    });
+  }
   // Add event listener to close the modal
-  document.getElementById("modal-close").addEventListener("click", () => {
-    document.getElementById("payment-modal").style.display = "none";
-    refreshPageContent(); // Refresh content when the modal is closed
-    // Come beginning of the page
-    window.scrollTo(0, 0);
-  });
+  const modalClose = document.getElementById("modal-close");
+  if (modalClose) {
+    modalClose.addEventListener("click", () => {
+      document.getElementById("payment-modal").style.display = "none";
+      refreshPageContent(); // Refresh content when the modal is closed
+      window.scrollTo(0, 0);
+    });
+  }
+
+  // Set up automatic refresh every 30 seconds
+  startAutoRefresh();
 }
 
-document.getElementById("donate-form").addEventListener("submit", (event) => {
-  event.preventDefault();
+// Wait for DOM ready before initialising listeners and fetching data
+document.addEventListener("DOMContentLoaded", () => {
+  const donateForm = document.getElementById("donate-form");
+  if (donateForm) {
+    console.log('Donate form found, adding event listener');
+    donateForm.addEventListener("submit", (event) => {
+      console.log('Form submitted!');
+      event.preventDefault();
+      const amountInput = document.getElementById("amount");
+      const amount = parseInt(amountInput.value);
+      console.log('Amount entered:', amount);
+      
+      if (!amount || amount < 1) {
+        alert("Bitte geben Sie einen gültigen Betrag ein (mindestens CHF 1).");
+        amountInput.focus();
+        return;
+      }
+      
+      donateAmount(amount, "Spende");
+    });
+  } else {
+    console.error('Donate form not found!');
+  }
 
-  const amount = parseInt(document.getElementById("amount").value);
-  donateAmount(amount, "Spende");
+  main();
 });
 
-main();
-
 function donateAmount(amount, purpose) {
-  const paymentUrl = `https://crowdfundinglora.payrexx.com/de/vpos?amount=${amount}&purpose=${purpose}&currency=CHF`;
+  console.log('donateAmount called with:', amount, purpose);
+  
+  const paymentUrl = `https://rotekulturtage.payrexx.com/de/vpos?amount=${amount}&purpose=${purpose}&currency=CHF`;
+  console.log('Payment URL:', paymentUrl);
 
   // Open the payment page in the iframe and show the modal
   const iframe = document.getElementById("payment-iframe");
+  const modal = document.getElementById("payment-modal");
+  
+  if (!iframe) {
+    console.error('Payment iframe not found!');
+    return;
+  }
+  
+  if (!modal) {
+    console.error('Payment modal not found!');
+    return;
+  }
+  
   iframe.src = paymentUrl;
-  document.getElementById("payment-modal").style.display = "block";
+  modal.style.display = "block";
+  console.log('Modal should now be visible');
 }
 function updateCampaignStatus(status) {
   // Update progress bar
   const progressBar = document.getElementById("progress");
   // const progressText = document.getElementById("progress-text");
+  if (!status) return;
   const progressPercentage = (status.amountRaised / status.goal) * 100;
   // progressText.textContent = `${progressPercentage.toFixed(2)}%`;
   progressBar.style.height = `${progressPercentage}%`;
 
-  /* const remainingDays = document.getElementById("remaining-days");
+  const remainingDays = document.getElementById("remaining-days");
 
-  // Update remaining days
   const today = new Date();
   const endDate = new Date(status.endDate);
   const remainingTime = endDate.getTime() - today.getTime();
   const remainingDaysCount = Math.ceil(remainingTime / (1000 * 3600 * 24));
  remainingDays.textContent = `${remainingDaysCount}`;
-*/
-  // Update supporters count
-  // const supportersCount = document.getElementById("supporters-count");
-  // supportersCount.textContent = `${status.supportersCount}`;
 
   // Update amount raised
   const amountRaisedElement = document.getElementById("amount-raised");
   amountRaisedElement.textContent = `${status.amountRaised} CHF`;
 
+  // Update goal amount dynamically
+  const goalAmountElement = document.querySelector('.goal-amount');
+  if (goalAmountElement) {
+    goalAmountElement.innerHTML = `
+      <span id="progress-text">${progressPercentage.toFixed(1)}%</span> von CHF ${status.goal.toLocaleString('de-CH')}
+      <br>
+      <span id="supporters-count">${status.supportersCount}</span> Unterstützer:innen
+    `;
+  }
+
   // Update other elements if needed
 }
 function refreshPageContent() {
-  axios.get(`${devEnv}/api/campaign-status`).then((response) => {
-    const status = response.data;
-    updateCampaignStatus(status);
-  });
+  console.log('Refreshing campaign status...');
+  fetch(`${devEnv}/api/campaign-status`)
+    .then(response => response.json())
+    .then(status => {
+      console.log('Updated campaign status:', status);
+      updateCampaignStatus(status);
+    })
+    .catch(err => {
+      console.error('Error refreshing campaign status:', err);
+    });
 }
+
+// Auto-refresh functionality
+let autoRefreshInterval;
+
+function startAutoRefresh() {
+  // Refresh every 30 seconds
+  autoRefreshInterval = setInterval(() => {
+    refreshPageContent();
+  }, 30000);
+  console.log('Auto-refresh started (every 30 seconds)');
+}
+
+function stopAutoRefresh() {
+  if (autoRefreshInterval) {
+    clearInterval(autoRefreshInterval);
+    autoRefreshInterval = null;
+    console.log('Auto-refresh stopped');
+  }
+}
+
+// Refresh immediately when page becomes visible again (user returns to tab)
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    console.log('Page became visible, refreshing content...');
+    refreshPageContent();
+  }
+});
 
 // Suggested amounts
 function setAmount(value) {
@@ -233,9 +321,26 @@ function showRewards() {
   }
 }
 
-// topFunction function scrolls to the top of the page, when the button is clicked
+// "Jetzt spenden" button scrolls to donation form and focuses the amount input
 document.getElementById('goto-top').addEventListener('click', function() {
-  {const foundingContainer = document.getElementById('foundingCampagneContainer');
-    foundingContainer.scrollIntoView({ behavior: 'smooth' });
+  const foundingContainer = document.getElementById('foundingCampagneContainer');
+  foundingContainer.scrollIntoView({ behavior: 'smooth' });
+  
+  // Focus on the amount input after scrolling
+  setTimeout(() => {
+    const amountInput = document.getElementById('amount');
+    if (amountInput) {
+      amountInput.focus();
+    }
+  }, 500); // Wait for smooth scroll to complete
+});
+
+// Add manual refresh functionality for testing
+document.addEventListener('keydown', (e) => {
+  // Press Ctrl+R or Cmd+R to manually refresh campaign data
+  if ((e.ctrlKey || e.metaKey) && e.key === 'r' && e.shiftKey) {
+    e.preventDefault();
+    console.log('Manual refresh triggered');
+    refreshPageContent();
   }
 });
