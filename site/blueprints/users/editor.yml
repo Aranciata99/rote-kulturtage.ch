@@ -1,0 +1,29 @@
+title: Editor:in
+description: Kann Seiten und Inhalte bearbeiten, keine Benutzer verwalten und hinzufügen.
+
+permissions:
+  access:
+    panel: true
+    system: false
+    account: true
+    site: true
+    users: false
+  users:
+    create: false
+    delete: false
+    update: false
+    changeRole: false
+    changeEmail: false
+    changeLanguage: false
+    changeName: false
+    changePassword: false
+  site:
+    update: false
+  pages:
+    create: true
+    update: true
+    delete: true
+    changeStatus: true
+  files:
+    upload: true
+    delete: true

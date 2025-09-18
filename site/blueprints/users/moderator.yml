@@ -1,0 +1,30 @@
+title: Moderator:in
+description: Kann Seiten und Inhalte bearbeiten und Benutzer verwalten und hinzufügen.
+
+permissions:
+  access:
+    account: true
+    panel: true
+    site: true
+    system: false
+    users: true
+  users:
+    create: true
+    delete: true
+    update: true
+    changeRole: true
+    changeEmail: true
+    changeLanguage: true
+    changeName: true
+    changePassword: true
+  site:
+    update: false
+  pages:
+    create: true
+    update: true
+    delete: true
+    changeStatus: true
+  files:
+    upload: true
+    delete: true
+  
