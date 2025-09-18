@@ -1484,30 +1484,30 @@ button:hover {
     /* generall settings */
 
     :root {
-        --header-footer-height-width: 4.5vh;
+        --header-footer-height-width: 50px;
     }
 
     /* generall settings / Typefaces & Settings */
 
     h1 {
-        font-size: min(12vw, 50px);
+        font-size: min(6rem, 50px);
     }
 
     h2 {
-        font-size: 4vh;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 4vh;
+        font-size: 2rem;
     }
 
     p {
-        font-size: 2.4vh;
+        font-size: 1.4rem;
         line-height: 1.2;
     }
 
     small {
-        font-size: 2vh;
+        font-size: 1rem;
         line-height: 1.4;
     }
 
@@ -1534,7 +1534,7 @@ button:hover {
     /* Span */
 
     .smallText p {
-        font-size: 2vh;
+        font-size: 1rem;
         line-height: 1.2;
     }
 
@@ -1543,31 +1543,31 @@ button:hover {
     .programmHeader,
     .programmHeader.aboutOpen,
     .programmHeader.contactOpen {
-        width: 50vw;
+        width: 50%;
     }
 
     /* default / header / About TR */
 
     .aboutHeader,
     .aboutHeader.contactOpen {
-        left: 50vw;
-        width: calc(50vw - var(--header-footer-height-width));
+        left: 50%;
+        width: calc(50% - var(--header-footer-height-width));
     }
 
     /* default / footer */
 
     .footer {
-        width: 100vw;
+        width: 100%;
         z-index: 100;
     }
 
     .footer.contactOpen {
-        width: 100vw;
+        width: 100%;
     }
 
     .footerLeft p,
     .footerRight p {
-        top: -8%;
+        top: -5%;
     }
 
     .logoRKTfooter {
@@ -1578,12 +1578,12 @@ button:hover {
 
     .programmHeader p,
     .aboutHeader p {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%);
     }
 
     .contactHeader p,
     .crowdFoundingHeader p {
-        right: -35%;
+        right: -25%;
     }
 
     /* default / background */
@@ -1592,8 +1592,8 @@ button:hover {
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
     }
 
     .homeBackgroundImages img {
@@ -1629,7 +1629,7 @@ button:hover {
     /* Containers (Animation) */
 
     .programmContainer {
-        top: -100vh;
+        top: -100%;
         z-index: 11;
     }
 
@@ -1638,53 +1638,53 @@ button:hover {
     }
 
     .programmContainer.contactOpen {
-        width: calc(100vw - var(--header-footer-height-width));
+        width: calc(100% - var(--header-footer-height-width));
     }
 
     .programmContainer.aboutContactOpen {
-        width: calc(100vw - var(--header-footer-height-width));
+        width: calc(100% - var(--header-footer-height-width));
     }
 
     .aboutContainer {
         left: 0;
-        width: calc(100vw - var(--header-footer-height-width));
+        width: calc(100% - var(--header-footer-height-width));
         border-left: none;
     }
 
     .aboutContainer.contactOpen {
         left: 0;
-        width: calc(100vw - var(--header-footer-height-width));
+        width: calc(100% - var(--header-footer-height-width));
     }
 
     .contactContainer {
-        right: calc(-100vw - var(--border-thickness));
-        height: 100vh;
-        width: 100vw;
+        right: calc(-100% - var(--border-thickness));
+        height: 100%;
+        width: 100%;
     }
 
     /* Close pages Container */
 
     .closeProgrammContainer {
-        width: 50vw;
+        width: 50%;
         padding-bottom: calc((var(--header-footer-height-width) / 2));
     }
 
     /* Programm Page */
 
     .filterButtonsContainer {
-        width: calc(90vw - var(--header-footer-height-width));
-        left: 5vw;
+        width: calc(90% - var(--header-footer-height-width));
+        left: 5%;
     }
 
     .filterButtonsContainer.open {
-        width: calc(90vw - var(--header-footer-height-width));
-        left: 5vw;
+        width: calc(90% - var(--header-footer-height-width));
+        left: 5%;
     }
 
     .programmDatum {
         color: white;
         background-color: black;
-        height: calc(var(--header-footer-height-width)*2);
+        height: calc(var(--header-footer-height-width) * 2);
     }
 
     .programmDatum h3 {
@@ -1737,14 +1737,14 @@ button:hover {
     }
 
     .programmContentContainer {
-        padding-top: calc(var(--header-footer-height-width)*4);
-        height: calc(100vh - var(--header-footer-height-width)*5);
+        padding-top: calc(var(--header-footer-height-width) * 4);
+        height: calc(100% - var(--header-footer-height-width) * 5);
     }
 
     /* About Page */
 
     .aboutContentContainer {
-        height: calc(100vh - var(--header-footer-height-width)*6);
+        height: calc(100%h - var(--header-footer-height-width) * 6);
     }
 
     .aboutNavi div {
