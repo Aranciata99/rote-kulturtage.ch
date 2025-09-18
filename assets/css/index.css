@@ -467,11 +467,12 @@ button:hover {
 }
 
 .contactContainer {
+    position: fixed;
     top: 0;
     right: calc(-33.3333vw - var(--border-thickness));
     height: 100vh;
     width: 33.3333vw;
-    overflow: hidden;
+    overflow: hidden; /*XXXX*/
     z-index: 41;
 }
 
@@ -499,6 +500,10 @@ button:hover {
 
 .closeAboutContainer {
     border-bottom: var(--border-thickness) solid var(--rkt-red);
+}
+
+.closeContactContainer {
+    position: fixed;
 }
 
 .closeFoundingContainer {
@@ -1088,6 +1093,7 @@ button:hover {
     outline: none;
     margin-top: 1vh;
     padding-inline: 1vw;
+    border-radius: 0;
 }
 
 .contributions input::placeholder {
@@ -1213,10 +1219,12 @@ button:hover {
     width: auto;
     font-size: 1vw;
     background-color: white;
+    color: black;
     border: var(--border-thickness) solid black;
     padding-inline: 20px;
     cursor: pointer;
     margin-bottom: 10px;
+    border-radius: 0;
 }
 
 .price {
@@ -1244,33 +1252,6 @@ button:hover {
     border: var(--border-thickness) solid black;
     color: white;
 }
-
-/* 
-.goodie-size {
-    font-size: 1rem;
-    padding: 7px;
-    border: 2px solid #ddd;
-    color: #555;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #f2f2f2;
-    width: 100px;
-}
-
-.goodie-color {
-    font-size: 1rem;
-    padding: 7px;
-    border: 2px solid #ddd;
-    color: #555;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-
-    background-color: #f2f2f2;
-    width: 100px;
-} */
 
 #goto-top {
     display: none;
@@ -1494,7 +1475,7 @@ button:hover {
     body {
         height: 100%;
         width: 100%;
-        overflow-x: none;
+        overflow-x: hidden;
     }
 
     /* generall settings */
@@ -1780,7 +1761,7 @@ button:hover {
     /* About Page */
 
     .aboutContentContainer {
-        height: calc(100% - var(--header-footer-height-width) * 4);
+        height: calc(100% - var(--header-footer-height-width) * 3);
     }
 
     .aboutNavi {
@@ -1847,6 +1828,10 @@ button:hover {
         font-size: 1.1rem;
     }
 
+    .crowdfoundingSticker span {
+        font-size: 1.2rem;
+    }
+
     /* Crowdfounding Page */
 
     .crowdFoundingText {
@@ -1890,7 +1875,7 @@ button:hover {
     }
 
     .goodie-button {
-        font-size: 3vw;
+        font-size: 0.8rem;
         width: 100%;
         height: calc(var(--header-footer-height-width));
     }
