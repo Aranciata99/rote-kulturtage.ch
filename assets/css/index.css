@@ -290,7 +290,8 @@ button:hover {
 }
 
 .footerRight {
-    display: none; /*XXXXX*/
+    display: none;
+    /*XXXXX*/
     position: absolute;
     top: 0;
     width: 50%;
@@ -493,6 +494,10 @@ button:hover {
 
 .closeFoundingContainer {
     top: 2vh;
+    width: var(--header-footer-height-width);
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 0;
 }
 
 .closeFoundingContainer div div {
@@ -776,7 +781,8 @@ button:hover {
 }
 
 .contactNewsletter {
-    display: none; /*XXXXX*/
+    display: none;
+    /*XXXXX*/
 }
 
 .newsletterForm {
@@ -1424,7 +1430,6 @@ button:hover {
 
     .closeFoundingContainer {
         position: absolute;
-        left: 0;
     }
 
     .closeFoundingContainer div div {
