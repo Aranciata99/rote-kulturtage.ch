@@ -97,6 +97,10 @@ button:hover {
     color: black;
 }
 
+.helvetica {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Span */
 
 .redText {
@@ -385,9 +389,14 @@ button:hover {
     transform: translate(-50%, -60%);
 }
 
+.homeDatum h1 {
+    font-size: 4vh;
+
+}
+
 .homeTitle {
     position: absolute;
-    top: 6%;
+    top: 10%;
     left: 3%;
 }
 
@@ -1481,6 +1490,13 @@ button:hover {
 
 @media (max-width: 900px) {
 
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        overflow-x: none;
+    }
+
     /* generall settings */
 
     :root {
@@ -1507,7 +1523,7 @@ button:hover {
     }
 
     small {
-        font-size: 1rem;
+        font-size: 1.2rem;
         line-height: 1.4;
     }
 
@@ -1605,9 +1621,13 @@ button:hover {
         transform: translate(-50%, -50%);
     }
 
+    .homeDatum h1 {
+        font-size: 10vw;
+    }
+
     .homeTitle {
-        top: 3%;
-        left: 3%;
+        top: calc(var(--header-footer-height-width));
+        left: calc(var(--header-footer-height-width) / 2);
     }
 
     .homeTitle h1 {
@@ -1616,8 +1636,8 @@ button:hover {
 
     .homeSticker {
         position: absolute;
-        bottom: 10%;
-        left: 5%;
+        bottom: calc(var(--header-footer-height-width)*1.5);
+        left: calc(var(--header-footer-height-width) / 3);
         z-index: 5;
     }
 
@@ -1625,6 +1645,12 @@ button:hover {
     /* Pages */
     /* Pages */
     /* Pages */
+
+    .programmContainer,
+    .aboutContainer,
+    .contactContainer {
+        height: 100%;
+    }
 
     /* Containers (Animation) */
 
@@ -1649,6 +1675,12 @@ button:hover {
         left: 0;
         width: calc(100% - var(--header-footer-height-width));
         border-left: none;
+        height: 100%;
+        top: -100%;
+    }
+
+    .aboutContainer.open {
+        top: 0;
     }
 
     .aboutContainer.contactOpen {
@@ -1660,6 +1692,10 @@ button:hover {
         right: calc(-100% - var(--border-thickness));
         height: 100%;
         width: 100%;
+    }
+
+    .contactContainer.open {
+        height: 100%;
     }
 
     /* Close pages Container */
@@ -1684,11 +1720,11 @@ button:hover {
     .programmDatum {
         color: white;
         background-color: black;
-        height: calc(var(--header-footer-height-width) * 2);
+        height: calc(var(--header-footer-height-width));
     }
 
     .programmDatum h3 {
-        transform: translate(-50%, -35%);
+        transform: translate(-50%, -65%);
     }
 
     .programmTag {
@@ -1744,11 +1780,15 @@ button:hover {
     /* About Page */
 
     .aboutContentContainer {
-        height: calc(100%h - var(--header-footer-height-width) * 6);
+        height: calc(100% - var(--header-footer-height-width) * 4);
+    }
+
+    .aboutNavi {
+        grid-template-columns: auto auto;
     }
 
     .aboutNavi div {
-        height: calc(var(--header-footer-height-width));
+        height: calc(var(--header-footer-height-width) / 3 * 2);
         border-bottom: var(--border-thickness) solid var(--rkt-red);
         border-right: var(--border-thickness) solid var(--rkt-red);
         width: auto;
@@ -1762,7 +1802,7 @@ button:hover {
     }
 
     .aboutNavi small {
-        transform: translate(-50%, 30%);
+        transform: translate(-50%, 10%);
     }
 
     /* Contact Page */
@@ -1788,6 +1828,11 @@ button:hover {
         font-size: 2vh;
     }
 
+    .crowdfoundingSticker {
+        width: calc(var(--header-footer-height-width) * 2.3);
+        height: calc(var(--header-footer-height-width) * 2.3);
+    }
+
     .crowdfoundingSticker:hover {
         transform: rotate(10deg);
 
@@ -1795,11 +1840,11 @@ button:hover {
 
     .crowdfoundingSticker h2,
     .crowdfoundingSticker p {
-        line-height: 1.1;
+        line-height: 1.2;
     }
 
     .crowdfoundingSticker h2 {
-        font-size: 3vh;
+        font-size: 1.1rem;
     }
 
     /* Crowdfounding Page */

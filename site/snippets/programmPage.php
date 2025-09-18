@@ -14,5 +14,4 @@
     <div class="programmContentContainer" id="programmGrid">
         <?php snippet('porgrammPunkt') ?>
     </div>
-
 </div>
