@@ -472,7 +472,8 @@ button:hover {
     right: calc(-33.3333vw - var(--border-thickness));
     height: 100vh;
     width: 33.3333vw;
-    overflow: hidden; /*XXXX*/
+    overflow: hidden;
+    /*XXXX*/
     z-index: 41;
 }
 
@@ -533,6 +534,10 @@ button:hover {
     top: 0;
     margin-top: 0;
     height: calc(100vh - var(--header-footer-height-width)/2*7);
+}
+
+.aboutAware {
+    padding-bottom: 0px;
 }
 
 .programmContentContainer {
@@ -1689,8 +1694,8 @@ button:hover {
     /* Programm Page */
 
     .filterButtonsContainer {
-        width: calc(90% - var(--header-footer-height-width));
-        left: 5%;
+        width: calc(100% - 50px);
+        left: 25px;
     }
 
     .filterButtonsContainer.open {
@@ -1762,6 +1767,10 @@ button:hover {
 
     .aboutContentContainer {
         height: calc(100% - var(--header-footer-height-width) * 3);
+    }
+
+    .aboutAware {
+        padding-bottom: 50px;
     }
 
     .aboutNavi {
