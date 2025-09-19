@@ -4,6 +4,7 @@
             <?php snippet('closeButton') ?>
         </div>
         <Button data-filter="alle">Alle</Button>
+        <Button data-filter="performatives">Performatives</Button>
         <Button data-filter="musik">Musik</Button>
         <Button data-filter="film">Film</Button>
         <Button data-filter="theorie">Theorie</Button>

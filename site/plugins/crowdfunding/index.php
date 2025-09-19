@@ -192,7 +192,7 @@ function crowdfundingEnsureTable(): void
         $stmt->execute([
             ':raised' => 0,
             ':goal'   => 12000,
-            ':start'  => '2025-09-22',
+            ':start'  => '2025-09-20',
             ':end'    => '2025-10-16',
             ':sup'    => 0,
         ]);
@@ -204,7 +204,8 @@ function crowdfundingEnsureTable(): void
     $db->exec('DELETE FROM campaign_status');
     $stmt = $db->prepare('UPDATE campaign_status SET goal = :goal WHERE id = 1');
     $stmt->execute([':goal' => 20000]);
-    $stmt->execute([':end' => '2025-10-12']);
+    $stmt->execute([':start' => '2025-09-20']);
+    $stmt->execute([':end' => '2025-10-16']);
     */
 
 }
