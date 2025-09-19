@@ -1,5 +1,6 @@
 // Base URL for API – default to current origin to avoid CORS issues
 const devEnv = window?.config?.apiUrl || window.location.origin;
+const foundingContainer = document.getElementById('foundingCampagneContainer');
 
 // Get campaign status and update page elements
 async function getCampaignStatus() {
@@ -121,7 +122,7 @@ function updateCampaignStatus(status) {
   const remainingTime = endDate.getTime() - today.getTime();
   const remainingDaysCount = Math.ceil(remainingTime / (1000 * 3600 * 24));
   remainingDays.textContent = `${remainingDaysCount}`;
-  console.log("End date from API:", endDate);
+  //console.log("End date from API:", endDate);
 
   // Update amount raised
   const amountRaisedElement = document.getElementById("amount-raised");
@@ -328,6 +329,8 @@ function createGoodieElement(goodie) {
       donateAmount(goodie.price, goodieName);
     } else {
       donateAmount(goodie.price, goodie.name);
+      foundingContainer.scrollIntoView({ behavior: 'smooth' });
+      //console.log('ScrollToTop');
     }
   }
 
@@ -360,7 +363,6 @@ function showRewards() {
 
 // "Jetzt spenden" button scrolls to donation form and focuses the amount input
 document.getElementById('goto-top').addEventListener('click', function () {
-  const foundingContainer = document.getElementById('foundingCampagneContainer');
   foundingContainer.scrollIntoView({ behavior: 'smooth' });
 
   // Focus on the amount input after scrolling
