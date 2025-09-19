@@ -651,19 +651,23 @@ button:hover {
 }
 
 .programmPunkt h2 {
-    color: var(--rkt-red);
+    color: black;
+    font-family: 'ABCFavoritEdu-Book';
     line-height: 1.1;
     padding-inline: 1vw;
 }
 
 .programmPunkt h3 {
+    font-size: 2.5vh;
+    color: var(--rkt-red);
     line-height: 1;
     padding-inline: 1vw;
 }
 
 .programmPunkt a {
     cursor: help;
-    color: black;
+    color: var(--rkt-red);
+    font-family: 'ABCFavoritLiningEdu-Book';
 }
 
 .programmPunkt button {
@@ -1688,7 +1692,7 @@ button:hover {
 
     .closeProgrammContainer {
         width: 50%;
-        padding-bottom: calc((var(--header-footer-height-width) / 2));
+        padding-bottom: calc((var(--header-footer-height-width) / 4));
     }
 
     /* Programm Page */
@@ -1740,6 +1744,10 @@ button:hover {
 
     .programmPunkt button:hover {
         width: 50%;
+    }
+
+    .programmPunkt h3 {
+        font-size: 1.3rem;
     }
 
     .programmInfoContainer {

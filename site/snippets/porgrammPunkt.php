@@ -24,12 +24,12 @@
                     $color = sprintf("#%02x%02x%02x", $r, $g, $b); ?>
                     <div class="programmCoverImagePlaceholder" style="background-color: <?php echo $color; ?>; height: <?php echo $g; ?>rem"></div>
                 <?php endif ?>
-                <h2><?= $punkt->title() ?></h2>
                 <h3><?= $punkt->von()->toDate('H:i') ?>–<?= $punkt->bis()->toDate('H:i') ?> <br>
                     <?php if ($punkt->locationLink()->isNotEmpty()): ?>
                         <a href="<?= $punkt->locationLink() ?>" target="_blank">
                             <?php endif ?><?= $punkt->location() ?></a>
                 </h3>
+                <h2><?= $punkt->title() ?></h2>
                 <?php if ($punkt->copyright()->isNotEmpty()): ?><div class="bildCopyright">↑ Photo © <?= $punkt->copyright() ?></div><?php endif ?>
                 <?php if ($punkt->details()->isNotEmpty() || $punkt->veranstaltungsDetails()->isNotEmpty()): ?>
                     <button>INFO</button>
