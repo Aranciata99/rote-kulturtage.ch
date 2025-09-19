@@ -503,9 +503,9 @@ button:hover {
     border-bottom: var(--border-thickness) solid var(--rkt-red);
 }
 
-.closeContactContainer {
-    position: fixed;
-}
+/*.closeContactContainer {
+    position: relative;
+}*/
 
 .closeFoundingContainer {
     top: 2vh;

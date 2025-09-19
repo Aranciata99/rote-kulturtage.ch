@@ -65,13 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const amountInput = document.getElementById("amount");
       const amount = parseInt(amountInput.value);
       console.log('Amount entered:', amount);
-      
+
       if (!amount || amount < 1) {
         alert("Bitte geben Sie einen gültigen Betrag ein (mindestens CHF 1).");
         amountInput.focus();
         return;
       }
-      
+
       donateAmount(amount, "Spende");
     });
   } else {
@@ -83,24 +83,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function donateAmount(amount, purpose) {
   console.log('donateAmount called with:', amount, purpose);
-  
+
   const paymentUrl = `https://rotekulturtage.payrexx.com/de/vpos?amount=${amount}&purpose=${purpose}&currency=CHF`;
   console.log('Payment URL:', paymentUrl);
 
   // Open the payment page in the iframe and show the modal
   const iframe = document.getElementById("payment-iframe");
   const modal = document.getElementById("payment-modal");
-  
+
   if (!iframe) {
     console.error('Payment iframe not found!');
     return;
   }
-  
+
   if (!modal) {
     console.error('Payment modal not found!');
     return;
   }
-  
+
   iframe.src = paymentUrl;
   modal.style.display = "block";
   console.log('Modal should now be visible');
@@ -120,7 +120,8 @@ function updateCampaignStatus(status) {
   const endDate = new Date(status.endDate);
   const remainingTime = endDate.getTime() - today.getTime();
   const remainingDaysCount = Math.ceil(remainingTime / (1000 * 3600 * 24));
- remainingDays.textContent = `${remainingDaysCount}`;
+  remainingDays.textContent = `${remainingDaysCount}`;
+  console.log("End date from API:", endDate);
 
   // Update amount raised
   const amountRaisedElement = document.getElementById("amount-raised");
@@ -358,10 +359,10 @@ function showRewards() {
 }
 
 // "Jetzt spenden" button scrolls to donation form and focuses the amount input
-document.getElementById('goto-top').addEventListener('click', function() {
+document.getElementById('goto-top').addEventListener('click', function () {
   const foundingContainer = document.getElementById('foundingCampagneContainer');
   foundingContainer.scrollIntoView({ behavior: 'smooth' });
-  
+
   // Focus on the amount input after scrolling
   setTimeout(() => {
     const amountInput = document.getElementById('amount');

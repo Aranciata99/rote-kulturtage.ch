@@ -11,9 +11,9 @@
                 </h3>
 
                 <div class="goal-amount">
-                    <span id="progress-text"></span> von CHF 50’000
+                    <span id="progress-text"></span>
                     <br>
-                    <span id="supporters-count"></span> Unterstützer:innen
+                    <span id="supporters-count"></span>
                 </div>
 
                 <div class="container-progress">

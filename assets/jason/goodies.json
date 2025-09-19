@@ -8,7 +8,7 @@
     {
       "id": 2,
       "name": "Plakat der Roten Kulturtage",
-      "description": "Das A2-Plakat der Roten Kulturtage: Silbrig schimmernd, rot durchzogen und ein liebevoller Siebdruck: Perfekt für den Sitzungsraum oder übers Bett.",
+      "description": "Das A1-Plakat der Roten Kulturtage: Silbrig schimmernd, rot durchzogen und ein liebevoller Siebdruck: Perfekt für den Sitzungsraum oder übers Bett. Plus dreierlei Sticker!",
       "price": 40
     },
     {
@@ -25,21 +25,9 @@
     },
     {
       "id": 5,
-      "name": "Bücherpaket",
-      "description": "Verschiedene literarische leckerbissen",
-      "price": 150
-    },
-    {
-      "id": 6,
       "name": "Marxköpfe",
-      "description": "Du wolltest schon immer ein Keramik-Marxkopf, der als Vase oder lasse fungieren kann? Laurie Ubezio macht's möglich!",
+      "description": "Du wolltest schon immer ein Keramik-Marxkopf, der als Vase fungieren kann? Hol ihn dir jetzt!",
       "price": 250
-    },
-    {
-      "id": 7,
-      "name": "Kunst Claudi",
-      "description": "Limitiertes Kunstwerk einer jungen Zürcher Künstlerin",
-      "price": 500
     }
   ]
   

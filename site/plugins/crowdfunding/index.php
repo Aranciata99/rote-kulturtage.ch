@@ -17,7 +17,9 @@ Kirby::plugin('custom/crowdfunding', [
     // API Routes
     // --------------------------------------------------------
     'api' => [
-        'authentication' => function() { return true; },
+        'authentication' => function () {
+            return true;
+        },
         'routes' => [
             [
                 'pattern' => 'campaign-status',
@@ -25,7 +27,7 @@ Kirby::plugin('custom/crowdfunding', [
                 'action'  => function () {
                     // Ensure table exists
                     crowdfundingEnsureTable();
-                    
+
                     $db   = crowdfundingDb();
                     $stmt = $db->query('SELECT * FROM campaign_status LIMIT 1');
                     $row  = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
@@ -63,7 +65,7 @@ Kirby::plugin('custom/crowdfunding', [
                 'action'  => function () {
                     // Ensure all tables exist
                     crowdfundingEnsureTable();
-                    
+
                     $payload = kirby()->request()->body()->toArray();
                     $rawBody = kirby()->request()->body()->toString();
 
@@ -72,7 +74,7 @@ Kirby::plugin('custom/crowdfunding', [
                     if ($webhookSecret) {
                         $signature = $_SERVER['HTTP_X_PAYREXX_SIGNATURE'] ?? '';
                         $expectedSignature = hash_hmac('sha256', $rawBody, $webhookSecret);
-                        
+
                         if (!hash_equals($expectedSignature, $signature)) {
                             return new Response('Unauthorized', 'text/plain', 401);
                         }
@@ -88,15 +90,15 @@ Kirby::plugin('custom/crowdfunding', [
                     if ($transactionStatus === 'confirmed') {
                         $amount = ($payload['transaction']['amount'] ?? 0) / 100.0;
                         $transactionId = $payload['transaction']['id'] ?? '';
-                        
+
                         error_log("Processing confirmed transaction: ID={$transactionId}, Amount={$amount}");
-                        
+
                         // Prevent duplicate processing
                         $db = crowdfundingDb();
                         $stmt = $db->prepare('SELECT COUNT(*) FROM transactions WHERE transaction_id = :tid');
                         $stmt->bindValue(':tid', $transactionId);
                         $stmt->execute();
-                        
+
                         if ($stmt->fetchColumn() == 0) {
                             // Record transaction to prevent duplicates
                             $stmt = $db->prepare('INSERT INTO transactions (transaction_id, amount, processed_at) VALUES (:tid, :amt, :processed)');
@@ -105,12 +107,12 @@ Kirby::plugin('custom/crowdfunding', [
                                 ':amt' => $amount,
                                 ':processed' => date('Y-m-d H:i:s')
                             ]);
-                            
+
                             // Update campaign status
                             $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 1');
                             $stmt->bindValue(':amt', $amount);
                             $stmt->execute();
-                            
+
                             error_log("Transaction processed successfully. New total raised: " . ($amount + 25)); // Assuming previous amount
                         } else {
                             error_log("Transaction {$transactionId} already processed, skipping.");
@@ -145,14 +147,14 @@ function crowdfundingDb(): PDO
     // SQLite database stored in site/storage/
     $dbPath = dirname(__DIR__, 2) . '/storage/crowdfunding.sqlite';
     $dbDir = dirname($dbPath);
-    
+
     // Ensure storage directory exists
     if (!is_dir($dbDir)) {
         mkdir($dbDir, 0755, true);
     }
 
     $dsn = "sqlite:{$dbPath}";
-    
+
     $pdo = new PDO($dsn, null, null, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -163,6 +165,7 @@ function crowdfundingDb(): PDO
 
 function crowdfundingEnsureTable(): void
 {
+
     $db = crowdfundingDb();
     $db->exec('CREATE TABLE IF NOT EXISTS campaign_status (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -188,12 +191,22 @@ function crowdfundingEnsureTable(): void
                               VALUES (:raised, :goal, :start, :end, :sup)');
         $stmt->execute([
             ':raised' => 0,
-            ':goal'   => 15000,
-            ':start'  => '2025-09-16',
+            ':goal'   => 12000,
+            ':start'  => '2025-09-22',
             ':end'    => '2025-10-16',
             ':sup'    => 0,
         ]);
     }
+
+    //refresh campaign Status
+
+    /*
+    $db->exec('DELETE FROM campaign_status');
+    $stmt = $db->prepare('UPDATE campaign_status SET goal = :goal WHERE id = 1');
+    $stmt->execute([':goal' => 20000]);
+    $stmt->execute([':end' => '2025-10-12']);
+    */
+
 }
 
 /**
