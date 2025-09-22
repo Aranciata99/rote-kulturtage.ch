@@ -43,7 +43,17 @@ Kirby::plugin('custom/crowdfunding', [
                     $amount  = isset($payload['amount']) ? (float)$payload['amount'] : 0;
 
                     $db   = crowdfundingDb();
-                    $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt WHERE id = 1');
+                    // Get first row
+                    $stmt = $db->query('SELECT id FROM campaign_status ORDER BY id ASC LIMIT 1');
+                    $idRow = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $id = $idRow['id'] ?? null;
+
+                    if ($id !== null) {
+                        $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt WHERE id = :id');
+                        $stmt->bindValue(':amt', $amount);
+                        $stmt->bindValue(':id', $id);
+                        $stmt->execute();
+                    }
                     $stmt->bindValue(':amt', $amount);
                     $stmt->execute();
 
@@ -207,7 +217,6 @@ function crowdfundingEnsureTable(): void
     $stmt->execute([':start' => '2025-09-20']);
     $stmt->execute([':end' => '2025-10-16']);
     */
-
 }
 
 /**

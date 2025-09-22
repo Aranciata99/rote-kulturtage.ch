@@ -16,8 +16,8 @@
     </div>
 </a>
 
-<a href="<?= $pages = $site->find('crowdfounding') ?>">
+<a href="<?= $pages = $site->find('crowdfunding') ?>">
     <div class="crowdFoundingHeader">
-        <p><?= page('crowdfounding')?->title()->upper() ?></p>
+        <p><?= page('crowdfunding')?->title()->upper() ?></p>
     </div>
 </a>
