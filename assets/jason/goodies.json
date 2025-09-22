@@ -3,7 +3,8 @@
       "id": 1,
       "name": "Sticker & Feuerzeug",
       "description": "Paket aus dreierlei Stickern auf transparenter Folie gedruckt und ein customizesed Feuerzeug.",
-      "price": 20
+      "price": 20,
+      "image": "/assets/goodies/feuerzeug_sticker.jpg"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "id": 3,
       "name": "Shirt schwarz/silber",
       "description": "T-Shirt schwarz und silber, ob Langarm oder Kurzarm, wunderbare Farbkombinationen mit hochwertigem Print.",
-      "price": 50
+      "price": 50,
+      "image": "/assets/goodies/shirt_silber.jpg"
     },
     {
       "id": 4,

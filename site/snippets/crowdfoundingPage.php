@@ -7,7 +7,7 @@
             <div class="closeFoundingContainer">
                 <a href="<?= $pages = $site->find('home') ?>"><?php snippet('closeButton') ?></a>
             </div>
-            <h2><?= page('crowdfounding')?->title() ?> <br><span class="helvetica">♥ ♥ ♥ ♥ ♥</span></h2>
+            <h2><?= page('crowdfunding')?->title() ?> <br><span class="helvetica">♥ ♥ ♥ ♥ ♥</span></h2>
             <p><?= $page->beschrieb()->kt() ?></p> <br>
             <button id="goto-top" title="Go to top">Jetzt spenden</button>
         </div>

@@ -1,4 +1,4 @@
-<a href="<?= $pages = $site->find('crowdfounding') ?>" style="font-style: normal;">
+<a href="<?= $pages = $site->find('crowdfunding') ?>" style="font-style: normal;">
     <div class="crowdfoundingSticker">
         <h2><span class="helvetica">♥ ♥ ♥</span><br>
             Unterstütze uns!<br>
