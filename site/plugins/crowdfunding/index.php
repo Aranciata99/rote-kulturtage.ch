@@ -119,7 +119,7 @@ Kirby::plugin('custom/crowdfunding', [
                             ]);
 
                             // Update campaign status
-                            $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 1');
+                            $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 16');
                             $stmt->bindValue(':amt', $amount);
                             $stmt->execute();
 
