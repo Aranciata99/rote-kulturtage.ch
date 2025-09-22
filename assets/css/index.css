@@ -554,6 +554,10 @@ button:hover {
     height: calc(100vh - var(--header-footer-height-width)*2);
 }
 
+.contactVerein p {
+    margin-top: -25px;
+}
+
 /* Programm Page */
 
 /* Programm Page / Filter */
@@ -716,27 +720,6 @@ button:hover {
     text-align: left;
 }
 
-/* .programmInfoText small {
-    padding-right: calc(var(--header-footer-height-width)/2);
-} */
-
-/* .closeProgrammInfo {
-    position: absolute;
-    height: calc(var(--header-footer-height-width)/2);
-    width: calc(var(--header-footer-height-width)/2);
-    right: 0;
-    top: 0;
-    background-color: black;
-    border-radius: 50px;
-}
-
-.closeProgrammInfo h3 {
-    color: white;
-    position: absolute;
-    top: -93%;
-    left: 15%;
-} */
-
 .bildCopyright {
     position: absolute;
     text-align: center;
@@ -803,38 +786,49 @@ button:hover {
     padding-left: calc(var(--header-footer-height-width)/3);
 }
 
-.contactNewsletter {
-    display: none;
-    /*XXXXX*/
-}
-
 .newsletterForm {
     display: grid;
 }
 
-.newsletterForm input {
-    margin-bottom: 1vh;
-    height: calc(var(--header-footer-height-width));
+.contactNewsletter input {
+    position: relative;
+    font-size: 2.2vh;
+    margin-bottom: 0;
+    height: calc(var(--header-footer-height-width)/4*3);
     border: var(--border-thickness) solid;
     text-align: left;
     outline: none;
     padding-inline: 2vh;
+    width: calc(100% - var(--header-footer-height-width)/5*4);
 }
 
-.newsletterForm input::placeholder {
+.inf-form input::placeholder {
     font-size: 2.2vh;
     color: hsla(0, 0%, 0%, 0.25);
     cursor: text;
 }
 
-.newsletterForm button {
+.inf-content small {
+    font-size: 1.7vh;
+    line-height: 1;
+}
+
+.contactNewsletter a {
+    color: black;
+    font-size: 1.7vh;
+}
+
+.inf-content button {
     text-align: left;
     font-size: 2.2vh;
     padding-inline: 2vh;
     height: calc(var(--header-footer-height-width));
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: -25px;
 }
 
-.newsletterForm button:focus {
+.inf-content button:focus {
     border-color: var(--rkt-red);
 }
 
@@ -1859,6 +1853,10 @@ button:hover {
 
     .crowdfoundingSticker span {
         font-size: 1.2rem;
+    }
+
+    .contactNewsletter input {
+        width: calc(100% - 44px);
     }
 
     /* Crowdfounding Page */

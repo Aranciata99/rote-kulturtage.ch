@@ -20,5 +20,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.querySelector('[data-filter="all"]').click();
+  document.querySelector('[data-filter="alle"]').click();
 });
