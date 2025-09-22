@@ -226,6 +226,14 @@ function createGoodieElement(goodie) {
   const goodieDescription = document.createElement("p");
   goodieDescription.textContent = goodie.description;
   goodieDiv.appendChild(goodieDescription);
+  
+  if (goodie.image) {
+    const goodieImage = document.createElement("img");
+    goodieImage.src = goodie.image;
+    goodieImage.alt = goodie.name;
+    goodieImage.className = "goodie-image";
+    goodieDiv.appendChild(goodieImage);
+  }
 
   const goodiePrice = document.createElement("div");
   goodiePrice.className = "price";

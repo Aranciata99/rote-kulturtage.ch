@@ -9,7 +9,8 @@
       "id": 2,
       "name": "Plakat der Roten Kulturtage",
       "description": "Das A1-Plakat der Roten Kulturtage: Silbrig schimmernd, rot durchzogen und ein liebevoller Siebdruck: Perfekt für den Sitzungsraum oder übers Bett. Plus dreierlei Sticker!",
-      "price": 40
+      "price": 40,
+      "image": "/assets/goodies/plakat.jpg"
     },
     {
       "id": 3,
@@ -21,13 +22,15 @@
       "id": 4,
       "name": "Shirt rot/grau",
       "description": "T-Shirt rot und grau, ob Langarm oder Kurzarm, wunderbare Farbkombinationen mit hochwertigem Print.",
-      "price": 50
+      "price": 50,
+      "image": "/assets/goodies/shirt_rotgrau.jpg"
     },
     {
       "id": 5,
       "name": "Marxköpfe",
       "description": "Du wolltest schon immer ein Keramik-Marxkopf, der als Vase fungieren kann? Hol ihn dir jetzt!",
-      "price": 250
+      "price": 250,
+      "image": "/assets/goodies/marxkoepfe.jpg"
     }
   ]
   
