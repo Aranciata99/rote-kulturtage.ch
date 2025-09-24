@@ -28,6 +28,7 @@
                     .inf-main_98ea09126edd6eea0b7affbbeb0d9b17 .inf-success p a {
                         color: black;
                         font-size: 2.2vh;
+                        border-radius: 0px;
                     }
 
                     .inf-main_98ea09126edd6eea0b7affbbeb0d9b17 h4 {
@@ -47,7 +48,7 @@
                         height: calc(var(--header-footer-height-width) / 5 * 4);
                         color: black;
                         border: var(--border-thickness) solid black;
-                        border-radius: none;
+                        border-radius: 0px;
                         padding-inline: 2vh;
                     }
 
@@ -81,7 +82,7 @@
                         padding-inline: 2vh;
                         top: -18px;
                         cursor: pointer;
-                        border-radius: none;
+                        border-radius: 0px;
                         width: 100%;
                     }
 
