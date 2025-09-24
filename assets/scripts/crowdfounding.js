@@ -84,29 +84,32 @@ document.addEventListener("DOMContentLoaded", () => {
   main();
 });
 
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
 function donateAmount(amount, purpose) {
   console.log('donateAmount called with:', amount, purpose);
 
-  const paymentUrl = `https://rotekulturtage.payrexx.com/de/vpos?amount=${amount}&purpose=${purpose}&currency=CHF`;
-  console.log('Payment URL:', paymentUrl);
+  const paymentUrl = `https://rotekulturtage.payrexx.com/de/vpos?amount=${amount}&purpose=${encodeURIComponent(purpose)}&currency=CHF`;
 
-  // Open the payment page in the iframe and show the modal
-  const iframe = document.getElementById("payment-iframe");
-  const modal = document.getElementById("payment-modal");
+  if (isMobile()) {
+    // Auf Mobilgeräten: In neuem Tab öffnen
+    window.open(paymentUrl, '_blank');
+  } else {
+    // Desktop: In iframe anzeigen
+    const iframe = document.getElementById("payment-iframe");
+    const modal = document.getElementById("payment-modal");
 
-  if (!iframe) {
-    console.error('Payment iframe not found!');
-    return;
+    if (!iframe || !modal) {
+      console.error('Payment iframe or modal not found!');
+      return;
+    }
+
+    iframe.src = paymentUrl;
+    modal.style.display = "block";
+    console.log('Modal should now be visible');
   }
-
-  if (!modal) {
-    console.error('Payment modal not found!');
-    return;
-  }
-
-  iframe.src = paymentUrl;
-  modal.style.display = "block";
-  console.log('Modal should now be visible');
 }
 function updateCampaignStatus(status) {
   // Update progress bar
