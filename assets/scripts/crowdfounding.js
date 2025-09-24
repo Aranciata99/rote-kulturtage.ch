@@ -1,6 +1,6 @@
 // Base URL for API – default to current origin to avoid CORS issues
 const devEnv = window?.config?.apiUrl || window.location.origin;
-const foundingContainer = document.getElementById('foundingCampagneContainer');
+const foundingContainer = document.getElementById('TopDiv');
 
 // Get campaign status and update page elements
 async function getCampaignStatus() {
@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       donateAmount(amount, "Spende");
+      foundingContainer.scrollIntoView({ behavior: 'smooth' });
+      //console.log('ScrollToTop');
     });
   } else {
     console.error('Donate form not found!');

@@ -1826,10 +1826,12 @@ button:hover {
     }
 
     .toggleFilterMenue span {
-        position: relative;
-        font-size: 1.3rem;
+        position: absolute;
+        font-size: min(4.5vw, 18px);
+        
         line-height: 0;
-        top: -5px;
+        top: 50%;
+        transform: translate(-50%, 50%);
     }
 
     .closeFilterMenue {
@@ -1844,10 +1846,11 @@ button:hover {
     }
 
     .closeFilterMenue span {
-        position: relative;
+        position: absolute;
         font-size: 2rem;
         line-height: 0;
-        top: -2px;
+        top: 40%;
+        transform: translate(-50%, 50%);
     }
 
     /* About Page */
@@ -1885,7 +1888,7 @@ button:hover {
     /* Contact Page */
 
     .contactContentContainer {
-        height: calc(100vh - var(--header-footer-height-width)*4);
+        height: calc(100% - var(--header-footer-height-width)*4);
     }
 
     .newsletterForm input {

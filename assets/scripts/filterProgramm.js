@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.getElementById("closeFilterMenue");
   const filterContainer = document.querySelector(".filterButtonsContainer");
 
-  if (window.innerWidth >= 900) {
+  //if (window.innerWidth >= 900) {
 
     //Toggle Filter Menue
     toggleButton.addEventListener("click", function () {
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
     //Close Filter Menue
     closeButton.addEventListener("click", function () {
       filterContainer.style.display = "none";
-      items.forEach(item => {
+      /*items.forEach(item => {
         item.style.display = "block";
-      });
+      });*/
     });
-  }
+  //}
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
