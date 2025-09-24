@@ -335,6 +335,8 @@ function createGoodieElement(goodie) {
         goodieColor.options[goodieColor.selectedIndex].value;*/
       const goodieName = `${goodie.name} - ${goodieSizeValue}`; //- ${goodieColorValue}
       donateAmount(goodie.price, goodieName);
+      foundingContainer.scrollIntoView({ behavior: 'smooth' });
+      //console.log('ScrollToTop');
     } else {
       donateAmount(goodie.price, goodie.name);
       foundingContainer.scrollIntoView({ behavior: 'smooth' });

@@ -47,6 +47,7 @@
                         height: calc(var(--header-footer-height-width) / 5 * 4);
                         color: black;
                         border: var(--border-thickness) solid black;
+                        border-radius: none;
                         padding-inline: 2vh;
                     }
 
@@ -80,6 +81,7 @@
                         padding-inline: 2vh;
                         top: -18px;
                         cursor: pointer;
+                        border-radius: none;
                         width: 100%;
                     }
 
