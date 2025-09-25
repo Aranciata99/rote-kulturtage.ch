@@ -6,7 +6,7 @@
                 </div>
             </div>
             <div class="campaignContainer">
-                <h3 class="amount-raised" style="margin-bottom: 10px; margin-top: 10px;">
+                <h3 class="amount-raised" style="margin-bottom: 10px; margin-top: 50px;">
                     <span id="amount-raised"></span>
                 </h3>
 

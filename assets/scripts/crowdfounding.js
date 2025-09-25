@@ -38,7 +38,9 @@ async function main() {
   if (Array.isArray(goodiesList)) {
     goodiesList.forEach((goodie) => {
       const goodieElement = createGoodieElement(goodie);
-      goodiesContainer.appendChild(goodieElement);
+      if (goodieElement) {
+        goodiesContainer.appendChild(goodieElement);
+      }
     });
   }
   // Add event listener to close the modal
@@ -221,6 +223,7 @@ function setAmount(value) {
 }
 
 function createGoodieElement(goodie) {
+
   const goodieDiv = document.createElement("div");
   goodieDiv.className = "goodie";
 
@@ -231,7 +234,7 @@ function createGoodieElement(goodie) {
   const goodieDescription = document.createElement("p");
   goodieDescription.textContent = goodie.description;
   goodieDiv.appendChild(goodieDescription);
-  
+
   if (goodie.image) {
     const goodieImage = document.createElement("img");
     goodieImage.src = goodie.image;
@@ -244,6 +247,15 @@ function createGoodieElement(goodie) {
   goodiePrice.className = "price";
   goodiePrice.textContent = `${goodie.price} CHF`;
   goodieDiv.appendChild(goodiePrice);
+
+  if (goodie.limit_count <= 0) {
+    return null; // kein Element anzeigen
+  }
+
+  const goodieLimit = document.createElement("div");
+  goodieLimit.textContent = `noch ${goodie.limit_count} verfügbar`;
+  goodieLimit.className = "goodie-limit";
+  goodieDiv.appendChild(goodieLimit);
 
   //When creating element id 3, show two select pickers for the size and color
   if (goodie.id === 3) {

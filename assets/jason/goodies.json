@@ -4,6 +4,7 @@
       "name": "Sticker & Feuerzeug",
       "description": "Paket aus dreierlei Stickern auf transparenter Folie gedruckt und ein customizesed Feuerzeug.",
       "price": 20,
+      "limit": 1,
       "image": "/assets/goodies/feuerzeug_sticker.jpg"
     },
     {
@@ -11,6 +12,7 @@
       "name": "Plakat der Roten Kulturtage",
       "description": "Das A1-Plakat der Roten Kulturtage: Silbrig schimmernd, rot durchzogen und ein liebevoller Siebdruck: Perfekt für den Sitzungsraum oder übers Bett. Plus dreierlei Sticker!",
       "price": 40,
+      "limit": 20,
       "image": "/assets/goodies/plakat.jpg"
     },
     {
@@ -18,6 +20,7 @@
       "name": "Shirt schwarz/silber",
       "description": "T-Shirt schwarz und silber, ob Langarm oder Kurzarm, wunderbare Farbkombinationen mit hochwertigem Print.",
       "price": 50,
+      "limit": 20,
       "image": "/assets/goodies/shirt_silber.jpg"
     },
     {
@@ -25,6 +28,7 @@
       "name": "Shirt rot/grau",
       "description": "T-Shirt rot und grau, ob Langarm oder Kurzarm, wunderbare Farbkombinationen mit hochwertigem Print.",
       "price": 50,
+      "limit": 20,
       "image": "/assets/goodies/shirt_rotgrau.jpg"
     },
     {
@@ -32,6 +36,7 @@
       "name": "Marxköpfe",
       "description": "Du wolltest schon immer ein Keramik-Marxkopf, der als Vase fungieren kann? Hol ihn dir jetzt!",
       "price": 250,
+      "limit": 3,
       "image": "/assets/goodies/marxkoepfe.jpg"
     }
   ]

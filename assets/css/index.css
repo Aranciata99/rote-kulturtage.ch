@@ -1240,6 +1240,16 @@ button:hover {
     color: var(--rkt-red);
 }
 
+.goodie-limit {
+    position: absolute;
+    font-size: 1.3vw;
+    color: var(--rkt-red);
+    text-align: right;
+    width: 100%;
+    left: 0%;
+    transform: translate(-25px, -50px);
+}
+
 .goodie-size {
     width: auto;
     font-size: 1vw;
@@ -1419,6 +1429,11 @@ button:hover {
     .price {
         font-size: 2.5vw;
     }
+
+    .goodie-limit {
+        font-size: 1.5vw;
+    }
+
 }
 
 @media (max-width: 1150px) {
@@ -1503,6 +1518,11 @@ button:hover {
 
     .goodie-size {
         font-size: 2vw;
+    }
+
+    .goodie-limit {
+        font-size: 2.3vw;
+        transform: translate(-20px, -40px);
     }
 }
 
@@ -1828,7 +1848,7 @@ button:hover {
     .toggleFilterMenue span {
         position: absolute;
         font-size: min(4.5vw, 18px);
-        
+
         line-height: 0;
         top: 50%;
         transform: translate(-50%, 50%);
@@ -2004,6 +2024,11 @@ button:hover {
         font-size: 1.5rem;
     }
 
+    .goodie-limit {
+        font-size: 1.3rem;
+        transform: translate(-20px, -40px);
+    }
+
     .closeFoundingContainer div div {
         background-color: black;
     }
@@ -2067,5 +2092,11 @@ button:hover {
         width: 100%;
     }
 
-
 }
+
+/*@media (max-width: 400px) {
+    .goodie-limit {
+        font-size: 1rem;
+        transform: translate(-20px, -37px);
+    }
+}*/

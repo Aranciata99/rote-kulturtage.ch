@@ -64,9 +64,11 @@ Kirby::plugin('custom/crowdfunding', [
                 'pattern' => 'goodies',
                 'method'  => 'GET',
                 'action'  => function () {
-                    $path = kirby()->root('index') . '/assets/jason/goodies.json';
-                    $json = file_exists($path) ? file_get_contents($path) : '[]';
-                    return new Response($json, 'application/json');
+                    $db = crowdfundingDb();
+                    $stmt = $db->query('SELECT * FROM goodies');
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    return new Response(json_encode($rows), 'application/json');
                 },
             ],
             [
@@ -119,11 +121,28 @@ Kirby::plugin('custom/crowdfunding', [
                             ]);
 
                             // Update campaign status
-                            $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 16');
+                            $stmt = $db->prepare('UPDATE campaign_status SET amount_raised = amount_raised + :amt, supporters_count = supporters_count + 1 WHERE id = 1');
                             $stmt->bindValue(':amt', $amount);
                             $stmt->execute();
 
                             error_log("Transaction processed successfully. New total raised: " . ($amount + 25)); // Assuming previous amount
+
+                            $purpose = $payload['transaction']['purpose'] ?? '';
+                            $goodieName = trim($purpose);
+
+                            // Prüfen ob Goodie existiert
+                            $stmt = $db->prepare('SELECT id, limit_count FROM goodies WHERE name = :name');
+                            $stmt->execute([':name' => $goodieName]);
+                            $goodie = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                            if ($goodie) {
+                                $newLimit = $goodie['limit_count'] - 1;
+                                $stmt = $db->prepare('UPDATE goodies SET limit_count = :limit WHERE id = :id');
+                                $stmt->execute([
+                                    ':limit' => $newLimit,
+                                    ':id'    => $goodie['id'],
+                                ]);
+                            }
                         } else {
                             error_log("Transaction {$transactionId} already processed, skipping.");
                         }
@@ -133,8 +152,10 @@ Kirby::plugin('custom/crowdfunding', [
                     return new Response('OK', 'text/plain');
                 },
             ]
+
         ]
     ],
+
 
     // --------------------------------------------------------
     // Ready callback: ensure table exists
@@ -177,6 +198,7 @@ function crowdfundingEnsureTable(): void
 {
 
     $db = crowdfundingDb();
+
     $db->exec('CREATE TABLE IF NOT EXISTS campaign_status (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         amount_raised      REAL DEFAULT 0,
@@ -184,6 +206,16 @@ function crowdfundingEnsureTable(): void
         start_date         TEXT,
         end_date           TEXT,
         supporters_count   INTEGER DEFAULT 0
+    )');
+
+    // Create goodie table
+    $db->exec('CREATE TABLE IF NOT EXISTS goodies (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT,
+        price REAL NOT NULL,
+        limit_count INTEGER DEFAULT 0,
+        image TEXT
     )');
 
     // Create transactions table for duplicate prevention
