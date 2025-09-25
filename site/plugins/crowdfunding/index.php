@@ -81,38 +81,26 @@ Kirby::plugin('custom/crowdfunding', [
                     $payload = kirby()->request()->body()->toArray();
                     $rawBody = kirby()->request()->body()->toString();
 
-                    // Verify Payrexx signature (optional but recommended)
-                    $webhookSecret = option('crowdfunding.webhook_secret', ''); // Add to config
-                    if ($webhookSecret) {
-                        $signature = $_SERVER['HTTP_X_PAYREXX_SIGNATURE'] ?? '';
-                        $expectedSignature = hash_hmac('sha256', $rawBody, $webhookSecret);
-
-                        if (!hash_equals($expectedSignature, $signature)) {
-                            return new Response('Unauthorized', 'text/plain', 401);
-                        }
-                    }
-
-                    // Log webhook for debugging
+                    // Log raw payload
                     error_log('Payrexx webhook received: ' . $rawBody);
                     error_log('Webhook payload parsed: ' . json_encode($payload, JSON_PRETTY_PRINT));
 
                     $transactionStatus = $payload['transaction']['status'] ?? null;
-                    error_log('Transaction status: ' . $transactionStatus);
+                    $transactionId = $payload['transaction']['id'] ?? '';
+                    $amount = ($payload['transaction']['amount'] ?? 0) / 100.0;
+
+                    error_log("Transaction status: {$transactionStatus}, ID={$transactionId}, Amount={$amount}");
 
                     if ($transactionStatus === 'confirmed') {
-                        $amount = ($payload['transaction']['amount'] ?? 0) / 100.0;
-                        $transactionId = $payload['transaction']['id'] ?? '';
-
-                        error_log("Processing confirmed transaction: ID={$transactionId}, Amount={$amount}");
+                        $db = crowdfundingDb();
 
                         // Prevent duplicate processing
-                        $db = crowdfundingDb();
                         $stmt = $db->prepare('SELECT COUNT(*) FROM transactions WHERE transaction_id = :tid');
                         $stmt->bindValue(':tid', $transactionId);
                         $stmt->execute();
 
                         if ($stmt->fetchColumn() == 0) {
-                            // Record transaction to prevent duplicates
+                            // Record transaction
                             $stmt = $db->prepare('INSERT INTO transactions (transaction_id, amount, processed_at) VALUES (:tid, :amt, :processed)');
                             $stmt->execute([
                                 ':tid' => $transactionId,
@@ -125,14 +113,11 @@ Kirby::plugin('custom/crowdfunding', [
                             $stmt->bindValue(':amt', $amount);
                             $stmt->execute();
 
-                            error_log("Transaction processed successfully. New total raised: " . ($amount + 25)); // Assuming previous amount
+                            error_log("Transaction processed successfully. New total raised: " . ($amount + 25));
 
-                            $purpose = $payload['transaction']['purpose'] ?? '';
-                            $goodieName = trim($purpose);
-
-                            // Prüfen ob Goodie existiert
-                            $stmt = $db->prepare('SELECT id, limit_count FROM goodies WHERE name = :name');
-                            $stmt->execute([':name' => $goodieName]);
+                            // --- GOODIE HANDLING VIA AMOUNT ---
+                            $stmt = $db->prepare('SELECT id, limit_count, name FROM goodies WHERE price = :price LIMIT 1');
+                            $stmt->execute([':price' => $amount]);
                             $goodie = $stmt->fetch(PDO::FETCH_ASSOC);
 
                             if ($goodie) {
@@ -142,17 +127,21 @@ Kirby::plugin('custom/crowdfunding', [
                                     ':limit' => $newLimit,
                                     ':id'    => $goodie['id'],
                                 ]);
+                                error_log("Goodie '{$goodie['name']}' limit reduced, new limit: {$newLimit}");
+                            } else {
+                                error_log("No matching goodie found for amount: {$amount}");
                             }
+                            // --- END GOODIE HANDLING ---
                         } else {
                             error_log("Transaction {$transactionId} already processed, skipping.");
                         }
                     } else {
                         error_log("Transaction status '{$transactionStatus}' not confirmed, skipping.");
                     }
+
                     return new Response('OK', 'text/plain');
                 },
             ]
-
         ]
     ],
 
