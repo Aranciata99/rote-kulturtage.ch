@@ -390,7 +390,7 @@ button:hover {
 }
 
 .homeDatum h1 {
-    font-size: 4vh;
+    font-size: 6vh;
 
 }
 
@@ -495,8 +495,7 @@ button:hover {
 
 .closeProgrammContainer {
     margin-bottom: calc((var(--header-footer-height-width) / 3));
-    width: calc(100% + (var(--header-footer-height-width) * 2));
-    background-color: white;
+    width: calc(100%);
     border-bottom: var(--border-thickness) solid var(--rkt-red);
 }
 
@@ -571,7 +570,7 @@ button:hover {
 
 .programmContainerHeader {
     position: absolute;
-    width: 60.6666vw;
+    width: 66.6666vw;
     top: 0;
     z-index: 110;
     line-height: 4.2vh;
@@ -1443,6 +1442,7 @@ button:hover {
 }
 
 @media (max-width: 992px) {
+
     .crowdFoundingBackground {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -1753,8 +1753,8 @@ button:hover {
     }
 
     .programmContainerHeader.open {
-        width: calc(90% - var(--header-footer-height-width));
-        left: 5%;
+        width: calc(100% - 50px);
+        left: 25px;
     }
 
     .programmDatum {
@@ -2094,9 +2094,9 @@ button:hover {
 
 }
 
-/*@media (max-width: 400px) {
+@media (max-width: 400px) {
     .goodie-limit {
-        font-size: 1rem;
-        transform: translate(-20px, -37px);
+        font-size: 0.7rem;
+        transform: translate(-20px, -30px);
     }
-}*/
+}
