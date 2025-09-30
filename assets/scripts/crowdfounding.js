@@ -290,7 +290,7 @@ function createGoodieElement(goodie) {
 
   //When creating element id 4, show two select pickers for the size and color
 
-  if (goodie.id === 4) {
+  if (goodie.id === 5) {
     const goodieSize = document.createElement("select");
     goodieSize.className = "goodie-size";
     goodieSize.id = `goodie-size-${goodie.id}`;

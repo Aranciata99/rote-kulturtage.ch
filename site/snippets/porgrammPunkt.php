@@ -8,15 +8,13 @@
             $tagClasses = implode(' ', array_map('trim', $tags)); ?>
             <div class="programmPunkt <?= $tagClasses ?>">
                 <?php if ($punkt->files()->isNotEmpty()): ?>
-                    <?php foreach ($punkt->files()->sortBy('first') as $bild): ?>
-                        <?php if ($bild->isNotEmpty()): ?>
+                        <?php if ($bild = $punkt->bild()->toFile()): ?>
                             <div class="programmCoverImage">
                                 <img src="<?= $bild->url() ?>" draggable="false" loading="lazy" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
                             </div>
                         <?php else: ?>
                             <div class="programmCoverImagePlaceholder"></div>
                         <?php endif ?>
-                    <?php endforeach ?>
                 <?php else: ?>
                     <?php $r = rand(10, 100);
                     $g = rand(10, 20);

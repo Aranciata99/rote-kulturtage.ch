@@ -497,6 +497,7 @@ button:hover {
     margin-bottom: calc((var(--header-footer-height-width) / 3));
     width: calc(100%);
     border-bottom: var(--border-thickness) solid var(--rkt-red);
+    background-color: white;
 }
 
 .closeAboutContainer {

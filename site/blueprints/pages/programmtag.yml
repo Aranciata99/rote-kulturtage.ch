@@ -5,6 +5,7 @@ sections:
     create: programmpunkt
     layout: cards
     image:
+      query: page.bild.toFile
       ratio: 1/1
       cover: true
     text: "{{ page.von }} </br></br> {{ page.title }}"
