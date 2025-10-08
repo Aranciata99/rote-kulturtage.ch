@@ -34,18 +34,30 @@ columns:
         size: large
         help: Text
         required: true
+      orgaLogos:
+        label: false
+        type: text
+        required: true
       logos:
         label: Teilnehmer:innen
         type: files
         layout: list
         multiple: true
         help: Logos – Schwarz weiss
+      mediaLogos:
+        label: false
+        type: text
+        required: true
       medienpartnerinnen:
         label: Medienpartner:innen
         type: files
         layout: list
         multiple: true
         help: Logos – Schwarz weiss
+      moreLogos:
+        label: false
+        type: text
+        required: true
       others:
         label: Weitere unterstützer:innen
         type: files

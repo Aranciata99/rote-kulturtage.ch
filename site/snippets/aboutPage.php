@@ -31,20 +31,20 @@
                 <p class="aboutInfoAllgemein"><?= page('about')?->aboutInfoAllgemein()->kt() ?></p>
             </span>
             <p><?= page('about')?->aboutInfoText()->kt() ?></p>
-            <p>Folgende Organisationen/Gruppen nehmen teil:</p>
+            <p><?= page('about')?->orgaLogos() ?>:</p>
             <div class="infoLogoContainer">
                 <?php foreach (page('about')->logos()->toFiles()->sortBy('sort') as $logo): ?>
                     <img src="<?= $logo->url() ?>" draggable="false">
                 <?php endforeach ?>
             </div>
-            <p>Medienpartnerinnen:</p>
+            <p><?= page('about')?->mediaLogos() ?>:</p>
             <div class="infoLogoContainer">
                 <?php foreach (page('about')->medienpartnerinnen()->toFiles()->sortBy('sort') as $partner): ?>
                     <img src="<?= $partner->url() ?>" draggable="false">
                 <?php endforeach ?>
             </div>
             <?php if (page('about')->others()->isNotEmpty()): ?>
-                <p>Weitere Unterstützer:innen:</p>
+                <p><?= page('about')?->moreLogos() ?>:</p>
                 <div class="infoLogoContainer">
                     <?php foreach (page('about')->others()->toFiles()->sortBy('sort') as $weitere): ?>
                         <img src="<?= $weitere->url() ?>" draggable="false">
