@@ -10,10 +10,14 @@
         <a href="<?= $site->url() ?>"><img src="assets/img/rktlogo.png" alt="Logo Rote Kulturtage"></a>
     </div>
     <div class="footerRight">
-        <a href="">
-            <p>
-                EN
-            </p>
+        <?php
+        $current = $kirby->language()->code();
+        $other = $current === 'en' ? 'de' : 'en';
+        $otherUrl = $page->url($other);
+        ?>
+        <a href="<?= $otherUrl ?>">
+            <p><?= strtoupper($other) ?></p>
         </a>
     </div>
+
 </div>

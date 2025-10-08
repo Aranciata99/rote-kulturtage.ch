@@ -294,7 +294,7 @@ button:hover {
 }
 
 .footerRight {
-    display: none;
+    display: block;
     /*XXXXX*/
     position: absolute;
     top: 0;
