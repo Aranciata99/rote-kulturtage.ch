@@ -16,8 +16,10 @@
     </div>
 </a>
 
-<a href="<?= $pages = $site->find('crowdfunding') ?>">
+<?php if ($crowd = $site->find('crowdfunding')): ?>
+  <a href="<?= $crowd->url($kirby->language()->code()) ?>">
     <div class="crowdFoundingHeader">
-        <p><?= page('crowdfunding')?->title()->upper() ?></p>
+      <p><?= $crowd->title()->upper() ?></p>
     </div>
-</a>
+  </a>
+<?php endif ?>

@@ -119,25 +119,25 @@
                 </style>
                 <div class="inf-main_98ea09126edd6eea0b7affbbeb0d9b17">
                     <div class="inf-success" style="display:none">
-                        <small><a href="#" class="inf-btn">Ihre Anmeldung wurde erfolgreich registriert!</a></small>
+                        <small><a href="#" class="inf-btn"><?= page('contact')?->newsletterConfirmed() ?></a></small>
                     </div>
                     <div class="inf-content">
                         <div class="inf-input inf-input-text"> <input type="email" name="inf[1]" data-inf-meta="1" data-inf-error="" required="required" placeholder="Email *"> </div>
                         <script src="https://eu.altcha.org/js/latest/altcha.min.js" type="module" defer></script> <altcha-widget hidelogo hidefooter floating challengeurl="https://newsletter.infomaniak.com/v3/altcha-challenge"></altcha-widget>
                         <script src="https://newsletter.storage5.infomaniak.com/mcaptcha/altcha.js" defer> </script>
                         <script type="text/javascript" src="https://newsletter.infomaniak.com/v3/static/webform_index.js?v=1758577023"></script>
-                        <div class="inf-submit"> <input type="submit" style="margin-top: 25px;" name="" value="Bestätigen"> </div>
-                        <div class="inf-rgpd">Ihre E-Mail-Adresse wird nur verwendet, um Ihnen unseren Newsletter und Informationen über unsere Aktivitäten zuzusenden. Sie können jederzeit den Abmeldelink in unseren E-Mails nutzen.</div>
+                        <div class="inf-submit"> <input type="submit" style="margin-top: 25px;" name="" value="Confirm"> </div>
+                        <div class="inf-rgpd"><?= page('contact')?->newsletterDataSecurity() ?></div>
                     </div>
                 </div>
             </form>
         </div>
         <div class="contactMail" id="">
-            <small>Kontakt</small>
+            <small><?= page('contact')?->contactTitle() ?></small>
             <a href="mailto:rotekulturtage@immerda.ch" target="_blank"><button>E-Mail</button></a>
         </div>
         <div class="contactVerein" id="">
-            <small>Verein</small>
+            <small><?= page('contact')?->vereinTitle() ?></small>
             <p><?= page('contact')?->contactVereinText()->kt() ?></p>
         </div>
     </div>

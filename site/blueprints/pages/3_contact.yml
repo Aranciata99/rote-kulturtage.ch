@@ -4,10 +4,30 @@ image:
   icon: pen
   back: red
 
-columns:
-  - width: 1/3
+sections:
+  tags:
     type: fields
     fields:
+      newsletterDataSecurity:
+        label: Newsletter Mail Info
+        type: text
+        required: true
+        buttons: false
+      newsletterConfirmed:
+        label: Newsletter Bestätigungs Text
+        type: text
+        required: true
+        buttons: false
+      contactTitle:
+        label: Titel Kontakt
+        type: text
+        required: true
+        buttons: false
+      vereinTitle:
+        label: Titel Verein
+        type: text
+        required: true
+        buttons: false
       contactVereinText:
         label: Verein Text / Adresse
         type: textarea
