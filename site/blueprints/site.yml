@@ -12,3 +12,12 @@ columns:
           query: page
           back: black
           color: white
+
+  - width: 1/3
+    sections:
+    type: fields
+    fields:
+      hometitle:
+        label: Titel (nicht ändern)
+        type: text
+        required: true
