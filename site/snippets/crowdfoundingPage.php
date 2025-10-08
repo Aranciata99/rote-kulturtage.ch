@@ -5,7 +5,7 @@
         </div>
         <div class="crowdFoundingText">
             <div class="closeFoundingContainer" id="TopDiv">
-                <a href="<?= $pages = $site->find('home') ?>"><?php snippet('closeButton') ?></a>
+                <a href="<?= $pages = $site ?>"><?php snippet('closeButton') ?></a>
             </div>
             <h2><?= page('crowdfunding')?->title() ?> <br><span class="helvetica">♥ ♥ ♥ ♥ ♥</span></h2>
             <p><?= $page->beschrieb()->kt() ?></p> <br>

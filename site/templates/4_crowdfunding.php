@@ -16,8 +16,8 @@
 
 <?php slot('scripts') ?>
 
-<script src="assets/scripts/crowdfoundingOpen.js"></script>
-<script src="assets/scripts/crowdfounding.js"></script>
+<script src="<?= url('assets/scripts/crowdfoundingOpen.js') ?>"></script>
+<script src="<?= url('assets/scripts/crowdfounding.js') ?>"></script>
 
 <?php endslot() ?>
 
