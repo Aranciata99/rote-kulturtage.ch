@@ -6,14 +6,14 @@
         <div class="toggleFilterMenue" id="toggleFilterMenue"><span>Programm Filter</span></div>
         <div class="filterButtonsContainer">
             <div class="closeFilterMenue" id="closeFilterMenue"><span>×</span></div>
-            <Button data-filter="alle">Alle</Button>
-            <Button data-filter="performatives">Performatives</Button>
-            <Button data-filter="musik">Musik</Button>
-            <Button data-filter="film">Film</Button>
-            <Button data-filter="theorie">Theorie</Button>
-            <Button data-filter="sport">Sport</Button>
-            <Button data-filter="kinderprogramm">Kinderprogramm</Button>
-            <Button data-filter="weiteres">Weiteres</Button>
+            <Button data-filter="alle"><?= page('programm')?->alle() ?></Button>
+            <Button data-filter="performatives"><?= page('programm')?->performatives() ?></Button>
+            <Button data-filter="musik"><?= page('programm')?->musik() ?></Button>
+            <Button data-filter="film"><?= page('programm')?->film() ?></Button>
+            <Button data-filter="theorie"><?= page('programm')?->theorie() ?></Button>
+            <Button data-filter="sport"><?= page('programm')?->sport() ?></Button>
+            <Button data-filter="kinderprogramm"><?= page('programm')?->kinderprogramm() ?></Button>
+            <Button data-filter="weiteres"><?= page('programm')?->weiteres() ?></Button>
         </div>
     </div>
     <div class="programmContentContainer" id="programmGrid">

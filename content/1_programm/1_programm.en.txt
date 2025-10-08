@@ -6,7 +6,7 @@ Alle: Alle
 
 ----
 
-Performatives: Performatives
+Performative: Performatives
 
 ----
 
@@ -35,7 +35,3 @@ Weiteres: Weiteres
 ----
 
 Programm: 
-
-----
-
-Uuid: vp85z4le0xusfhg4

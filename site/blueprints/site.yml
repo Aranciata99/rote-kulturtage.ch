@@ -18,6 +18,6 @@ columns:
     type: fields
     fields:
       hometitle:
-        label: Titel (nicht ändern)
+        label: Titel (nicht ändern!)
         type: text
         required: true

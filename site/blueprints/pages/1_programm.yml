@@ -14,3 +14,56 @@ sections:
       icon: grid-full
       color: white
       back: black
+
+  tags:
+    type: fields
+    label: Tags
+    fields:
+      alle:
+        label: false
+        placeholder: Alle
+        type: text
+        required: true
+        width: 1/5
+      performatives:
+        label: false
+        placeholder: performatives
+        type: text
+        required: true
+        width: 1/5
+      musik:
+        label: false
+        placeholder: Musik
+        type: text
+        required: true
+        width: 1/5
+      film:
+        label: false
+        placeholder: Film
+        type: text
+        required: true
+        width: 1/5
+      theorie:
+        label: false
+        placeholder: Theorie
+        type: text
+        required: true
+        width: 1/5
+      sport:
+        label: false
+        placeholder: Sport
+        type: text
+        required: true
+        width: 1/5
+      kinderprogramm:
+        label: false
+        placeholder: Kinderprogramm
+        type: text
+        required: true
+        width: 1/5
+      weiteres:
+        label: false
+        placeholder: Weiteres
+        type: text
+        required: true
+        width: 1/5
