@@ -891,6 +891,8 @@ button:hover {
 .crowdfoundingSticker p {
     position: absolute;
     color: white;
+    left: 50%;
+    transform: translate(-50%, 0);
     text-align: center;
     top: 2%;
     line-height: 1;

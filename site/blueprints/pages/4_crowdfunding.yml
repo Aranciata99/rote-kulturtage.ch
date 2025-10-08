@@ -17,3 +17,8 @@ columns:
           - link
         help: 
         required: true
+      sticker:
+        label: Sticker Text
+        type: text
+        required: true
+        maxlength: 17
