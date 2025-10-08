@@ -1,3 +1,10 @@
+<?php
+if ($kirby->language()->code() == 'de') {
+    $buttonText = 'Jetzt spenden';
+} else {
+    $buttonText = 'Donate now';
+}
+?>
 <div class="crowdFoundingContainer" id="programmScroller">
     <div class="crowdFoundingBackground" id="crowdFoundingBackground">
         <div class="crowdFoundingCampagne" id="foundingCampagneContainer">
@@ -9,7 +16,7 @@
             </div>
             <h2><?= page('crowdfunding')?->title() ?> <br><span class="helvetica">♥ ♥ ♥ ♥ ♥</span></h2>
             <p><?= $page->beschrieb()->kt() ?></p> <br>
-            <button id="goto-top" title="Go to top">Jetzt spenden</button>
+            <button id="goto-top" title="Go to top"><?= $buttonText ?></button>
         </div>
         <div class="crowdFoundingVideo">
 

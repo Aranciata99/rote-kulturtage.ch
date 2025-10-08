@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $page->title() ?></title>
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="<?= url('assets/img/favicon.png') ?>">
     <?= css('assets/css/index.css') ?>
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
