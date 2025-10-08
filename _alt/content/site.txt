@@ -1,0 +1,60 @@
+Title: Rote Kulturtage 2025
+
+----
+
+Programmheadertitle: Programm
+
+----
+
+Aboutheadertitle: About
+
+----
+
+Contactheadertitle: Kontakt
+
+----
+
+Programmpunkte:
+
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Zweiter Titel
+  time: 20–23
+  location: ZWZ
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Zweiter Titel
+  time: 20–23
+  location: ZWZ
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Zweiter Titel
+  time: 20–23
+  location: ZWZ
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik
+- 
+  bild:
+    - file://jehh3c4p5o4okrd0
+  title: Ökologie und kultur
+  time: 20:00–23:00
+  location: Rote Fabrik

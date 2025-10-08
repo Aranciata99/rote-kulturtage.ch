@@ -1,0 +1,41 @@
+Title: Buchvorstellung: Downtime
+
+----
+
+Bild: - file://qm9nqgwso6pibnt8
+
+----
+
+Copyright: 
+
+----
+
+Von: 19:30:00
+
+----
+
+Bis: 21:00:00
+
+----
+
+Location: Volkshaus, Buchhandlung
+
+----
+
+Locationlink: https://www.google.com/maps/place/Buchhandlung+im+Volkshaus/@47.3753946,8.5246795,17z/data=!3m2!4b1!5s0x47900a1a513c40cd:0xcce8fcdfdf0528c8!4m6!3m5!1s0x47900a1a51655555:0x75b98b4e27688e78!8m2!3d47.3753946!4d8.5272544!16s%2Fg%2F11f55_3xk2?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D
+
+----
+
+Tags: Theorie, Weiteres
+
+----
+
+Veranstaltungsdetails: Sprache: Deutsch
+
+----
+
+Details: Arbeit im digitalen Kapitalismus bedeutet permanente Verfügbarkeit, algorithmische Kontrolle und eine Unsichtbarkeit jener, die den reibungslosen Betrieb sichern. Jonas Frick zeigt in seinem neu erschienen Buch Downtime, dass der Kampf um Kontrolle und Solidarität nicht nur am Arbeitsplatz, sondern auch in der Literatur geführt wird. Von Gig-Worker-Poetry über Cyberpunk bis hin zu literarischen Roboter-Aufständen zeigt Downtime, wie Schriftsteller*innen digitalisierte Arbeitswelten erfassen, Klassenverhältnisse reflektieren und neue Strategien der Verweigerung entwerfen. Die Fehlbarkeit des Computers wird dabei zum Modell des menschlichen Handelns, das Störsignale gegen die reibungslose Kontrolle setzt und das neue Formen von Solidarität und Gegenmacht denkbar macht: Wo die Maschine streikt, kann auch der Mensch pausieren.
+
+----
+
+Uuid: x85lnz4jigend4x9

@@ -8,5 +8,6 @@ return [
     // Get this from your Payrexx dashboard
     'webhook_secret' => '', // Add your Payrexx webhook secret here
   ],
-  'panel.vue.compiler' => false
+  'panel.vue.compiler' => false,
+  'languages' => true
 ];
