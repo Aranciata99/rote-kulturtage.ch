@@ -30,7 +30,11 @@ Tags: Weiteres
 
 ----
 
-Veranstaltungsdetails: Sprache: Deutsch
+Veranstaltungsdetails: Sprache:  Deutsch
+
+----
+
+anmeldung: anmeldung
 
 ----
 

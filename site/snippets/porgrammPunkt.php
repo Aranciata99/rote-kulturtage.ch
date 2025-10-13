@@ -8,13 +8,13 @@
             $tagClasses = implode(' ', array_map('trim', $tags)); ?>
             <div class="programmPunkt <?= $tagClasses ?>">
                 <?php if ($punkt->files()->isNotEmpty()): ?>
-                        <?php if ($bild = $punkt->bild()->toFile()): ?>
-                            <div class="programmCoverImage">
-                                <img src="<?= $bild->thumb(['width' => 600, 'quality' => 80])->url() ?>" draggable="false" loading="lazy" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
-                            </div>
-                        <?php else: ?>
-                            <div class="programmCoverImagePlaceholder"></div>
-                        <?php endif ?>
+                    <?php if ($bild = $punkt->bild()->toFile()): ?>
+                        <div class="programmCoverImage">
+                            <img src="<?= $bild->thumb(['width' => 600, 'quality' => 80])->url() ?>" draggable="false" loading="lazy" alt="RKT Event Cover Picture for <?= $punkt->title()->esc() ?>">
+                        </div>
+                    <?php else: ?>
+                        <div class="programmCoverImagePlaceholder"></div>
+                    <?php endif ?>
                 <?php else: ?>
                     <?php $r = rand(10, 100);
                     $g = rand(10, 20);
@@ -36,6 +36,9 @@
                             <p><?= $punkt->details()->kt() ?></p>
                         </div>
                     </div>
+                <?php endif ?>
+                <?php if ($punkt->anmeldung()->isNotEmpty()): ?>
+                        <a href="https://shorturl.at/V4hRf" target="_blank"><button style="background-color: rgb(230, 48, 27); cursor: pointer;"><?= $punkt->anmeldung()->upper() ?></button></a>
                 <?php endif ?>
             </div>
         <?php endforeach ?>

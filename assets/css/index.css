@@ -619,11 +619,14 @@ button:hover {
 /* Programm Page / Programm */
 
 .programmDatum {
+    position: relative;
+    top: 0;
     text-align: center;
     background-color: black;
     color: white;
     height: calc(var(--header-footer-height-width));
     border-bottom: var(--border-thickness) solid var(--rkt-red);
+    z-index: 20;
 }
 
 .programmDatum h3 {
@@ -1761,6 +1764,7 @@ button:hover {
     }
 
     .programmDatum {
+        position: sticky;
         color: white;
         background-color: black;
         height: calc(var(--header-footer-height-width));
@@ -1771,6 +1775,7 @@ button:hover {
     }
 
     .programmTag {
+        width: calc(100%-50px);
         grid-template-columns: repeat(1, 1fr);
     }
 
@@ -1783,7 +1788,7 @@ button:hover {
     }
 
     .programmCoverImage {
-        width: 100%;
+        width: calc(100%);
         height: auto
             /*33vh*/
         ;
@@ -1820,8 +1825,8 @@ button:hover {
     }
 
     .programmContentContainer {
-        padding-top: calc(var(--header-footer-height-width) * 4);
-        height: calc(100% - var(--header-footer-height-width) * 5);
+        padding-top: calc(var(--header-footer-height-width) * 2.5);
+        height: calc(100% - var(--header-footer-height-width) * 3.5);
     }
 
     .filterButtonsContainer {
