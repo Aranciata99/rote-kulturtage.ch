@@ -12,6 +12,6 @@
         </div>
     </div>
     <div class="homeSticker">
-        <?php snippet('sticker') ?>
+        <!-- <?php snippet('sticker') ?> -->
     </div>
 </div>

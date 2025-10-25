@@ -3,9 +3,9 @@
         <?php snippet('closeButton') ?>
     </div>
     <div class="contactContentContainer">
-        <div class="contactFunding">
-            <?php snippet('sticker') ?>
-        </div>
+        <!-- <div class="contactFunding">
+            <?php snippet('sticker') ?> 
+        </div> -->
         <div class="contactNewsletter" id="">
             <small>Newsletter</small>
             <form method="post" action="https://newsletter.infomaniak.com/v3/api/1/newsletters/webforms/21653/submit" class="inf-form"><input type="email" name="email" style="display:none" /><input type="hidden" name="key" value="eyJpdiI6Ik9XTVM3aFFZazZ0RVF0TTFBa3VTd0p5NytaR2NtSE01c3NzYktrOHN2K3c9IiwibWFjIjoiZWM2MGM2ZTcxMGI5NDVlYzZmYTJkN2Y5YTI2MmQ3M2UzMzk5MjRkZTkzZjNiOTI1NDBjYzBhMTU4MDBjMGEzOSIsInZhbHVlIjoiQUhZXC9McnlaVXg2M0V0UjNacWtVVjArSFJWeCtcL1ZlMjhGME9aT0FOelNnPSJ9"><input type="hidden" name="webform_id" value="21653">
