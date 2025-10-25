@@ -8,6 +8,19 @@ sections:
   tags:
     type: fields
     fields:
+      statementSticker:
+        label: Text Statement-Box-link
+        type: text
+        buttons: false
+        maxlength: 70
+        help: Wenn dieser Text entfernt wird, wird die Box und somit der Link ausgeblendet. Falls das Statement runtergenommen werden soll
+      statementPDF:
+        label: Statement PDF
+        type: files
+        layout: list
+        multiple: false
+        accept:
+          - application/pdf
       newsletterDataSecurity:
         label: Newsletter Mail Info
         type: text

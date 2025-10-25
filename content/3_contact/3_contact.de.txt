@@ -1,1 +1,29 @@
+Statementsticker: Stellungnahme zum Ausschluss aus den Räumlichkeiten des Volkshauses
+
+----
+
+Statementpdf: - file://usv010pqpoimr1v8
+
+----
+
+Newsletterdatasecurity: A
+
+----
+
+Newsletterconfirmed: A
+
+----
+
+Contacttitle: A
+
+----
+
+Vereintitle: A
+
+----
+
+Contactvereintext: A
+
+----
+
 Uuid: rqgq5ajwwpow22eq

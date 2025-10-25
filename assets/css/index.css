@@ -257,7 +257,8 @@ button:hover {
     width: var(--header-footer-height-width);
     top: 0;
     right: 0;
-    height: 100%; /* XXX Hier ändern wenn crowdfounding Page gebraucht */
+    height: 100%;
+    /* XXX Hier ändern wenn crowdfounding Page gebraucht */
 }
 
 .crowdFoundingHeader {
@@ -408,6 +409,13 @@ button:hover {
 .homeSticker {
     position: absolute;
     bottom: 10%;
+    left: 5%;
+    z-index: 5;
+}
+
+.homeStatementSticker {
+    position: absolute;
+    bottom: 18%;
     left: 5%;
     z-index: 5;
 }
@@ -898,6 +906,41 @@ button:hover {
     transform: translate(-50%, 0);
     text-align: center;
     top: 2%;
+    line-height: 1;
+}
+
+.statementSticker {
+    position: relative;
+    width: calc(var(--header-footer-height-width)*4);
+    height: calc(var(--header-footer-height-width)*2);
+    top: 0;
+    background-color: var(--rkt-red);
+    cursor: pointer;
+    transform: rotate(5deg);
+    color: white;
+    /*transition: var(--transition-animation-general);*/
+    border: var(--border-thickness) solid var(--rkt-red);
+}
+
+.statementSticker:hover {
+    border: var(--border-thickness) solid black;
+    background-color: white;
+    color: black;
+}
+
+.statementSticker a:hover {
+    font-style: normal;
+}
+
+.statementSticker h2,
+.statementSticker p {
+    position: relative;
+    font-family: 'ABCFavoritEdu-Book';
+    font-size: 2.2vh;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     line-height: 1;
 }
 
@@ -1686,6 +1729,13 @@ button:hover {
         z-index: 5;
     }
 
+    .homeStatementSticker {
+        position: absolute;
+        bottom: calc(var(--header-footer-height-width)*1.5);
+        left: 5%;
+        z-index: 5;
+    }
+
     /* Pages */
     /* Pages */
     /* Pages */
@@ -1961,6 +2011,20 @@ button:hover {
 
     .crowdfoundingSticker span {
         font-size: 1.2rem;
+    }
+
+    .statementSticker {
+        width: calc(var(--header-footer-height-width) * 4);
+        height: calc(var(--header-footer-height-width) * 1.8);
+    }
+
+    .statementSticker h2,
+    .statementSticker p {
+        line-height: 1.1;
+    }
+
+    .statementSticker h2 {
+        font-size: 1.1rem;
     }
 
     .contactNewsletter input {
