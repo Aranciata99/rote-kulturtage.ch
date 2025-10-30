@@ -12,11 +12,11 @@
         </div>
     </div>
     <div class="homeSticker">
-        <!-- <?php snippet('sticker') ?> -->
+        <?php snippet('sticker') ?>
     </div>
-    <?php if (page('contact')?->statementSticker()->isNotEmpty()): ?>
+    <!--<?php if (page('contact')?->statementSticker()->isNotEmpty()): ?>
         <div class="homeStatementSticker">
             <?php snippet('statementSticker') ?>
         </div>    
-    <?php endif ?>
+    <?php endif ?>-->
 </div>
