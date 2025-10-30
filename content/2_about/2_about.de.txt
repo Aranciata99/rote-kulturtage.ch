@@ -103,6 +103,14 @@ Aboutawaretext: Das Awareness Konzept zum Festival wird bei Festival-Start hier 
 
 ----
 
+Awarenessstickertext: Awareness Concept
+
+----
+
+Awarenesspdf: - file://m3vvvue4hjlab2xw
+
+----
+
 Bild:
 
 - file://6ykxfougj3gek4bm

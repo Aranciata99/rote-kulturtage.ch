@@ -407,7 +407,7 @@ button:hover {
 .homeSticker {
     position: absolute;
     bottom: 10%;
-    left: 5%;
+    left: 80px;
     z-index: 5;
 }
 
@@ -415,6 +415,12 @@ button:hover {
     position: absolute;
     bottom: 18%;
     left: 5%;
+    z-index: 5;
+}
+.homeAwarenessSticker {
+    position: absolute;
+    bottom: 12%;
+    left: 350px;
     z-index: 5;
 }
 
@@ -893,7 +899,7 @@ button:hover {
 }
 
 .crowdfoundingSticker a:hover {
-    font-style: normal;
+    font-style: italic;
 }
 
 .crowdfoundingSticker h2,
@@ -912,18 +918,16 @@ button:hover {
     width: calc(var(--header-footer-height-width)*4);
     height: calc(var(--header-footer-height-width)*2);
     top: 0;
-    background-color: black;
+    background-color: white;
     cursor: pointer;
     transform: rotate(5deg);
-    color: white;
-    /*transition: var(--transition-animation-general);*/
+    color: black;
+    transition: var(--transition-animation-general);
     border: var(--border-thickness) solid black;
 }
 
 .statementSticker:hover {
-    border: var(--border-thickness) solid black;
-    background-color: white;
-    color: black;
+    transform: rotate(-5deg);
 }
 
 .statementSticker a:hover {
@@ -939,6 +943,40 @@ button:hover {
     top: 35%;
     transform: translate(-50%, -50%);
     text-align: center;
+    line-height: 1;
+}
+
+.awarenessSticker {
+    position: relative;
+    width: calc(var(--header-footer-height-width)*4);
+    height: calc(var(--header-footer-height-width)*3);
+    top: 0;
+    background-color: black;
+    border-radius: 25px;
+    cursor: pointer;
+    transform: rotate(-5deg);
+    transition: var(--transition-animation-general);
+}
+
+.awarenessSticker:hover {
+    transform: rotate(10deg);
+}
+
+.awarenessSticker a:hover {
+    font-style: normal;
+}
+
+.awarenessSticker h2,
+.awarenessSticker p {
+    position: relative;
+    font-family: 'ABCFavoritEdu-Book';
+    color: white;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     line-height: 1;
 }
 
@@ -1726,7 +1764,7 @@ button:hover {
 
     .homeSticker {
         position: absolute;
-        bottom: calc(var(--header-footer-height-width)*1.5);
+        bottom: calc(var(--header-footer-height-width)*3.75);
         left: calc(var(--header-footer-height-width) / 3);
         z-index: 5;
     }
@@ -1735,6 +1773,13 @@ button:hover {
         position: absolute;
         bottom: calc(var(--header-footer-height-width)*1.5);
         left: 5%;
+        z-index: 5;
+    }
+
+    .homeAwarenessSticker {
+        position: absolute;
+        bottom: calc(var(--header-footer-height-width)*1.5);
+        left: 3%;
         z-index: 5;
     }
 
@@ -2016,8 +2061,8 @@ button:hover {
     }
 
     .statementSticker {
-        width: calc(var(--header-footer-height-width) * 4);
-        height: calc(var(--header-footer-height-width) * 1.8);
+        width: calc(var(--header-footer-height-width) * 2.5);
+        height: calc(var(--header-footer-height-width) * 1.5);
     }
 
     .statementSticker h2,
@@ -2026,6 +2071,20 @@ button:hover {
     }
 
     .statementSticker h2 {
+        font-size: 0.8rem;
+    }
+
+    .awarenessSticker {
+        width: calc(var(--header-footer-height-width) * 2.5);
+        height: calc(var(--header-footer-height-width) * 1.8);
+    }
+
+    .awarenessSticker h2,
+    .awarenessSticker p {
+        line-height: 1.1;
+    }
+
+    .awarenessSticker h2 {
         font-size: 1.1rem;
     }
 

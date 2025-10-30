@@ -1,8 +1,10 @@
-<a href="<?= $pages = $site->find('festivalpass') ?>" style="font-style: normal;">
-    <div class="crowdfoundingSticker">
-        <h2><span class="helvetica">♥ ♥ ♥</span><br>
-            <?= page('festivalpass')?->sticker() ?><br>
-            ★★★</h2>
-        </h2>
-    </div>
-</a>
+<?php if ($page = $site->find('festivalpass')): ?>
+    <a href="<?= $page->url($kirby->language()->code()) ?>" style="font-style: normal;">
+        <div class="crowdfoundingSticker">
+            <h2>★★★<br>
+                <?= page('festivalpass')?->sticker() ?><br>
+                ★★★</h2>
+            </h2>
+        </div>
+    </a>
+<?php endif ?>

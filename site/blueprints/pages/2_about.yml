@@ -124,3 +124,16 @@ columns:
         size: large
         help: Text
         required: true
+      awarenessStickerText:
+        label: Text Awareness-Box-link PDF Download
+        type: text
+        buttons: false
+        maxlength: 70
+      awarenessPDF:
+        label: Awareness PDF 
+        type: files
+        layout: list
+        multiple: false
+        accept:
+          - application/pdf
+        help: Dateiname muss beim allfälligen Ersetzen Identisch sein!!

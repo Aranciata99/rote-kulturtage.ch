@@ -14,6 +14,9 @@
     <div class="homeSticker">
         <?php snippet('sticker') ?>
     </div>
+    <div class="homeAwarenessSticker">
+        <?php snippet('awarenessSticker') ?>
+    </div>
     <!--<?php if (page('contact')?->statementSticker()->isNotEmpty()): ?>
         <div class="homeStatementSticker">
             <?php snippet('statementSticker') ?>
