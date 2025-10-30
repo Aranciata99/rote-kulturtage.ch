@@ -6,9 +6,6 @@
 
 <?php slot() ?>
 
-<!-- Umleitung -->
-<?php go('/home') ?>
-
 <?php snippet('crowdfoundingPage') ?>
 <?php snippet('header') ?>
 <?php snippet('footer') ?>

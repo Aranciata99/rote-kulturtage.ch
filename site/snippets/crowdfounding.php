@@ -78,7 +78,7 @@ if ($kirby->language()->code() == 'de') {
     </div>
 
     <div class="contributions">
-        <form id="donate-form">
+        <!-- <form id="donate-form">
             <br>
             <div class="amount-input">
                 <span class="currency-symbol">CHF</span> <br>
@@ -93,9 +93,9 @@ if ($kirby->language()->code() == 'de') {
                 </ul>
             </div>
             <button type="submit"><?= $submit ?></button>
-        </form>
+        </form> -->
         <br>
-        <button id="rewards" onclick="showRewards()"><?= $showGoodies ?></button>
+        <!-- <button id="rewards" onclick="showRewards()"><?= $showGoodies ?></button> -->
         <div class="goodiesWrapper">
             <div id="goodies-container">
                 <br />

@@ -16,10 +16,10 @@
   </div>
 </a>
 
-<!-- <?php if ($page = $site->find('crowdfunding')): ?>
+<?php if ($page = $site->find('festivalpass')): ?>
   <a href="<?= $page->url($kirby->language()->code()) ?>">
     <div class="crowdFoundingHeader">
-      <p><?= $site->find('crowdfunding')->title()->upper() ?></p>
+      <p><?= $site->find('festivalpass')->title()->upper() ?></p>
     </div>
   </a>
-<?php endif ?> -->
+<?php endif ?>

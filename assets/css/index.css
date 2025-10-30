@@ -257,15 +257,14 @@ button:hover {
     width: var(--header-footer-height-width);
     top: 0;
     right: 0;
-    height: 100%;
-    /* XXX Hier ändern wenn crowdfounding Page gebraucht */
+    height: 50%;
 }
 
 .crowdFoundingHeader {
     top: 50%;
-    background-color: black;
-    border-left: var(--border-thickness) solid black;
-    border-top: var(--border-thickness) solid black;
+    background-color: var(--rkt-red);
+    border-left: var(--border-thickness) solid var(--rkt-red);
+    border-top: var(--border-thickness) solid var(--rkt-red);
 }
 
 .crowdFoundingHeader div {
@@ -882,7 +881,7 @@ button:hover {
     width: calc(var(--header-footer-height-width)*4);
     height: calc(var(--header-footer-height-width)*4);
     top: 0;
-    background-color: black;
+    background-color: var(--rkt-red);
     border-radius: 200px;
     cursor: pointer;
     transform: rotate(10deg);
@@ -913,12 +912,12 @@ button:hover {
     width: calc(var(--header-footer-height-width)*4);
     height: calc(var(--header-footer-height-width)*2);
     top: 0;
-    background-color: var(--rkt-red);
+    background-color: black;
     cursor: pointer;
     transform: rotate(5deg);
     color: white;
     /*transition: var(--transition-animation-general);*/
-    border: var(--border-thickness) solid var(--rkt-red);
+    border: var(--border-thickness) solid black;
 }
 
 .statementSticker:hover {
@@ -1020,24 +1019,28 @@ button:hover {
 
 .campaignContainer h3 {
     color: black;
+    display: none; /* XXXX */
 }
 
 .goal-amount,
 .start-date,
 .end-date,
 .nr-backers {
+    display: none; /* XXXX */
     font-size: 2.4vh;
     margin-bottom: var(--header-footer-height-width);
     color: black;
 }
 
 .remaining-days {
+    display: none; /* XXXX */
     font-size: 2.4vh;
     margin-top: var(--header-footer-height-width);
     color: black;
 }
 
 .container-progress {
+    display: none; /* XXXX */
     height: 25vh;
     width: 100%;
     margin: 0;
@@ -1045,7 +1048,7 @@ button:hover {
 }
 
 .container-progress {
-    display: grid;
+    display: none; /* XXXX */
     grid-template-columns: 8% 80%;
     gap: 0px 4%;
 }
@@ -1451,7 +1454,7 @@ button:hover {
     }
 
     #goodies-container {
-        display: none;
+        display: block;
         grid-template-columns: repeat(1, 1fr);
     }
 
@@ -1536,7 +1539,7 @@ button:hover {
     }
 
     #goodies-container {
-        display: none;
+        display: block;
         grid-template-columns: repeat(1, 1fr);
     }
 
@@ -2033,7 +2036,7 @@ button:hover {
     /* Crowdfounding Page */
 
     .crowdFoundingText {
-        background-color: black;
+        background-color: var(--rkt-red);
     }
 
     .crowdFoundingBackground.open {

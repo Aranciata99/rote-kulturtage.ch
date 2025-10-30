@@ -4,6 +4,7 @@
     </div>
     <div class="contactContentContainer">
         <div class="contactFunding">
+            <?php snippet('sticker') ?> 
             <?php if (page('contact')?->statementSticker()->isNotEmpty()): ?>
                 <?php snippet('statementSticker') ?> 
             <?php endif ?>

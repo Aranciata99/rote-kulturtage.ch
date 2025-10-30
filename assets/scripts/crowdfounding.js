@@ -253,7 +253,7 @@ function createGoodieElement(goodie) {
   }
 
   const goodieLimit = document.createElement("div");
-  goodieLimit.textContent = `noch ${goodie.limit_count} verfügbar`;
+  goodieLimit.textContent = `${goodie.limit_count} verfügbar/left`;
   goodieLimit.className = "goodie-limit";
   goodieDiv.appendChild(goodieLimit);
 
@@ -363,7 +363,7 @@ function createGoodieElement(goodie) {
 
   const buyButton = document.createElement("button");
   buyButton.className = "goodie-button";
-  buyButton.textContent = "Auswählen und spenden";
+  buyButton.textContent = "Support us";
   // Use the 'onBuyButtonClick' function with the current 'goodie' object as an argument
   buyButton.addEventListener("click", () => onBuyButtonClick(goodie));
   goodieDiv.appendChild(buyButton);
