@@ -417,6 +417,7 @@ button:hover {
     left: 5%;
     z-index: 5;
 }
+
 .homeAwarenessSticker {
     position: absolute;
     bottom: 12%;
@@ -553,6 +554,18 @@ button:hover {
 
 .aboutAware {
     padding-bottom: 0px;
+}
+
+.aboutAwareIconListeContainer {
+    display: flex;
+    padding-bottom: var(--header-footer-height-width);
+}
+
+.aboutAwareIconListe img {
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    padding-right: 10px;
 }
 
 .programmContentContainer {
@@ -1057,28 +1070,32 @@ button:hover {
 
 .campaignContainer h3 {
     color: black;
-    display: none; /* XXXX */
+    display: none;
+    /* XXXX */
 }
 
 .goal-amount,
 .start-date,
 .end-date,
 .nr-backers {
-    display: none; /* XXXX */
+    display: none;
+    /* XXXX */
     font-size: 2.4vh;
     margin-bottom: var(--header-footer-height-width);
     color: black;
 }
 
 .remaining-days {
-    display: none; /* XXXX */
+    display: none;
+    /* XXXX */
     font-size: 2.4vh;
     margin-top: var(--header-footer-height-width);
     color: black;
 }
 
 .container-progress {
-    display: none; /* XXXX */
+    display: none;
+    /* XXXX */
     height: 25vh;
     width: 100%;
     margin: 0;
@@ -1086,7 +1103,8 @@ button:hover {
 }
 
 .container-progress {
-    display: none; /* XXXX */
+    display: none;
+    /* XXXX */
     grid-template-columns: 8% 80%;
     gap: 0px 4%;
 }
@@ -1613,6 +1631,17 @@ button:hover {
         font-size: 2.3vw;
         transform: translate(-20px, -40px);
     }
+
+    .aboutAwareIconListeContainer {
+        padding-bottom: var(--header-footer-height-width);
+    }
+
+    .aboutAwareIconListe img {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        padding-right: 10px;
+    }
 }
 
 
@@ -1764,7 +1793,7 @@ button:hover {
 
     .homeSticker {
         position: absolute;
-        bottom: calc(var(--header-footer-height-width)*3.75);
+        bottom: calc(var(--header-footer-height-width)*1.5);
         left: calc(var(--header-footer-height-width) / 3);
         z-index: 5;
     }
@@ -1779,7 +1808,7 @@ button:hover {
     .homeAwarenessSticker {
         position: absolute;
         bottom: calc(var(--header-footer-height-width)*1.5);
-        left: 3%;
+        left: 40%;
         z-index: 5;
     }
 

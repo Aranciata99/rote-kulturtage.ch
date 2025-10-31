@@ -113,8 +113,8 @@ columns:
         help: Title
         required: true
         maxlength: 15
-      aboutAwareText:
-        label: Awareness Text
+      aboutAwareText1:
+        label: Awareness Text 1
         type: textarea
         buttons:
           - italic
@@ -124,6 +124,46 @@ columns:
         size: large
         help: Text
         required: true
+      rollstuhl1:
+        label: Rollstuhlgängigkeit
+        type: textarea
+        buttons: false
+        required: true
+      rollstuhl2:
+        label: Beschränkte Rollstuhlgängigkeit
+        type: textarea
+        buttons: false
+        required: true
+      licht:
+        label: Intensive Lichteinwirkung
+        type: textarea
+        buttons: false
+        required: true
+      ton:
+        label: Intensive Toneinwirkung
+        type: textarea
+        buttons: false
+        required: true
+      stuhl:
+        label: Sitzplatzmöglichkeit
+        type: textarea
+        buttons: false
+        required: true
+      wc:
+        label: Sanitäre Anlagen
+        type: textarea
+        buttons: false
+        required: true
+      aboutAwareText2:
+        label: Awareness Text 2
+        type: textarea
+        buttons:
+          - italic
+          - '|'
+          - ul
+          - ol
+        size: large
+        help: Text
       awarenessStickerText:
         label: Text Awareness-Box-link PDF Download
         type: text

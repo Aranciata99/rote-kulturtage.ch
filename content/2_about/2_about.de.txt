@@ -99,7 +99,45 @@ Aboutawaretitle: Awareness
 
 ----
 
-Aboutawaretext: Das Awareness Konzept zum Festival wird bei Festival-Start hier ersichtlich sein.
+Aboutawaretext1:
+
+An den Roten Kulturtagen wollen wir einen solidarischen Raum schaffen. Es gibt keinen Platz für diskriminierendes und übergriffiges Verhalten. Falls es trotzdem dazukommen sollte, stehen bei unseren Awarenesstrukturen immer die betroffene Person und ihre Bedürfnisse im Zentrum.
+
+Awarenessteam: Bei Veranstaltungen mit vielen Personen gibt es eine Awarenessperson, die unterstützt, wenn Personen Hilfe brauchen und eingreift, wenn Personen Diskriminierung erleben. Sie ist gekennzeichnet mit einem orangen Leuchtbändel. Zudem ist während der Veranstaltungen  die Festivalhotline (077 998 45 13) betreut. Bei jeder Veranstaltung ist eine Person der Festivalleitung anwesend.  
+
+Zugänglichkeit: Hierzu mehr bei den einzelnen Programmpunkten. Bei weiteren Fragen, meldet euch gerne per Mail an <a href="mailto:rotekulturtage@immerda.ch" target="_blank" style="color: rgb(230, 48, 27);">E-Mail</a>.
+
+----
+
+Aboutawaretext2:
+
+Kritisiert werden Awareness-Konzepte, oft auch zurecht, aufgrund einer Abschiebung der Verantwortlichkeit für ein Verhalten ausschliesslich aufs Individuum, einem fehlen den Fokus auf materielle Unterstützung für marginalisierte und diskriminierte Personen(-gruppen) oder aber der Herabstufung des Klassenwiderspruches auf die blosse Diskriminierungsebene. Wir sind dennoch der Überzeugung, dass es solche Awareness-Konzepte gerade aufgrund unseres Klassenstandpunktes braucht. Die Arbeiter:innenklasse ist keine homogene Masse. Es gibt viele interne Widersprüche und auch diskriminierendes Verhalten innerhalb der Klasse. Wichtig ist jedoch, einen Weg für den gemeinsamen Kampf und die Formung eines gemeinsamen Klassenbewusstseins zu finden. Dies kann durch ein Awareness-Konzept unterstützt werden. Was das Awareness-Konzept spezifisch leistet, ist der Aufbau von materiell begründeten Strukturen, welche gegen systematische Unterdrückung und Diskriminierung vorgehen.
+
+Falls ihr Ergänzungen, Kritik oder Wünsche bezüglich der Zugänglichkeit oder des Awareness-Konzepts habt, meldet euch gerne jederzeit via <a href="mailto:rotekulturtage@immerda.ch" target="_blank" style="color: rgb(230, 48, 27);">E-Mail</a>.
+
+----
+
+Rollstuhl1: Die Veranstaltung ist rollstuhlgängig.
+
+----
+
+Rollstuhl2: Falls ihr mit einem Rollstuhl die Veranstaltung besuchen möchtet, meldet euch bitte vorher über unsere E-Mail <a href="mailto:rotekulturtage@immerda.ch" target="_blank" style="color: black">E-Mail</a>.
+
+----
+
+Licht: In der Veranstaltung werden Strobo oder ähnliche intensive Lichteinwirkungen eingesetzt.
+
+----
+
+Ton: An dieser Veranstaltung kann es laut werden.
+
+----
+
+Stuhl: An dieser Veranstaltung sind nur beschränkte Sitzplatzmöglichkeiten vorgesehen.
+
+----
+
+Wc: An dieser Veranstaltung sind keine sanitären Anlagen vorhanden.
 
 ----
 
@@ -108,6 +146,10 @@ Awarenessstickertext: Awareness Concept
 ----
 
 Awarenesspdf: - file://m3vvvue4hjlab2xw
+
+----
+
+Aboutawaretext: Das Awareness Konzept zum Festival wird bei Festival-Start hier ersichtlich sein.
 
 ----
 

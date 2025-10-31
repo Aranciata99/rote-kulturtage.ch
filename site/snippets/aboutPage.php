@@ -62,8 +62,36 @@
         </div>
         <div class="aboutAware" id="aboutAware">
             <h2><?= page('about')?->aboutAwareTitle() ?></h2>
-            <p><?= page('about')?->aboutAwareText()->kt() ?></p>
-        </div>
-    </div>
+            <p><?= page('about')?->aboutAwareText1()->kt() ?></p>
+            <div class="aboutAwareIconListe">
+                <div class="aboutAwareIconListeContainer">
+                    <img src="assets/awareness/rollstuhl1_B.png" alt="awareness icon Barierefrei" draggable="false">
+                    <small><?= page('about')?->rollstuhl1() ?></small>
+                </div>
+                <div class="aboutAwareIconListeContainer">
+                    <img src="assets/awareness/rollstuhl2_B.png" alt="awareness icon Barierefrei auf Anfrage" draggable="false">
+                    <small><?= page('about')?->rollstuhl2() ?></small>
+                </div>
+                <div class="aboutAwareIconListeContainer">
+                    <img src="assets/awareness/licht_B.png" alt="awareness icon intensive Lichteinwirkung" draggable="false">
+                    <small><?= page('about')?->licht() ?></small>
+                </div>
+                <div class="aboutAwareIconListeContainer">
+                    <img src="assets/awareness/ton_B.png" alt="awareness icon intensive Toneinwirkung" draggable="false">
+                    <small><?= page('about')?->ton() ?></small>
+                </div>
+                <div class="aboutAwareIconListeContainer">
+                    <img src="assets/awareness/stuhl_B.png" alt="awareness icon begrenzte Sitzmöglichkeiten" draggable="false">
+                    <small><?= page('about')?->stuhl() ?></small>
+                </div>
+                <div class="aboutAwareIconListeContainer">
+                    <img src="assets/awareness/wc_B.png" alt="awareness icon wenig sanitäre anlagen" draggable="false">
+                    <small><?= page('about')?->wc() ?></small>
+                </div>
+                </div>
 
-</div>
+                <p><?= page('about')?->aboutAwareText2()->kt() ?></p>
+            </div>
+        </div>
+
+    </div>
